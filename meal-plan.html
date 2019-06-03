@@ -22,7 +22,6 @@
 </head>
 
 <body>
-
     <header>
         <!-- Navbar -->
         <nav class="border">
@@ -40,14 +39,29 @@
 
 
     <section class="container">
-        <!-- Recipe Search -->
-        <form>
-            Search Recipe for a Recipe:<br>
-            <input type="text" id="searchTerm"><br>
-            <input type="submit" id="submit" value="Submit">
-        </form>
-        <!-- Recipe Results -->
-        <div id="searchResults"></div>
+        <!--Weekly Plan Row-->
+        <div class="row">
+            <div class="col-md-12 border text-center">
+                Weekly Plan goes here
+            </div>
+        </div>
+        <!--Day Plan and Search Bar-->
+        <div class="row">
+            <!--Day Plan-->
+            <div class="col-md-6 border text-center">
+                Day Plan goes here
+            </div>
+            <!--Recipe Search-->
+            <div class="col-md-6 border text-center">
+                <form>
+                    Search for a Recipe:<br>
+                    <input type="text" id="searchTerm"><br>
+                    <input type="submit" id="submit" value="Submit">
+                </form>
+                    <!-- Recipe Results -->
+                    <div id="searchResults"></div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->

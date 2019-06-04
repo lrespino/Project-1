@@ -18,8 +18,11 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
-
+    <!--dragula stylesheets-->
+    <link rel="stylesheet" href="assets/dist/dragula.css">
+    <link rel="stylesheet" href="assets/dist/dragula.min.css">
 </head>
+
 
 <body>
     <header>
@@ -46,20 +49,36 @@
             </div>
         </div>
         <!--Day Plan and Search Bar-->
-        <div class="row">
+        <div class="row ">
             <!--Day Plan-->
             <div class="col-md-6 border text-center">
                 Day Plan goes here
+                <div>Breakfast</div>
+                <div id="left"class="holder container">
+                    here
+                </div>
             </div>
             <!--Recipe Search-->
-            <div class="col-md-6 border text-center">
+            <div class="col-md-6 border text-center mx-auto">
                 <form>
                     Search for a Recipe:<br>
                     <input type="text" id="searchTerm"><br>
                     <input type="submit" id="submit" value="Submit">
                 </form>
                     <!-- Recipe Results -->
-                    <div id="searchResults"></div>
+                    <div id="searchResults">
+                        <!--Placeholder for Card-->
+                        <div id="right" class="container d-flex justify-content-center">
+                            <div  class="card box" draggable="" style="width: 18rem;">
+                                <img class="card-img-top" src="" alt="Recipe image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Recipe title</h5>
+                                    <p class="card-text">Basic Recipe Info</p>
+                                    <a href="#" class="btn btn-primary">Add to Plan</a>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
@@ -69,7 +88,11 @@
         <p>© 2019 Health Hero</p>
     </footer>
 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+<script src="assets/dist/dragula.js"></script>
+<script src="assets/JavaScript/drag-and-drop-logic.js"></script>
 </body>
+
 
 <script src="assets/JavaScript/recipe-logic.js"></script>
 

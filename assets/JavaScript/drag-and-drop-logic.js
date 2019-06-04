@@ -21,6 +21,7 @@
  */
 
 });
-dragula([left, right]);
-/* dragula([left, right], { copy: true }); */
+/* dragula([left, right]); */
+dragula([left], { removeOnSpill: true });
+dragula([left, right], { copy: true });
 

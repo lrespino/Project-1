@@ -2,6 +2,8 @@
 Dependancy needed for project
 
 API
+https://developer.edamam.com/edamam-recipe-api
+
 var appKey = "ab75022db9057519bafaa14829512295";
 var appId = "cc950c0c";
 var query = "";

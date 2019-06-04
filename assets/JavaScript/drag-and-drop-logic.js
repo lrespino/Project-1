@@ -1,7 +1,7 @@
  $(document).ready(function () {
     console.log("ready!");
 
-    var box = document.getElementsByClassName('box')[0]
+/*     var box = document.getElementsByClassName('box')[0]
     var containers = document.getElementsByClassName('holder')
     for (var container of containers) {
         container.addEventListener("dragover", dragover)
@@ -18,7 +18,8 @@
     function drop() {
         this.append(box)
     } 
+ */
 
 });
-
+dragula([left, right], { copy: true });
 

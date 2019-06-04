@@ -18,10 +18,9 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--Draggable library-->
-    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/droppable.js"></script>
-
+    <!--dragula stylesheets-->
+    <link rel="stylesheet" href="assets/dist/dragula.css">
+    <link rel="stylesheet" href="assets/dist/dragula.min.css">
 </head>
 
 
@@ -54,8 +53,9 @@
             <!--Day Plan-->
             <div class="col-md-6 border text-center">
                 Day Plan goes here
-                <div class="holder ">
-                    Breakfast
+                <div>Breakfast</div>
+                <div id="left"class="holder container">
+                    here
                 </div>
             </div>
             <!--Recipe Search-->
@@ -66,15 +66,17 @@
                     <input type="submit" id="submit" value="Submit">
                 </form>
                     <!-- Recipe Results -->
-                    <div id="searchResults"  class="d-flex justify-content-center">
+                    <div id="searchResults">
                         <!--Placeholder for Card-->
-                        <div class="card box" draggable="true" style="width: 18rem;">
-                            <img class="card-img-top" src="" alt="Recipe image">
-                            <div class="card-body">
-                                <h5 class="card-title">Recipe title</h5>
-                                <p class="card-text">Basic Recipe Info</p>
-                                <a href="#" class="btn btn-primary">Add to Plan</a>
-                            </div>
+                        <div id="right" class="container d-flex justify-content-center">
+                            <div  class="card box" draggable="" style="width: 18rem;">
+                                <img class="card-img-top" src="" alt="Recipe image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Recipe title</h5>
+                                    <p class="card-text">Basic Recipe Info</p>
+                                    <a href="#" class="btn btn-primary">Add to Plan</a>
+                                </div>
+                        </div>
                         </div>
                     </div>
             </div>
@@ -86,9 +88,12 @@
         <p>© 2019 Health Hero</p>
     </footer>
 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+<script src="assets/dist/dragula.js"></script>
+<script src="assets/JavaScript/drag-and-drop-logic.js"></script>
 </body>
 
-<script src="assets/JavaScript/drag-and-drop-logic.js"></script>
+
 <script src="assets/JavaScript/recipe-logic.js"></script>
 
 </html>

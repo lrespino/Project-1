@@ -21,5 +21,6 @@
  */
 
 });
-dragula([left, right], { copy: true });
+dragula([left, right]);
+/* dragula([left, right], { copy: true }); */
 

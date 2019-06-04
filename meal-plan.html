@@ -18,8 +18,12 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <!--Draggable library-->
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/droppable.js"></script>
 
 </head>
+
 
 <body>
     <header>
@@ -46,20 +50,33 @@
             </div>
         </div>
         <!--Day Plan and Search Bar-->
-        <div class="row">
+        <div class="row ">
             <!--Day Plan-->
             <div class="col-md-6 border text-center">
                 Day Plan goes here
+                <div class="holder ">
+                    Breakfast
+                </div>
             </div>
             <!--Recipe Search-->
-            <div class="col-md-6 border text-center">
+            <div class="col-md-6 border text-center mx-auto">
                 <form>
                     Search for a Recipe:<br>
                     <input type="text" id="searchTerm"><br>
                     <input type="submit" id="submit" value="Submit">
                 </form>
                     <!-- Recipe Results -->
-                    <div id="searchResults"></div>
+                    <div id="searchResults"  class="d-flex justify-content-center">
+                        <!--Placeholder for Card-->
+                        <div class="card box" draggable="true" style="width: 18rem;">
+                            <img class="card-img-top" src="" alt="Recipe image">
+                            <div class="card-body">
+                                <h5 class="card-title">Recipe title</h5>
+                                <p class="card-text">Basic Recipe Info</p>
+                                <a href="#" class="btn btn-primary">Add to Plan</a>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
@@ -71,6 +88,7 @@
 
 </body>
 
+<script src="assets/JavaScript/drag-and-drop-logic.js"></script>
 <script src="assets/JavaScript/recipe-logic.js"></script>
 
 </html>

@@ -38,6 +38,8 @@ $("#submit").on("click", function (e) {
 
 //Given an array of recipes, dynamically generate cards to append to the page
 function buildRecipeCards(recipes) {
+
+    $("#searchResults").empty();
     recipes.forEach(function (recipe, index) {
         var recipeCard = $("<div>").addClass("card");
 

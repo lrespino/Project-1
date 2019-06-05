@@ -53,11 +53,26 @@
         <!--Day Plan and Search Bar-->
         <div class="row ">
             <!--Day Plan-->
-            <div class="col-md-6 border text-center" >
+<!--             <div class="col-md-6 border text-center" >
                 Day Plan goes here
                 <div>Breakfast</div>
-                <div id="left"class="holder container">
+                <div id="dayContainers"class="holder container">
                     here
+                </div>
+            </div> -->
+            <!--Day Plan-->
+            <div class="col-md-6 border text-center">
+            
+                <div id="breakfast" class="holder border element">
+                    Breakfast
+                </div>
+            
+                <div id="lunch"class="holder  border element">
+                    Lunch
+                </div>
+            
+                <div id="dinner"class="holder  border element">
+                    Dinner
                 </div>
             </div>
             <!--Recipe Search-->
@@ -70,7 +85,7 @@
                     <!-- Recipe Results -->
                     <div id="searchResults" class="container">
                         <!--Placeholder for Card-->
-                        <!-- <div class="">
+                       <div class="">
                             <div class="card box" draggable="" style="width: 18rem;">
                                 <img class="card-img-top" src="" alt="Recipe image">
                                 <div class="card-body">
@@ -79,7 +94,7 @@
                                     <button class="far fa-heart favoriteButton toggleFavBut"></button>
                                 </div>
                             </div>
-                        </div> -->
+                        </div> 
             </div>
         </div>
     </section>
@@ -88,6 +103,13 @@
     <footer class="footerStyle border text-center fixed-bottom">
         <p>© 2019 Health Hero</p>
     </footer>
+ <script>          
+    $('.toggleFavBut').click(function () {
+        console.log("favorited")
+        $(this).toggleClass('favoriteButton far');
+        $(this).toggleClass('favoritedButton fas fa-lg');
+        });
+ </script>
 <!--Simple script to toggle classes on heart icon-->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
 <script src="assets/dist/dragula.js"></script>

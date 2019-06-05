@@ -26,6 +26,12 @@ $("#submit").on("click", function (e) {
 
         buildRecipeCards(recipes);
         console.log(recipes);
+        //Added the toggle fav function here so it can work with the loaded items
+        $('.toggleFavBut').click(function () {
+            console.log("favorited")
+            $(this).toggleClass('favoriteButton far');
+            $(this).toggleClass('favoritedButton fas fa-lg');
+        });
 
     });
 });
@@ -38,9 +44,11 @@ function buildRecipeCards(recipes) {
         var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
         var cardBody = $("<div>").addClass("card-body");
         var title = $("<h5>").addClass("card-title").text(recipe.label);
-        var recipeButton = $("<a>").addClass("btn btn-primary").attr("href", recipe.url).text("Recipe Details")
+        var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
+        var newLine = $("<br>");
+        var recipeButton = $("<a>").addClass("ks-button").attr("href", recipe.url).text("Recipe Details")
 
-        var ingredientsButton = $("<button>").addClass("btn btn-primary").attr("data-toggle", "collapse")
+        var ingredientsButton = $("<button>").addClass("ks-button").attr("data-toggle", "collapse")
             .attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
 
         var ingredientsCollapse = $("<div>").addClass("collapse").attr("id", index);
@@ -54,11 +62,12 @@ function buildRecipeCards(recipes) {
             ingredients.append(li);
         });
 
-        cardBody.append(title, ingredientsButton, ingredientsCollapse, recipeButton);
+        cardBody.append(title, heartButton, newLine, ingredientsButton, ingredientsCollapse, recipeButton);
 
         recipeCard.append(img, cardBody);
 
         $("#searchResults").append(recipeCard);
+
 
     });
 }

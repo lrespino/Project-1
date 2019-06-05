@@ -18,6 +18,8 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/59a7a76dd2.js"></script>
+
     <!--dragula stylesheets-->
     <link rel="stylesheet" href="assets/dist/dragula.css">
     <link rel="stylesheet" href="assets/dist/dragula.min.css">
@@ -51,7 +53,7 @@
         <!--Day Plan and Search Bar-->
         <div class="row ">
             <!--Day Plan-->
-            <div class="col-md-6 border text-center">
+            <div class="col-md-6 border text-center" >
                 Day Plan goes here
                 <div>Breakfast</div>
                 <div id="left"class="holder container">
@@ -63,22 +65,21 @@
                 <form>
                     Search for a Recipe:<br>
                     <input type="text" id="searchTerm"><br>
-                    <input type="submit" id="submit" value="Submit">
+                    <input type="submit" id="submit" value="Submit" class=" ks-button">
                 </form>
                     <!-- Recipe Results -->
-                    <div id="searchResults">
+                    <div id="searchResults" class="container">
                         <!--Placeholder for Card-->
-                        <div id="right" class="container d-flex justify-content-center">
-                            <div  class="card box" draggable="" style="width: 18rem;">
+                        <!-- <div class="">
+                            <div class="card box" draggable="" style="width: 18rem;">
                                 <img class="card-img-top" src="" alt="Recipe image">
                                 <div class="card-body">
                                     <h5 class="card-title">Recipe title</h5>
                                     <p class="card-text">Basic Recipe Info</p>
-                                    <a href="#" class="btn btn-primary">Add to Plan</a>
+                                    <button class="far fa-heart favoriteButton toggleFavBut"></button>
                                 </div>
-                        </div>
-                        </div>
-                    </div>
+                            </div>
+                        </div> -->
             </div>
         </div>
     </section>
@@ -87,7 +88,7 @@
     <footer class="footerStyle border text-center fixed-bottom">
         <p>© 2019 Health Hero</p>
     </footer>
-
+<!--Simple script to toggle classes on heart icon-->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
 <script src="assets/dist/dragula.js"></script>
 <script src="assets/JavaScript/drag-and-drop-logic.js"></script>

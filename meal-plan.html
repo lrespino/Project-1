@@ -115,6 +115,7 @@
         <h2 class="row ">
 
             <!--Day Plan-->
+
             <div class="col-md-6 border text-center" >
     
                 <br>
@@ -134,7 +135,6 @@
                </div>
                <br>
                <br>
-
             </div>
 
             <!--Recipe Search-->
@@ -149,6 +149,7 @@
                         <!--Placeholder for Card-->
                         <!-- <div>
                             <div class="card box" draggable="" style="width: 18rem;"> <button class="removeButton">&#10007</button>
+
                                 <img class="card-img-top" src="" alt="Recipe image">
                                 <div class="card-body">
                                     <h5 class="card-title">Recipe title</h5>
@@ -156,6 +157,7 @@
                                     <button class="far fa-heart favoriteButton toggleFavBut"></button> -->
                                     
                                 </div>
+
                         </div>
                     </div>
             </div>
@@ -166,6 +168,13 @@
     <footer class="footerStyle border text-center fixed-bottom">
         <p>© 2019 Health Hero</p>
     </footer>
+ <script>          
+    $('.toggleFavBut').click(function () {
+        console.log("favorited")
+        $(this).toggleClass('favoriteButton far');
+        $(this).toggleClass('favoritedButton fas fa-lg');
+        });
+ </script>
 <!--Simple script to toggle classes on heart icon-->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
 <script src="assets/dist/dragula.js"></script>

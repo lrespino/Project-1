@@ -1,7 +1,11 @@
 body {
     background: url("../images/blizzard.png")
 }
-
+.ks-container {
+        background-color: rgba(241, 241, 241, 1);
+        border-radius: 5px;
+        box-shadow: 4px 4px 10px 0px rgb(165, 165, 165);
+}
 .favoriteButton {
     color: rgb(33, 33, 33);
     background-color: transparent;
@@ -53,6 +57,7 @@ body {
     color: #fff;
     background-color: #42611F;
     border-color: #42611F;
+    text-decoration: none;
 }
 
 .ks-button:focus {
@@ -77,4 +82,32 @@ body {
 
 button div div h5 {
     font-size: 0.85rem;
+} 
+
+/*-Login-- */
+#login {
+    display:block;
+
+}
+#password {
+    display:block;
+}
+.fa-user {
+    color: rgb(118, 173, 55)
+}
+input {
+    border-radius: 5px;
+    border-style: none;
+    padding: 5px;
+}
+input:focus {
+    outline: rgb(118, 173, 55) solid .1rem
+}
+
+a {
+    color: rgb(118, 173, 55)
+}
+a:hover {
+    color: #42611F
+
 }

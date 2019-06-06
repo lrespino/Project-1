@@ -15,6 +15,7 @@
 
     <!-- Custom Style Link -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/59a7a76dd2.js"></script>
 
     <!-- Animate.css CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
@@ -28,10 +29,10 @@
             <h1 class="nav float-left">HH</h1>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Home</a>
+                  <a class="nav-link active" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Meal Plan</a>
+                  <a class="nav-link" href="meal-plan.html">Meal Plan</a>
                 </li>
             </ul>
         </nav>
@@ -40,7 +41,7 @@
     <!-- Page Introduction -->
     <div class="container">
         <div class="row">
-            <div class="col-md-12 border">
+            <div class="col-md-12 border ks-container m-5">
                 <section>
                 
                     <h2 class="text-center">Welcome To Health Hero</h2>
@@ -53,10 +54,48 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-8 border mx-auto text-center">
-                Login Here
+            <div class="col-md-6 border mx-auto text-center ks-container">
+                <div class="wrapper fadeInDown m-2">
+                    <div id="formContent">
+                        <!-- Tabs Titles -->
+                        <div class="dropdown">
+                            <a class="ks-button dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Login admins
+                            </a>
+                        
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Daniel</a>
+                                <a class="dropdown-item" href="#">Matt</a>
+                                <a class="dropdown-item" href="#">Luis</a>
+                                <a class="dropdown-item" href="#">Kayleigh</a>
+                            </div>
+                        </div>
+                        <!-- Icon -->
+                        <div class="m-2">
+                            <i class="far fa-user fa-2x"></i>
+                        </div>
+                
+                        <!-- Login Form -->
+                        <form>
+                            <input type="text" id="login" class="mx-auto m-2" name="login" placeholder="login">
+                            <input type="text" id="password" class="mx-auto m-2" name="password" placeholder="password">
+                            <button type="submit" class="mx-auto m-2 ks-button" value="Log In">Submit</button>
+                        </form>
+                        
+                
+                        <!-- Remind Passowrd -->
+<!--                         <div class="mx-auto m-2" id="formFooter">
+                            <a class="" href="#">Forgot Password?</a>
+                        </div> -->
+                
+                    </div>
+                    
+                </div>
             </div>
+            
         </div>
+        
 
     </div>
 

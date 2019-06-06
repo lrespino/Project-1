@@ -25,7 +25,7 @@
 <body>
     <header>
         <!-- Navbar -->
-        <nav class="border">
+        <nav class="">
             <h1 class="nav float-left">HH</h1>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
@@ -42,10 +42,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 border ks-container m-5">
-                <section>
-                
-                    <h2 class="text-center">Welcome To Health Hero</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure quia nulla provident ipsam reiciendis, iste
+                <section class="p-4">
+                    <h2 class="text-center border-bottom">Welcome To Health Hero</h2>
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure quia nulla provident ipsam reiciendis, iste
                         placeat numquam optio impedit necessitatibus laudantium consequatur suscipit fuga similique est tempore
                         molestias possimus veniam!
                     </p>
@@ -59,7 +58,7 @@
                     <div id="formContent" class="p-4">
                         <!-- Tabs Titles -->
                         <!-- Icon -->
-                        <div class="m-2 mt-4">
+                        <div class="m-2 mt-2">
                             <i class="far fa-user fa-3x"></i>
                         </div>
                 
@@ -73,7 +72,7 @@
                                 <label for="password">Password</label>
                                 <input type="text" class="mx-auto m-2 onNewLine" id="inputPassword" placeholder="Password">
                             </div>
-                            <div class="form-check">
+                            <div class="form-check m-2">
                                 <input type="checkbox" class="form-check-input" id="dropdownCheck2">
                                 <label class="form-check-label" for="dropdownCheck2">
                                     Remember me
@@ -82,7 +81,7 @@
                             <button type="login" class="mx-auto ks-button"value="login">Sign in</button>
                         </form>
                         <div class="dropdown">
-                            <a class="ks-button dropdown-toggle m-2 mb-4" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            <a class="ks-button dropdown-toggle m-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 Login admins
                             </a>
@@ -94,9 +93,6 @@
                                 <a class="dropdown-item" href="#">Kayleigh</a>
                             </div>
                         </div>
-                        
-                        
-                
                         <!-- Remind Passowrd -->
 <!--                         <div class="mx-auto m-2" id="formFooter">
                             <a class="" href="#">Forgot Password?</a>
@@ -113,8 +109,10 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footerStyle border text-center fixed-bottom">
-        <p>© 2019 Health Hero</p>
+    <footer class=" text-center mt-auto">
+        <div class="container">
+            <p>© 2019 Health Hero</p>
+        </div>
     </footer>
 
     <!-- Bootstrap Script Links -->

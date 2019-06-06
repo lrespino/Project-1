@@ -25,7 +25,7 @@
 /* dragula([left, right]); */
 
  
-=======
+
 /*  dragula([left, right]); 
 dragula([containers], { removeOnSpill: true });
 dragula([containers, searchResults], { copy: true }); */

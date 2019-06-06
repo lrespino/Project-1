@@ -27,10 +27,10 @@ body {
     
 }  */
 .card {
-        width: 18rem;
-        margin: 0 auto; 
-        float: none; 
-        margin-bottom: 10px; 
+    width: 18rem;
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
 }
 
 .ks-button {
@@ -65,4 +65,16 @@ body {
     background-color: #42611F;
     border-color: #42611F;
 
+}
+
+/* Week Day Buttons */
+.week-cards {
+    /* display: inline-block; */
+    width: 8rem;
+    float: left;
+    margin: 0.5px;
+}
+
+button div div h5 {
+    font-size: 0.85rem;
 }

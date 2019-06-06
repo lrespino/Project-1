@@ -14,16 +14,22 @@
     }
     function dragenter(e) {
         e.preventDefault()
-    }
+    }   
     function drop() {
         this.append(box)
     } 
  */
 
 });
+
+/* dragula([left, right]); */
+
+ 
+=======
 /*  dragula([left, right]); 
 dragula([containers], { removeOnSpill: true });
 dragula([containers, searchResults], { copy: true }); */
+
 
 /* var containers = $('.drag-container').toArray();
 containers.concat($('#searchResults').toArray());

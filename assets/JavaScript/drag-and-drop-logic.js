@@ -14,7 +14,7 @@
     }
     function dragenter(e) {
         e.preventDefault()
-    }
+    }   
     function drop() {
         this.append(box)
     } 
@@ -22,21 +22,6 @@
 
 });
 /* dragula([left, right]); */
-var breakfast = '#breakfast';
-var lunch = '#lunch';
-var dinner = '#dinner';
-var searchResults ="#searchResults"
 
-var containers = [
-   document.querySelector(breakfast),
-   document.querySelector(lunch),
-   document.querySelector(dinner),
-   document.querySelector(searchResults)
-];
-
-dragula({
-   containers: containers,
-   revertOnSpill: true,
-   copy: true
-});
+ 
 

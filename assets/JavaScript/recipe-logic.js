@@ -73,3 +73,9 @@ function buildRecipeCards(recipes) {
 
     });
 }
+
+
+/* Remove Button */
+$("#removeButton").on("click", function(){
+    $(".card").remove();
+})

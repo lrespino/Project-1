@@ -18,6 +18,11 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/59a7a76dd2.js"></script>
+
+    <!-- Animate.css CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
     <!--dragula stylesheets-->
     <link rel="stylesheet" href="assets/dist/dragula.css">
     <link rel="stylesheet" href="assets/dist/dragula.min.css">
@@ -31,10 +36,10 @@
             <h1 class="nav float-left">HH</h1>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link active" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Meal Plan</a>
+                    <a class="nav-link" href="#">Meal Plan</a>
                 </li>
             </ul>
         </nav>
@@ -45,52 +50,134 @@
         <!--Weekly Plan Row-->
         <div class="row">
             <div class="col-md-12 border text-center">
-                Weekly Plan goes here
+                <!-- Week Cards -->
+                <!---------------------------------------->
+                <button class="animated" id="MondayButton">
+                    <div class="card week-cards animated shake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Monday</h5>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="animated" id="TuesdayButton">
+                    <div class="card week-cards">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Tuesday</h5>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="animated" id="WednesdayButton">
+                    <div class="card week-cards">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Wednesday</h5>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="animated" id="ThursdayButton">
+                    <div class="card week-cards">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Thursday</h5>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="animated" id="FridayButton">
+                    <div class="card week-cards">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Friday</h5>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="animated" id="SaturdayButton">
+                    <div class="card week-cards">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Saturday</h5>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="animated" id="SundayButton">
+                    <div class="card week-cards">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Sunday</h5>
+                        </div>
+                    </div>
+                </button>
+                <!----------------------------->
+                <!-- End of Week Cards -->
             </div>
         </div>
         <!--Day Plan and Search Bar-->
-        <div class="row ">
+        <h2 class="row ">
+
             <!--Day Plan-->
+
             <div class="col-md-6 border text-center">
-                Day Plan goes here
-                <div>Breakfast</div>
-                <div id="left"class="holder container">
-                    here
+
+                <br>
+                <br>
+                <div id="breakfast" class="holder border element">
+                    Breakfast
                 </div>
+                <br>
+                <br>
+                <div id="lunch" class="holder  border element">
+                    Lunch
+                </div>
+                <br>
+                <br>
+                <div id="dinner" class="holder  border element">
+                    Dinner
+                </div>
+                <br>
+                <br>
             </div>
+
             <!--Recipe Search-->
             <div class="col-md-6 border text-center mx-auto">
                 <form>
                     Search for a Recipe:<br>
                     <input type="text" id="searchTerm"><br>
-                    <input type="submit" id="submit" value="Submit">
+                    <input type="submit" id="submit" value="Submit" class=" ks-button">
                 </form>
-                    <!-- Recipe Results -->
-                    <div id="searchResults">
-                        <!--Placeholder for Card-->
-                        <div id="right" class="container d-flex justify-content-center">
-                            <div  class="card box" draggable="" style="width: 18rem;">
+                <!-- Recipe Results -->
+                <div id="searchResults" class="container">
+                    <!--Placeholder for Card-->
+                    <!-- <div>
+                            <div class="card box" draggable="" style="width: 18rem;"> <button class="removeButton">&#10007</button>
                                 <img class="card-img-top" src="" alt="Recipe image">
                                 <div class="card-body">
                                     <h5 class="card-title">Recipe title</h5>
                                     <p class="card-text">Basic Recipe Info</p>
-                                    <a href="#" class="btn btn-primary">Add to Plan</a>
-                                </div>
-                        </div>
-                        </div>
-                    </div>
+                                    <button class="far fa-heart favoriteButton toggleFavBut"></button> -->
+
+                </div>
+
             </div>
-        </div>
+            </div>
+            </div>
+            </div>
     </section>
 
     <!-- Footer -->
     <footer class="footerStyle border text-center fixed-bottom">
         <p>© 2019 Health Hero</p>
     </footer>
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
-<script src="assets/dist/dragula.js"></script>
-<script src="assets/JavaScript/drag-and-drop-logic.js"></script>
+    <script>
+        $('.toggleFavBut').click(function () {
+            console.log("favorited")
+            $(this).toggleClass('favoriteButton far');
+            $(this).toggleClass('favoritedButton fas fa-lg');
+        });
+    </script>
+    <!--Simple script to toggle classes on heart icon-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+    <script src="assets/dist/dragula.js"></script>
+    <script src="assets/JavaScript/drag-and-drop-logic.js"></script>
 </body>
 
 

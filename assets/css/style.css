@@ -1,10 +1,11 @@
 body {
-    background: url("../images/blizzard.png")
+    background: url("../images/seamless_paper_texture.png")
 }
 .ks-container {
-        background-color: rgba(241, 241, 241, 1);
+        background-color: rgba(255, 255, 255, 0.5);
         border-radius: 5px;
-        box-shadow: 4px 4px 10px 0px rgb(165, 165, 165);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        padding: 0px;
 }
 .favoriteButton {
     color: rgb(33, 33, 33);
@@ -101,7 +102,13 @@ input {
     padding: 5px;
 }
 input:focus {
-    outline: rgb(118, 173, 55) solid .1rem
+    outline: none;
+    box-shadow: 0 0 0 0.1rem rgba(118, 173, 55, 0.5);
+
+/*     box-shadow: 0 0 3pt 2pt red; */
+}
+.onNewLine {
+    display:block
 }
 
 a {

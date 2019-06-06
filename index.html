@@ -54,12 +54,35 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 border mx-auto text-center ks-container">
-                <div class="wrapper fadeInDown m-2">
-                    <div id="formContent">
+            <div class="col-md-4 border mx-auto text-center ks-container ">
+                <div class="wrapper fadeInDown">
+                    <div id="formContent" class="p-4">
                         <!-- Tabs Titles -->
+                        <!-- Icon -->
+                        <div class="m-2 mt-4">
+                            <i class="far fa-user fa-3x"></i>
+                        </div>
+                
+                        <!-- Login Form -->
+                        <form >
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="mx-auto m-2 onNewLine" id="inputUsername" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" class="mx-auto m-2 onNewLine" id="inputPassword" placeholder="Password">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                                <label class="form-check-label" for="dropdownCheck2">
+                                    Remember me
+                                </label>
+                            </div>
+                            <button type="login" class="mx-auto ks-button"value="login">Sign in</button>
+                        </form>
                         <div class="dropdown">
-                            <a class="ks-button dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            <a class="ks-button dropdown-toggle m-2 mb-4" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 Login admins
                             </a>
@@ -71,17 +94,7 @@
                                 <a class="dropdown-item" href="#">Kayleigh</a>
                             </div>
                         </div>
-                        <!-- Icon -->
-                        <div class="m-2">
-                            <i class="far fa-user fa-2x"></i>
-                        </div>
-                
-                        <!-- Login Form -->
-                        <form>
-                            <input type="text" id="login" class="mx-auto m-2" name="login" placeholder="login">
-                            <input type="text" id="password" class="mx-auto m-2" name="password" placeholder="password">
-                            <button type="submit" class="mx-auto m-2 ks-button" value="Log In">Submit</button>
-                        </form>
+                        
                         
                 
                         <!-- Remind Passowrd -->

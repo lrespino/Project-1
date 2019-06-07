@@ -1,14 +1,78 @@
-body {
-    background: url("../images/blizzard.png")
+html {
+  position: relative; /*for sticky footer */
+  min-height: 100%; /*for sticky footer */
 }
+body {
+    background: url("../images/seamless_paper_texture.png");
+    margin-bottom: 40px; /*for sticky footer */
+    color: #212121;
+}
+.ks-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 0px;
+}
+/* Fonts */
+.h-font {
+    font-family: 'EB Garamond', serif;
+}
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #42611F;
+}
+.navbar-light .navbar-nav .nav-link {
+        color: rgb(118, 173, 55);
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    font-size: 22px;
+    transition: .5s ease;
+    color:#42611F;
+}
+.icon {
+     font-size: 2.8rem;
+     color:  #42611F;
+}
+/*Navigation Bar*/
 
+.ks-nav{
+    font-size: 1.2rem;
+    border-right: 1px solid rgb(118, 173, 55);
+    padding: 0;
+
+}
+.navbar-nav li:last-child a{
+    border:none;
+}
+.navbar {
+    overflow: hidden;
+    padding: 0px 25px;
+    background-color: rgb(243, 241, 237);
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 1;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.main {
+  margin-top: 68px;
+  margin-bottom: 78px;
+}
+/*Footer*/
+footer {
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px; /*vertically centers */
+}
 .favoriteButton {
     color: rgb(33, 33, 33);
     background-color: transparent;
     border-color: transparent;
     box-shadow: none;
 }
- .favoriteButton:hover {
+.favoriteButton:hover {
     color:  rgba(176, 27, 4, .5);
     transition: .8s ease;
 } 
@@ -17,7 +81,6 @@ body {
     border-color: transparent;
     box-shadow: none;
     color: rgb(176, 27, 4);
-
 }
 /* Meal Plan Page Styles */
 /*  .card {
@@ -32,7 +95,6 @@ body {
     float: none; 
     margin-bottom: 10px; 
 }
-
 .ks-button {
     background-color: rgb(118, 173, 55);
     color: #fff;
@@ -48,13 +110,12 @@ body {
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
 .ks-button:hover {
     color: #fff;
     background-color: #42611F;
     border-color: #42611F;
+    text-decoration: none;
 }
-
 .ks-button:focus {
     box-shadow: 0 0 0 0.2rem rgba(118, 173, 55, 0.5);
     outline: 0;
@@ -64,9 +125,7 @@ body {
     color: #fff;
     background-color: #42611F;
     border-color: #42611F;
-
 }
-
 /* Week Day Buttons */
 .week-cards {
     /* display: inline-block; */
@@ -74,7 +133,36 @@ body {
     float: left;
     margin: 0.5px;
 }
-
 button div div h5 {
     font-size: 0.85rem;
+} 
+/*-Login-- */
+#login {
+    display:block;
+
+}
+#password {
+    display:block;
+}
+.fa-user {
+    color: rgb(118, 173, 55)
+}
+input {
+    border-radius: 5px;
+    border-style: none;
+    padding: 5px;
+}
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.1rem rgba(118, 173, 55, 0.5);
+}
+.onNewLine {
+    display:block
+}
+a {
+    color: rgb(118, 173, 55)
+}
+a:hover {
+    color: #42611F
+
 }

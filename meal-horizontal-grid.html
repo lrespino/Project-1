@@ -111,63 +111,73 @@
                 <!-- End of Week Cards -->
             </div>
         </div>
-        <!--Day Plan and Search Bar-->
+        <!--Day Plan-->
         <div class="row">
 
             <!--Day Plan-->
             <div class="col-md-4 border text-center">
-                <div id="breakfast" class="holder border element">
-                   Breakfast
+                <h2 class="border meal-header">Breakfast</h2>
+                <div id="breakfast" class="holder meal-holder element mx-auto">
+                   
                </div>
             </div>   
 
             <div class="col-md-4 border text-center">
-               <div id="lunch"class="holder border element">
-                   Lunch
+                <h2 class="border meal-header">Lunch</h2>
+                <div id="lunch"class="holder meal-holder element mx-auto">
+                   
                </div>
             </div>
 
             <div class="col-md-4 border text-center">
-               <div id="dinner"class="holder border element">
-                   Dinner
+                <h2 class="border meal-header">Dinner</h2>
+                <div id="dinner"class="holder meal-holder element mx-auto">
+                   
                </div>
             </div>
 
+        </div>
+
+        <!--Save Day Plan-->
+        <div class="row">
+            <div class="col-md-12 border text-center mx-auto">
+                <div id="submitButtonSpacing">
+                    <input type="submit" id="save" value="Save" class="ks-button-form-submit">
+                </div>
+            </div>
         </div>
 
         <!--Recipe Search-->
         <div class="row">
             
             <div class="col-md-12 border text-center mx-auto">
+                
+                    
+                <!-- Recipe Results -->
                 <div class="slideContainer">
-                    <form>
-                        <p id="searchTitleSpacing">Search for a Recipe:</p>
-                        <div>
-                            <input type="text" id="searchTerm">
-                        </div>
-
-                        <div id="submitButtonSpacing">
-                            <input type="submit" id="submit" value="Submit" class="form-submit-button">
-                        </div>
-                    </form>
-                    <!-- Recipe Results -->
-                    <div id="searchResults" class="container imageContainer">
+                    <div id="searchResults" class="container imageContainer mx-auto">
                     
-                    
-                        
-                        <!--Placeholder for Card-->
-                        <!-- <div>
-                            <div class="card box" draggable="" style="width: 18rem;"> <button class="removeButton">#10007<button>
-                                <img class="card-img-top" src="" alt="Recipe image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Recipe title</h5>
-                                    <p class="card-text">Basic Recipe Info</p>
-                                    <button class="far fa-heart favoriteButton toggleFavBut"></button>
-                                </div>    
-                            </div>
-                        </div> -->
                     </div>
                 </div>
+                
+                <form>
+                    <label id="searchTitleSpacing">Search for a Recipe:</label>
+                    <div>
+                        <input type="text" id="searchTerm">
+                    </div>
+                    <div id="submitButtonSpacing">
+                        <input type="submit" id="submit" value="Submit" class="ks-button-form-submit ">
+                    </div>
+                </form>
+
+                
+            </div>
+        </div>
+
+        <!--Favrites Section-->
+        <div class="row">
+            <div class="favorite-container col-md-12 border text-center mx-auto">
+                <p>Favorites!!!</p>
             </div>
         </div>
 

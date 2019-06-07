@@ -62,3 +62,16 @@
     color: rgb(176, 27, 4);
 
 }
+
+
+<!--Placeholder for Card-->
+    <!-- <div>
+        <div class="card box" draggable="" style="width: 18rem;"> <buttonclass="removeButton">#10007<button>
+            <img class="card-img-top" src="" alt="Recipe image">
+            <div class="card-body">
+                <h5 class="card-title">Recipe title</h5>
+                <p class="card-text">Basic Recipe Info</p>
+                <button class="far fa-heart favoriteButton toggleFavBut"></button>
+            </div>    
+        </div>
+    </div> -->

@@ -1,99 +1,20 @@
+/* General Styles Start */
+/*-----------------------*/
+
 body {
     background: url("../images/blizzard.png")
 }
 
-/* Week Day Buttons */
-.week-cards {
-    /* display: inline-block; */
-    width: 8rem;
-    float: left;
-    margin: 0.5px;
-}
-
-button div div h5 {
-    font-size: 0.85rem;
-}
+/*-----------------------*/
+/* General Styles End */
 
 
-/* Form styling */
-#searchTitleSpacing {
-    margin-top: 10px;
-}
 
-#submitButtonSpacing {
-    margin: 20px;
-}
+/* Home Page Styles Start */
+/*-----------------------------*/
 
-.form-submit-button {
-    width: 80px;  
-    height: 35px;
-    background-color: rgb(118, 173, 55);
-    color: #fff;
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    /*   background-color: transparent; */
-    border: none;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.form-submit-button:hover {
-    color: #fff;
-    background-color: #42611F;
-    border-color: #42611F;
-}
-
-.form-submit-button:focus {
-    box-shadow: 0 0 0 0.2rem rgba(118, 173, 55, 0.5);
-    outline: 0;
-  
-}
-.form-submit-button:active {
-    color: #fff;
-    background-color: #42611F;
-    border-color: #42611F;
-
-}
-
-/* Results Slide */ 
-.slideContainer {
-    /* height: ;
-    width: ; */
-}
-
-.imageContainer {
-
-}
-
-.card {
-    width: 202px;
-    height: 302px;
-    margin: 0 auto; 
-    float: left; 
-    margin-bottom: 10px; 
-}
-
-.card-img-top {
-    width: 202px;
-    height: 124px;
-}
-
-.card-body {
-
-}
-
-.card-title {
-    font-size: 1em;
-}
-
+/* KS-Button Styles */
 .ks-button {
-    width: 40px;  
-    height: 35px;
     background-color: rgb(118, 173, 55);
     color: #fff;
     display: inline-block;
@@ -127,6 +48,152 @@ button div div h5 {
 
 }
 
+/*-----------------------------*/
+/* Home Page Styles End */
+
+
+
+/* Meal Plan Page styles Start */
+/*----------------------------------*/
+
+/* Week Day Buttons */
+.week-cards {
+    /* display: inline-block; */
+    width: 8rem;
+    float: left;
+    margin: 0.5px;
+}
+
+button div div h5 {
+    font-size: 0.85rem;
+}
+/********************************/
+
+/* Breakfast lunch Dinner Styles */
+.meal-holder {
+    width: 202px;
+    height: 302px;
+    background-color: #B01A04;
+}
+
+.meal-header {
+    font-size: 25px;
+}
+/********************************/
+
+/* Form styling */
+#searchTitleSpacing {
+    margin-top: 10px;
+}
+
+#submitButtonSpacing {
+    margin: 20px;
+}
+
+.ks-button-form-submit {
+    width: 80px;  
+    height: 30px;
+    background-color: rgb(118, 173, 55);
+    color: #fff;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    /*   background-color: transparent; */
+    border: none;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.ks-button-form-submit:hover {
+    color: #fff;
+    background-color: #42611F;
+    border-color: #42611F;
+}
+
+.ks-button-form-submit:focus {
+    box-shadow: 0 0 0 0.2rem rgba(118, 173, 55, 0.5);
+    outline: 0;
+  
+}
+.ks-button-form-submit:active {
+    color: #fff;
+    background-color: #42611F;
+    border-color: #42611F;
+
+}
+/********************************************/
+
+/* Results Slide */ 
+.slideContainer {
+    padding-left: 30px;
+}
+
+.imageContainer {
+    /* padding-left: 30px; */
+}
+
+.card {
+    width: 202px;
+    height: 302px;
+    margin: auto; 
+    float: left; 
+    margin-bottom: 10px; 
+}
+
+.card-img-top {
+    width: 202px;
+    height: 124px;
+}
+
+.card-body {
+
+}
+
+.card-title {
+    font-size: 1em;
+}
+
+.ks-button-recipe {
+    width: 40px;  
+    height: 35px;
+    background-color: rgb(118, 173, 55);
+    color: #fff;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    /*   background-color: transparent; */
+    border: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.ks-button-recipe:hover {
+    color: #fff;
+    background-color: #42611F;
+    border-color: #42611F;
+}
+
+.ks-button-recipe:focus {
+    box-shadow: 0 0 0 0.2rem rgba(118, 173, 55, 0.5);
+    outline: 0;
+  
+}
+.ks-button-recipe:active {
+    color: #fff;
+    background-color: #42611F;
+    border-color: #42611F;
+
+}
+
 .favoriteButton {
     color: rgb(33, 33, 33);
     background-color: transparent;
@@ -144,4 +211,15 @@ button div div h5 {
     color: rgb(176, 27, 4);
 
 }
+/**************************************************/
+
+/* Favorites Container */
+.favorite-container {
+    background-color: #B01A04;
+}
+/**************************************************/
+
+/*---------------------------------*/
+/* Meal Plan Page styles End */
+
 

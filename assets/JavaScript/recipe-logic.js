@@ -9,7 +9,7 @@ $("#submit").on("click", function (e) {
     var appKey = "ab75022db9057519bafaa14829512295";
     var appId = "cc950c0c";
 
-    var queryURL = "https://api.edamam.com/search?q=" + query + "&app_id=" + appId + "&app_key=" + appKey;
+    var queryURL = "https://api.edamam.com/search?q=" + query + "&app_id=" + appId + "&app_key=" + appKey + "&to=1";
 
     $.ajax({
         url: queryURL,
@@ -49,14 +49,15 @@ function buildRecipeCards(recipes) {
         var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
         var newLine = $("<br>");
         var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe")
-
+        var externalSite= $("<i>").addClass("fas fa-external-link-alt fa-xs")
         var ingredientsButton = $("<button>").addClass("ks-button-recipe").attr("data-toggle", "collapse")
+
             .attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
 
         var ingredientsCollapse = $("<div>").addClass("collapse").attr("id", index);
 
         var ingredients = $("<ul>").addClass("list-group", "list-group-flush");
-
+        recipeButton.append(externalSite)
         ingredientsCollapse.append(ingredients);
 
         recipe.ingredientLines.forEach(function (ingredient) {

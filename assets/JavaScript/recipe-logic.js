@@ -48,7 +48,7 @@ function buildRecipeCards(recipes) {
         var title = $("<h5>").addClass("card-title").text(recipe.label);
         var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
         var newLine = $("<br>");
-        var recipeButton = $("<a>").addClass("ks-button").attr("href", recipe.url).text("Recipe Details")
+        var recipeButton = $("<a>").addClass("ks-button").attr("href", recipe.url).text("Recipe")
 
         var ingredientsButton = $("<button>").addClass("ks-button").attr("data-toggle", "collapse")
             .attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");

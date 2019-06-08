@@ -17,18 +17,23 @@ var database = firebase.database();// Initialize Firebase (YOUR OWN APP)
 
 console.log("database set up")
 
+//gloabl variable to hold which day the user is on
+var weekday = "monday";
 
+$(".weekday").on("click", function () {
+    console.log(event.target.id);
 
-// database.ref().on("child_added", function (snapshot, prevChildKey) {
-//     var usersRecipes = snapshot.val();
-
-// });
+    weekday = event.target.id;
+})
 
 $("#save").on("click", function () {
     console.log("saving recipes...");
-    $("#dailyMealsContainer").find(".card").each(function () {
-        var ingredients = [];
 
+    $("#dailyMealsContainer").find(".card").each(function () {
+
+
+
+        var ingredients = [];
         //build an array of the ingredients for the recipe that was clicked
         $(this).find(".list-group-item").each(function () {
             ingredients.push($(this).text())
@@ -48,7 +53,10 @@ $("#save").on("click", function () {
         });
     });
 })
+
+
 var index = 0;
+
 database.ref().on("child_added", function (snapshot, prevChildKey) {
     var recipe = snapshot.val().recipe;
     console.log(recipe);
@@ -86,6 +94,5 @@ function buildRecipeCard(recipe) {
     recipeCard.append(img, cardBody);
 
     $("#saved-recipes").append(recipeCard);
-
 }
 

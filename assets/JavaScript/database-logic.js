@@ -67,39 +67,6 @@ $("#save").on("click", function () {
 //     index++;
 // });
 
-function buildRecipeCard(recipe, index) {
-
-    var recipeCard = $("<div>").addClass("card d-flex justify-content-center");
-
-    var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
-    var cardBody = $("<div>").addClass("card-body");
-    var title = $("<h5>").addClass("card-title").text(recipe.label);
-    var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
-    var newLine = $("<br>");
-    var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe Details")
-
-    var ingredientsButton = $("<button>").addClass("ks-button-recipe").attr("data-toggle", "collapse")
-        .attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
-
-    var ingredientsCollapse = $("<div>").addClass("collapse").attr("id", index);
-
-    var ingredients = $("<ul>").addClass("list-group", "list-group-flush");
-
-    ingredientsCollapse.append(ingredients);
-
-    recipe.ingredientLines.forEach(function (ingredient) {
-        var li = $("<li>").addClass("list-group-item").text(ingredient);
-        ingredients.append(li);
-    });
-
-    cardBody.append(title, heartButton, newLine, ingredientsButton, ingredientsCollapse, recipeButton);
-
-    recipeCard.append(img, cardBody);
-
-    $("#saved-recipes").append(recipeCard);
-
-}
-
 function getSavedRecipes(day) {
     var index = 0;
     firebase.database().ref('/weeklyPlan/' + day).once('value').then(function (snapshot) {

@@ -99,7 +99,7 @@ footer {
 /* Home Page Styles Start */
 /*-----------------------------*/
 .main {
-  margin-top: 68px;
+  margin-top: 78px;
   margin-bottom: 78px;
 }
 /*-Login-- */
@@ -141,6 +141,7 @@ a:hover {
     width: 8rem;
     float: left;
     margin: 0.5px;
+    margin-top: 10px;
 }
 button div div h5 {
     font-size: 0.85rem;
@@ -150,12 +151,22 @@ button div div h5 {
 .meal-holder {
     width: 202px;
     height: 302px;
-    background-color: #B01A04;
+    background-color: #000000;
+    padding: 0px;
+    margin: 0px;
+    
 }
 .meal-header {
     font-size: 25px;
 }
 /********************************/
+/* Save Button Styles */
+.save-margin {
+    margin: 5px 0px;
+}
+
+
+/*****************************/
 /* Form styling */
 #searchTitleSpacing {
     margin-top: 10px;
@@ -270,8 +281,16 @@ button div div h5 {
 /**************************************************/
 /* Favorites Container */
 .favorite-container {
-    background-color: #B01A04;
+    /* background-color: rgb(118, 173, 55); */
 }
 /**************************************************/
 /*---------------------------------*/
 /* Meal Plan Page styles End */
+
+
+.gradient {
+  width: 202px;
+  height: 302px;
+  padding: 0px;
+  margin: 0px;
+}

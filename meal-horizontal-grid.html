@@ -29,19 +29,27 @@
 </head>
 
 
-<body>
-    <header>
-        <!-- Navbar -->
-        <nav class="border">
-            <h1 class="nav float-left">HH</h1>
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Home</a>
+<body class="main">
+    <!-- Navbar -->
+    <header class="">
+        <nav class="navbar navbar-expand-md h-font navbar-light ">
+            <div class="navbar-brand" > 
+                <h1 href="#"class="nav float-left icon ">HH</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navbar-nav ml-auto nav-font">
+                <li class="nav-item active ">
+                  <a class="nav-link ks-nav " href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Meal Plan</a>
+                  <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
                 </li>
             </ul>
+            </div>
         </nav>
     </header>
 
@@ -49,60 +57,60 @@
     <section class="container">
         <!--Weekly Plan Row-->
         <div class="row">
-            <div class="col-md-12 border text-center">
+            <div class="col-md-12 border text-center ks-container">
                 <!-- Week Cards -->
                 <!---------------------------------------->
-                <button class="animated" id="MondayButton">
-                    <div class="week-cards animated">
-                        <div class="card-body">
+                <button class="animated zoomIn" id="MondayButton">
+                    <div class="week-cards">
+                        <div class="">
                           <h5 class="card-title text-center">Monday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="TuesdayButton">
+                <button class="animated zoomIn" id="TuesdayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Tuesday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="WednesdayButton">
+                <button class="animated zoomIn" id="WednesdayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Wednesday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="ThursdayButton">
+                <button class="animated zoomIn" id="ThursdayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Thursday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="FridayButton">
+                <button class="animated zoomIn" id="FridayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Friday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="SaturdayButton">
+                <button class="animated zoomIn" id="SaturdayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Saturday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="SundayButton">
+                <button class="animated zoomIn" id="SundayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Sunday</h5>
                         </div>
                     </div>
@@ -115,23 +123,23 @@
         <div class="row">
 
             <!--Day Plan-->
-            <div class="col-md-4 border text-center">
-                <h2 class="border meal-header">Breakfast</h2>
-                <div id="breakfast" class="holder meal-holder element mx-auto">
+            <div class="col-md-4 text-center">
+                <h2 class="meal-header">Breakfast</h2>
+                <div id="breakfast" class="holder meal-holder element mx-auto animated fadeInLeftBig gradient">
                    
                </div>
             </div>   
 
-            <div class="col-md-4 border text-center">
-                <h2 class="border meal-header">Lunch</h2>
-                <div id="lunch"class="holder meal-holder element mx-auto">
+            <div class="col-md-4 text-center">
+                <h2 class="meal-header">Lunch</h2>
+                <div id="lunch"class="holder meal-holder element mx-auto animated fadeInUpBig gradient">
                    
                </div>
             </div>
 
-            <div class="col-md-4 border text-center">
-                <h2 class="border meal-header">Dinner</h2>
-                <div id="dinner"class="holder meal-holder element mx-auto">
+            <div class="col-md-4 text-center">
+                <h2 class="meal-header">Dinner</h2>
+                <div id="dinner"class="holder meal-holder element mx-auto animated fadeInRightBig gradient">
                    
                </div>
             </div>
@@ -140,11 +148,15 @@
 
         <!--Save Day Plan-->
         <div class="row">
-            <div class="col-md-12 border text-center mx-auto">
+            <div class="col-md-5"></div>
+
+            <div class="col-md-2 border text-center mx-auto ks-container save-margin">
                 <div id="submitButtonSpacing">
                     <input type="submit" id="save" value="Save" class="ks-button-form-submit">
                 </div>
             </div>
+
+            <div class="col-md-5"></div>
         </div>
 
         <!--Recipe Search-->
@@ -184,9 +196,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footerStyle border text-center fixed-bottom">
-        <p>© 2019 Health Hero</p>
-    </footer>
+    <footer class=" text-center mt-auto">
+        <div>© 2019 Health Hero</div>
+    </footer>   
  <script>          
     $('.toggleFavBut').click(function () {
         console.log("favorited")

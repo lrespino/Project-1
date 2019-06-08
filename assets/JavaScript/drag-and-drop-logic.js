@@ -66,12 +66,10 @@ var containers = [
     document.querySelector(lunch),
     document.querySelector(dinner),
     document.querySelector(searchResults),
-    document.querySelector("#firstSlide"),
-    document.querySelector("#secondSlide"),
-    document.querySelector("#thirdSlide"),
-
-
-
+    document.querySelector(".carousel-item")
+    // document.querySelector("#firstSlide"),
+    // document.querySelector("#secondSlide"),
+    // document.querySelector("#thirdSlide"),
 ];
 
 dragula({

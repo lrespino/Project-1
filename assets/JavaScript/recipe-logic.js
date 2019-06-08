@@ -36,28 +36,34 @@ $("#submit").on("click", function (e) {
     });
 });
 
+function truncate(word) {
+    if (word.length > 23)
+       return word.substring(0,23) + '...';
+    else
+       return word;
+};
+
 //Given an array of recipes, dynamically generate cards to append to the page
 function buildRecipeCards(recipes) {
 
     $("#searchResults").empty();
     recipes.forEach(function (recipe, index) {
-        var recipeCard = $("<div>").addClass("card");
+        var recipeCard = $("<div>").addClass("card ks-card");
 
         var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
         var cardBody = $("<div>").addClass("card-body");
-        var title = $("<h5>").addClass("card-title").text(recipe.label);
+        var truncatedTitle = truncate(recipe.label);
+        var title = $("<h5>").addClass("card-title").text(truncatedTitle);
         var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
         var newLine = $("<br>");
         var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe")
         var externalSite= $("<i>").addClass("fas fa-external-link-alt fa-xs")
-        var ingredientsButton = $("<button>").addClass("ks-button-recipe").attr("data-toggle", "collapse")
-
-            .attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
+        var ingredientsButton = $("<button>").addClass("ks-button-recipe modalButton").attr("data-toggle", "collapse").attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
 
         var ingredientsCollapse = $("<div>").addClass("collapse").attr("id", index);
 
         var ingredients = $("<ul>").addClass("list-group", "list-group-flush");
-        recipeButton.append(externalSite)
+        recipeButton.append(externalSite);
         ingredientsCollapse.append(ingredients);
 
         recipe.ingredientLines.forEach(function (ingredient) {
@@ -81,65 +87,6 @@ $("#removeButton").on("click", function(){
     $(".card").remove();
 })
 
-
-/* Gradient Logic */
-var colors = new Array(
-    [118,173,55],
-    [144,238,144],
-    [144,238,144],
-    [46,139,87],
-    [192,192,192],
-    [107,142,35]);
-  
-var step = 0;
-//color table indices for: 
-// current color left
-// next color left
-// current color right
-// next color right
-var colorIndices = [0,1,2,3];
-
-//transition speed
-var gradientSpeed = 0.002;
-
-function updateGradient() {
-  
-    
-    if ( $===undefined ) return;
-    
-    var c0_0 = colors[colorIndices[0]];
-    var c0_1 = colors[colorIndices[1]];
-    var c1_0 = colors[colorIndices[2]];
-    var c1_1 = colors[colorIndices[3]];
-    
-    var istep = 1 - step;
-    var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-    var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-    var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-    var color1 = "rgb("+r1+","+g1+","+b1+")";
-    
-    var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-    var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-    var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-    var color2 = "rgb("+r2+","+g2+","+b2+")";
-  
-    $(".gradient").css({
-      background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
-      background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"
-    });
-    
-    step += gradientSpeed;
-    if ( step >= 1 ) {
-      step %= 1;
-      colorIndices[0] = colorIndices[1];
-      colorIndices[2] = colorIndices[3];
-      
-      //pick two new target color indices
-      //do not pick the same as the current one
-      colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-      colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-      
-    }
-}
-  
-setInterval(updateGradient,8);
+var modal = document.getElementById("ingredientsModal");
+var modalButton = document.getElementByClass("modalButton");
+var closeButton = document.getElementByclass("closeButton")

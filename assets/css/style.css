@@ -191,6 +191,14 @@ button div div h5 {
     font-size: 25px;
     margin-top: 5px;
 }
+
+/* Gradient Style */
+.gradient {
+    width: 202px;
+    height: 302px;
+    padding: 0px;
+    margin: 0px;
+}
 /********************************/
 /* Save Button Styles */
 .save-margin {
@@ -247,15 +255,21 @@ button div div h5 {
     /* padding-left: 30px; */
 }
 .card {
-    width: 202px;
-    height: 302px;
+    /* width: 202px; */
+    /* height: 302px; */
+    width: 16rem;
+    height: 20rem;
     margin: auto; 
     float: left; 
     margin-bottom: 10px; 
 }
 .card-img-top {
-    width: 202px;
-    height: 124px;
+    /* width: 202px; */
+    /* height: 124px; */
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto;
+
 }
 .card-body {
 
@@ -264,11 +278,12 @@ button div div h5 {
     font-size: 1em;
 }
 .ks-button-recipe {
-    width: 40px;  
-    height: 35px;
+    /* width: 125px;   */
+    /* height: 35px; */
+    width: 8rem;
     background-color: rgb(118, 173, 55);
     color: #fff;
-    display: inline-block;
+    display: block;
     font-weight: 400;
     text-align: center;
     vertical-align: middle;
@@ -279,6 +294,7 @@ button div div h5 {
     line-height: 1.5;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin: 5px auto;
 }
 .ks-button-recipe:hover {
     color: #fff;
@@ -319,10 +335,35 @@ button div div h5 {
 /*---------------------------------*/
 /* Meal Plan Page styles End */
 
-
-.gradient {
-  width: 202px;
-  height: 302px;
-  padding: 0px;
-  margin: 0px;
+/* Modal Styles */
+.modal {
+    /*display: none;*/
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.7);
 }
+.modalContent {
+    background-color: #f4f4f4;
+    margin: 50% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17)
+}
+.closeButton {
+    color: #000000;
+    float: right;
+    font-size: 30px;
+}
+.closeButton:hover, .closeButton:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+

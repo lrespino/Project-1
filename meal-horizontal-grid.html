@@ -47,11 +47,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class=" navbar-nav ml-auto nav-font">
-                <li class="nav-item active ">
+                <li class="nav-item">
                     <a class="nav-link ks-nav " href="index.html">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ks-nav" href="#">Logout</a>
                 </li>
             </ul>
             </div>
@@ -124,42 +127,44 @@
             </div>
         </div>
         <!--Day Plan-->
-        <div class="row" id="dailyMealsContainer">
-    
-            <div class="col-md-4 text-center">
-                <h2 class="meal-header ks-container">Breakfast</h2>
-                <div id="breakfast" class="holder meal-holder element mx-auto animated fadeInLeftBig gradient">
-                   
-               </div>
-            </div>   
-
-            <div class="col-md-4 text-center">
-                <h2 class="meal-header ks-container">Lunch</h2>
-                <div id="lunch"class="holder meal-holder element mx-auto animated fadeInUpBig gradient">
-                   
-               </div>
-            </div>
-
-            <div class="col-md-4 text-center">
-                <h2 class="meal-header ks-container">Dinner</h2>
-                <div id="dinner"class="holder meal-holder element mx-auto animated fadeInRightBig gradient">
-                   
-               </div>
-            </div>
-
-        </div>
-
-        <!--Save Day Plan-->
-        <div class="row">
-            <div class="col-md-5"></div>
-
-            <div class="col-md-2 border text-center mx-auto ks-container save-margin">
-                <div id="submitButtonSpacing">
-                    <button id="save" class="ks-button-form-submit">Save</button>
+        <div class="ks-container">
+            <div class="row" id="dailyMealsContainer">
+            
+                <div class="col-md-4 text-center">
+                    <h2 class="meal-header">Breakfast</h2>
+                    <div id="breakfast" class="holder meal-holder element mx-auto animated fadeInLeftBig gradient">
+                       
+                   </div>
+                </div>   
+            
+                <div class="col-md-4 text-center">
+                    <h2 class="meal-header">Lunch</h2>
+                    <div id="lunch"class="holder meal-holder element mx-auto animated fadeInUpBig gradient">
+                       
+                   </div>
                 </div>
+            
+                <div class="col-md-4 text-center">
+                    <h2 class="meal-header">Dinner</h2>
+                    <div id="dinner"class="holder meal-holder element mx-auto animated fadeInRightBig gradient">
+                       
+                   </div>
+                </div>
+            
             </div>
-
-            <div class="col-md-5"></div>
+            
+            <!--Save Day Plan-->
+            <div class="row">
+                <div class="col-md-5"></div>
+            
+                <div class="col-md-2 text-center mx-auto save-margin">
+                    <div id="submitButtonSpacing">
+                        <button id="save" class="ks-button-form-submit">Save</button>
+                    </div>
+                </div>
+            
+                <div class="col-md-5"></div>
+            </div>
         </div>
 
         <!--Recipe Search-->

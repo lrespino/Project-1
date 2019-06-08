@@ -180,11 +180,14 @@ button div div h5 {
 /********************************/
 /* Breakfast lunch Dinner Styles */
 .meal-holder {
-    width: 202px;
-    height: 302px;
+    /* width: 202px; */
+    /* height: 302px; */
+    width: 16rem;
+    height: 20rem;
     background-color: #000000;
     padding: 0px;
     margin: 0px;
+    border-radius: .25rem;
 }
 .meal-header {
     font-size: 25px;
@@ -192,8 +195,10 @@ button div div h5 {
 }
 /* Gradient Style */
 .gradient {
-    width: 202px;
-    height: 302px;
+    width: 16rem;
+    height: 20rem;
+    /* width: 202px; */
+    /* height: 302px; */
     padding: 0px;
     margin: 0px;
 }

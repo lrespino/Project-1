@@ -9,7 +9,7 @@ $("#submit").on("click", function (e) {
     var appKey = "ab75022db9057519bafaa14829512295";
     var appId = "cc950c0c";
 
-    var queryURL = "https://api.edamam.com/search?q=" + query + "&app_id=" + appId + "&app_key=" + appKey + "&to=5";
+    var queryURL = "https://api.edamam.com/search?q=" + query + "&app_id=" + appId + "&app_key=" + appKey + "&to=4";
     $.ajax({
         url: queryURL,
         method: "GET"

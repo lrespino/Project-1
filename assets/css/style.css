@@ -15,6 +15,10 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     padding: 0px;
 }
+.ks-container-pad {
+    padding: 15px;
+    margin: 20px;
+}
 /* Fonts */
 .h-font {
     font-family: 'EB Garamond', serif;
@@ -99,7 +103,7 @@ footer {
 /* Home Page Styles Start */
 /*-----------------------------*/
 .main {
-  margin-top: 68px;
+  margin-top: 78px;
   margin-bottom: 78px;
 }
 /*-Login-- */
@@ -155,6 +159,8 @@ button div div h5 {
 .meal-header {
     font-size: 25px;
 }
+
+
 /********************************/
 /* Form styling */
 #searchTitleSpacing {
@@ -200,29 +206,48 @@ button div div h5 {
 .slideContainer {
     padding-left: 30px;
 }
-.imageContainer {
-    /* padding-left: 30px; */
-}
+/* .imageContainer {
+    padding-left: 30px;
+} */
 .card {
-    width: 202px;
-    height: 302px;
+/*     width: 202px;
+    height: 302px; */
+    width: 16rem;
     margin: auto; 
-    float: left; 
+/*   float: left;  */
     margin-bottom: 10px; 
-}
-.card-img-top {
-    width: 202px;
-    height: 124px;
-}
-.card-body {
 
 }
+.ks-card {
+    /*     width: 202px;
+    height: 302px; */
+    width: 16rem;
+    height: 16rem;
+    margin: auto; 
+/*   float: left;  */
+    margin-bottom: 10px; 
+    background-color: rgba(255, 255, 255, 0.5)
+}
+.card-img-top {
+    width: 8rem;
+    height: 8rem;
+    margin:0 auto;
+
+}
+.ks-meal-holder {
+    width: 16rem;
+    height: 16rem;
+    background-color: rgba(255, 255, 255, 0.5)
+}
+/* .card-body {
+
+} */
 .card-title {
     font-size: 1em;
 }
 .ks-button-recipe {
-    width: 40px;  
-    height: 35px;
+/*     width: 40px;  
+    height: 35px; */
     background-color: rgb(118, 173, 55);
     color: #fff;
     display: inline-block;

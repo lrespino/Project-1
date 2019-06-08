@@ -145,7 +145,38 @@ a:hover {
 }
 button div div h5 {
     font-size: 0.85rem;
+    color: #fff;
+}
+.ks-weekButtons {
+    background-color: rgb(118, 173, 55);
+    color: #fff;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    /*   background-color: transparent; */
+    border: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 } 
+.ks-weekButtons:hover {
+    color: #fff;
+    background-color: #42611F;
+    border-color: #42611F;
+    text-decoration: none;
+}
+.ks-weekButtons:focus {
+    box-shadow: 0 0 0 0.2rem rgb(255,215,0);
+    outline: 0;
+}
+.ks-weekButtons:active {
+    color: #fff;
+    background-color: #42611F;
+    border-color: #42611F;
+}
 /********************************/
 /* Breakfast lunch Dinner Styles */
 .meal-holder {
@@ -158,6 +189,7 @@ button div div h5 {
 }
 .meal-header {
     font-size: 25px;
+    margin-top: 5px;
 }
 /********************************/
 /* Save Button Styles */

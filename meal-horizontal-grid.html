@@ -57,10 +57,10 @@
     <section class="container">
         <!--Weekly Plan Row-->
         <div class="row">
-            <div class="col-md-12 border text-center ks-container">
+            <div class="col-md-12 border text-center">
                 <!-- Week Cards -->
                 <!---------------------------------------->
-                <button class="animated zoomIn" id="MondayButton">
+                <button class="animated zoomIn ks-weekButtons" id="MondayButton">
                     <div class="week-cards">
                         <div class="">
                           <h5 class="card-title text-center">Monday</h5>
@@ -68,7 +68,7 @@
                     </div>
                 </button>
             
-                <button class="animated zoomIn" id="TuesdayButton">
+                <button class="animated zoomIn ks-weekButtons" id="TuesdayButton">
                     <div class="week-cards">
                         <div class="">
                           <h5 class="card-title text-center">Tuesday</h5>
@@ -76,7 +76,7 @@
                     </div>
                 </button>
             
-                <button class="animated zoomIn" id="WednesdayButton">
+                <button class="animated zoomIn ks-weekButtons" id="WednesdayButton">
                     <div class="week-cards">
                         <div class="">
                           <h5 class="card-title text-center">Wednesday</h5>
@@ -84,7 +84,7 @@
                     </div>
                 </button>
             
-                <button class="animated zoomIn" id="ThursdayButton">
+                <button class="animated zoomIn ks-weekButtons" id="ThursdayButton">
                     <div class="week-cards">
                         <div class="">
                           <h5 class="card-title text-center">Thursday</h5>
@@ -92,7 +92,7 @@
                     </div>
                 </button>
             
-                <button class="animated zoomIn" id="FridayButton">
+                <button class="animated zoomIn ks-weekButtons" id="FridayButton">
                     <div class="week-cards">
                         <div class="">
                           <h5 class="card-title text-center">Friday</h5>
@@ -100,7 +100,7 @@
                     </div>
                 </button>
             
-                <button class="animated zoomIn" id="SaturdayButton">
+                <button class="animated zoomIn ks-weekButtons" id="SaturdayButton">
                     <div class="week-cards">
                         <div class="">
                           <h5 class="card-title text-center">Saturday</h5>
@@ -108,7 +108,7 @@
                     </div>
                 </button>
             
-                <button class="animated zoomIn" id="SundayButton">
+                <button class="animated zoomIn ks-weekButtons" id="SundayButton">
                     <div class="week-cards">
                         <div class="">
                           <h5 class="card-title text-center">Sunday</h5>
@@ -124,21 +124,21 @@
 
             <!--Day Plan-->
             <div class="col-md-4 text-center">
-                <h2 class="meal-header">Breakfast</h2>
+                <h2 class="meal-header ks-container">Breakfast</h2>
                 <div id="breakfast" class="holder meal-holder element mx-auto animated fadeInLeftBig gradient">
                    
                </div>
             </div>   
 
             <div class="col-md-4 text-center">
-                <h2 class="meal-header">Lunch</h2>
+                <h2 class="meal-header ks-container">Lunch</h2>
                 <div id="lunch"class="holder meal-holder element mx-auto animated fadeInUpBig gradient">
                    
                </div>
             </div>
 
             <div class="col-md-4 text-center">
-                <h2 class="meal-header">Dinner</h2>
+                <h2 class="meal-header ks-container">Dinner</h2>
                 <div id="dinner"class="holder meal-holder element mx-auto animated fadeInRightBig gradient">
                    
                </div>
@@ -204,7 +204,19 @@
         console.log("favorited")
         $(this).toggleClass('favoriteButton far');
         $(this).toggleClass('favoritedButton fas fa-lg');
-        });
+    });
+
+    /* Week Button Stay Active */
+    $(".ks-weekButtons").click(function(){
+        if($(this).hasClass("active")){
+            $(this).removeClass("active")
+        }
+         else {
+            $(this).addClass("active")
+        }
+    });
+    
+
  </script>
 <!--Simple script to toggle classes on heart icon-->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>

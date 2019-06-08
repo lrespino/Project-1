@@ -10,7 +10,6 @@ $("#submit").on("click", function (e) {
     var appId = "cc950c0c";
 
     var queryURL = "https://api.edamam.com/search?q=" + query + "&app_id=" + appId + "&app_key=" + appKey + "&to=5";
-
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -59,9 +58,8 @@ function buildRecipeCards(recipes) {
         var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe")
         var externalSite= $("<i>").addClass("fas fa-external-link-alt fa-xs")
         var ingredientsButton = $("<button>").addClass("ks-button-recipe modalButton").attr("data-toggle", "collapse").attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
-
         var ingredientsCollapse = $("<div>").addClass("collapse").attr("id", index);
-
+      
         var ingredients = $("<ul>").addClass("list-group", "list-group-flush");
         recipeButton.append(externalSite);
         ingredientsCollapse.append(ingredients);
@@ -83,7 +81,7 @@ function buildRecipeCards(recipes) {
 
 
 /* Remove Button */
-$("#removeButton").on("click", function(){
+$("#removeButton").on("click", function () {
     $(".card").remove();
 })
 

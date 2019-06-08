@@ -185,13 +185,11 @@ button div div h5 {
     background-color: #000000;
     padding: 0px;
     margin: 0px;
-    
 }
 .meal-header {
     font-size: 25px;
     margin-top: 5px;
 }
-
 /* Gradient Style */
 .gradient {
     width: 202px;
@@ -204,8 +202,6 @@ button div div h5 {
 .save-margin {
     margin: 5px 0px;
 }
-
-
 /*****************************/
 /* Form styling */
 #searchTitleSpacing {

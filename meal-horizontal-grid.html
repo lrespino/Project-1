@@ -18,6 +18,7 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
+
     <script src="https://kit.fontawesome.com/59a7a76dd2.js"></script>
 
     <!-- Animate.css CDN Link -->
@@ -26,8 +27,12 @@
     <!--dragula stylesheets-->
     <link rel="stylesheet" href="assets/dist/dragula.css">
     <link rel="stylesheet" href="assets/dist/dragula.min.css">
-</head>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
 
+
+
+</head>
 
 <body class="main">
     <!-- Navbar -->
@@ -43,16 +48,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class=" navbar-nav ml-auto nav-font">
                 <li class="nav-item active ">
-                  <a class="nav-link ks-nav " href="index.html">Home</a>
+                    <a class="nav-link ks-nav " href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
+                    <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
                 </li>
             </ul>
             </div>
         </nav>
     </header>
-
 
     <section class="container">
         <!--Weekly Plan Row-->
@@ -120,9 +124,8 @@
             </div>
         </div>
         <!--Day Plan-->
-        <div class="row">
-
-            <!--Day Plan-->
+        <div class="row" id="dailyMealsContainer">
+    
             <div class="col-md-4 text-center">
                 <h2 class="meal-header ks-container">Breakfast</h2>
                 <div id="breakfast" class="holder meal-holder element mx-auto animated fadeInLeftBig gradient">
@@ -152,7 +155,7 @@
 
             <div class="col-md-2 border text-center mx-auto ks-container save-margin">
                 <div id="submitButtonSpacing">
-                    <input type="submit" id="save" value="Save" class="ks-button-form-submit">
+                    <button id="save" class="ks-button-form-submit">Save</button>
                 </div>
             </div>
 
@@ -161,17 +164,17 @@
 
         <!--Recipe Search-->
         <div class="row">
-            
+
             <div class="col-md-12 border text-center mx-auto">
-                
-                    
+
+
                 <!-- Recipe Results -->
                 <div class="slideContainer">
                     <div id="searchResults" class="container imageContainer mx-auto">
-                    
+
                     </div>
                 </div>
-                
+
                 <form>
                     <label id="searchTitleSpacing">Search for a Recipe:</label>
                     <div>
@@ -182,13 +185,13 @@
                     </div>
                 </form>
 
-                
+
             </div>
         </div>
 
         <!--Favrites Section-->
         <div class="row">
-            <div class="favorite-container col-md-12 border text-center mx-auto">
+            <div class="favorite-container col-md-12 border text-center mx-auto" id="saved-recipes">
                 <p>Favorites!!!</p>
             </div>
         </div>
@@ -212,8 +215,6 @@
           $(this).toggleClass('favoriteButton');
           $(this).toggleClass('favoritedButton');
       });
-
-
     </script>
     <!--Simple script to toggle classes on heart icon-->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
@@ -221,10 +222,8 @@
     <script src="assets/JavaScript/drag-and-drop-logic.js"></script>
     <script src="assets/JavaScript/recipe-logic.js"></script>
     <script src="assets/JavaScript/gradientLogic-and-modal.js"></script>
+    <script src="assets/JavaScript/database-logic.js"></script>
 
 </body>
-
-
-
 
 </html>

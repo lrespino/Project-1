@@ -18,6 +18,7 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
+
     <script src="https://kit.fontawesome.com/59a7a76dd2.js"></script>
 
     <!-- Animate.css CDN Link -->
@@ -25,92 +26,95 @@
 
     <!--dragula stylesheets-->
     <link rel="stylesheet" href="assets/dist/dragula.css">
+    <link rel="stylesheet" href="assets/dist/dragula.min.css">
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+
+
 
 </head>
 
-
-<body>
-
-<header class="">
-    <nav class="navbar navbar-expand-md h-font navbar-light ">
-        <div class="navbar-brand">
-            <h1 href="#" class="nav float-left icon ">HH</h1>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<body class="main">
+    <!-- Navbar -->
+    <header class="">
+        <nav class="navbar navbar-expand-md h-font navbar-light ">
+            <div class="navbar-brand" > 
+                <h1 href="#"class="nav float-left icon ">HH</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class=" navbar-nav ml-auto nav-font">
                 <li class="nav-item active ">
                     <a class="nav-link ks-nav " href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ks-nav" href="meal-plan.html">Meal Plan</a>
+                    <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
                 </li>
             </ul>
-        </div>
-    </nav>
-</header>
+            </div>
+        </nav>
+    </header>
 
-
-    <section class="container main">
+    <section class="container">
         <!--Weekly Plan Row-->
         <div class="row">
             <div class="col-md-12 border text-center">
                 <!-- Week Cards -->
                 <!---------------------------------------->
-                <button class="animated" id="MondayButton">
-                    <div class="week-cards animated">
-                        <div class="card-body">
+                <button class="animated zoomIn ks-weekButtons" id="MondayButton">
+                    <div class="week-cards">
+                        <div class="">
                           <h5 class="card-title text-center">Monday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="TuesdayButton">
+                <button class="animated zoomIn ks-weekButtons" id="TuesdayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Tuesday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="WednesdayButton">
+                <button class="animated zoomIn ks-weekButtons" id="WednesdayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Wednesday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="ThursdayButton">
+                <button class="animated zoomIn ks-weekButtons" id="ThursdayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Thursday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="FridayButton">
+                <button class="animated zoomIn ks-weekButtons" id="FridayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Friday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="SaturdayButton">
+                <button class="animated zoomIn ks-weekButtons" id="SaturdayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Saturday</h5>
                         </div>
                     </div>
                 </button>
             
-                <button class="animated" id="SundayButton">
+                <button class="animated zoomIn ks-weekButtons" id="SundayButton">
                     <div class="week-cards">
-                        <div class="card-body">
+                        <div class="">
                           <h5 class="card-title text-center">Sunday</h5>
                         </div>
                     </div>
@@ -120,26 +124,25 @@
             </div>
         </div>
         <!--Day Plan-->
-        <div class="row">
-
-            <!--Day Plan-->
-            <div class="col-md-4 border text-center">
-                <h2 class="border meal-header">Breakfast</h2>
-                <div id="breakfast" class="holder meal-holder element mx-auto">
+        <div class="row" id="dailyMealsContainer">
+    
+            <div class="col-md-4 text-center">
+                <h2 class="meal-header ks-container">Breakfast</h2>
+                <div id="breakfast" class="holder meal-holder element mx-auto animated fadeInLeftBig gradient">
                    
                </div>
             </div>   
 
-            <div class="col-md-4 border text-center">
-                <h2 class="border meal-header">Lunch</h2>
-                <div id="lunch"class="holder meal-holder element mx-auto">
+            <div class="col-md-4 text-center">
+                <h2 class="meal-header ks-container">Lunch</h2>
+                <div id="lunch"class="holder meal-holder element mx-auto animated fadeInUpBig gradient">
                    
                </div>
             </div>
 
-            <div class="col-md-4 border text-center">
-                <h2 class="border meal-header">Dinner</h2>
-                <div id="dinner"class="holder meal-holder element mx-auto">
+            <div class="col-md-4 text-center">
+                <h2 class="meal-header ks-container">Dinner</h2>
+                <div id="dinner"class="holder meal-holder element mx-auto animated fadeInRightBig gradient">
                    
                </div>
             </div>
@@ -148,22 +151,26 @@
 
         <!--Save Day Plan-->
         <div class="row">
-            <div class="col-md-12 border text-center mx-auto">
+            <div class="col-md-5"></div>
+
+            <div class="col-md-2 border text-center mx-auto ks-container save-margin">
                 <div id="submitButtonSpacing">
-                    <input type="submit" id="save" value="Save" class="ks-button-form-submit">
+                    <button id="save" class="ks-button-form-submit">Save</button>
                 </div>
             </div>
+
+            <div class="col-md-5"></div>
         </div>
 
         <!--Recipe Search-->
         <div class="row">
-            
+
             <div class="col-md-12 border text-center mx-auto">
-                
-                    
+
+
                 <!-- Recipe Results -->
-                <div class="slidesContainer " >
-                    <div id="searchResults" class="container imageContainer mx-auto ">
+                <div class="slideContainer">
+                    <div id="searchResults" class="container imageContainer mx-auto">
 
                     </div>
 
@@ -177,13 +184,14 @@
                         <input type="submit" id="submit" value="Submit" class="ks-button-form-submit ">
                     </div>
                 </form>
-                
+
+
             </div>
         </div>
 
         <!--Favrites Section-->
         <div class="row">
-            <div class="favorite-container col-md-12 border text-center mx-auto">
+            <div class="favorite-container col-md-12 border text-center mx-auto" id="saved-recipes">
                 <p>Favorites!!!</p>
             </div>
         </div>
@@ -191,20 +199,29 @@
     <!-- Footer -->
     <footer class=" text-center mt-auto">
         <div>© 2019 Health Hero</div>
-    </footer>
- <script>          
-    $('.toggleFavBut').click(function () {
-        console.log("favorited")
-        $(this).toggleClass('favoriteButton far');
-        $(this).toggleClass('favoritedButton fas fa-lg');
-        });
- </script>
-<!--Simple script to toggle classes on heart icon-->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
-<script src="assets/dist/dragula.js"></script>
-<script src="assets/JavaScript/drag-and-drop-logic.js"></script>
+    </footer>   
+
+    <script>          
+      $('.toggleFavBut').click(function () {
+          console.log("favorited")
+          $(this).toggleClass('favoriteButton far');
+          $(this).toggleClass('favoritedButton fas fa-lg');
+      });
+
+      /* Week Button Stay Active */
+      $(".ks-weekButtons").click(function() {
+          $(this).toggleClass('favoriteButton');
+          $(this).toggleClass('favoritedButton');
+      });
+    </script>
+    <!--Simple script to toggle classes on heart icon-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+    <script src="assets/dist/dragula.js"></script>
+    <script src="assets/JavaScript/drag-and-drop-logic.js"></script>
+    <script src="assets/JavaScript/recipe-logic.js"></script>
+    <script src="assets/JavaScript/gradientLogic-and-modal.js"></script>
+    <script src="assets/JavaScript/database-logic.js"></script>
 
 </body>
-<script src="assets/JavaScript/recipe-logic.js"></script>
 
 </html>

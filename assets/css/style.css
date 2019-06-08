@@ -1,3 +1,49 @@
+<<<<<<< HEAD
+body {
+    background: url("../images/blizzard.png")
+}
+
+.favoriteButton {
+    color: rgb(33, 33, 33);
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.favoriteButton:hover {
+    color: rgba(176, 27, 4, .5);
+    transition: .8s ease;
+}
+
+.favoritedButton {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    color: rgb(176, 27, 4);
+}
+
+/* Meal Plan Page Styles */
+
+/*  .card {
+    width: 18rem;
+    float: left;
+    margin: 5px;
+    
+}  */
+
+.card {
+    width: 18rem;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}
+
+.card-img-top {
+    height: 150px;
+    width: 150px;
+}
+
+=======
 /* General Styles Start */
 /*-----------------------*/
 html {
@@ -63,6 +109,7 @@ footer {
     line-height: 40px; /*vertically centers */
 }
 /* KS-Button Styles */
+>>>>>>> d9ccb8d004f10f726a4fb4ee4abcec42e559e8a6
 .ks-button {
     background-color: rgb(118, 173, 55);
     color: #fff;
@@ -78,21 +125,39 @@ footer {
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> d9ccb8d004f10f726a4fb4ee4abcec42e559e8a6
 .ks-button:hover {
     color: #fff;
     background-color: #42611F;
     border-color: #42611F;
+<<<<<<< HEAD
+}
+
+=======
     text-decoration: none;
 }
+>>>>>>> d9ccb8d004f10f726a4fb4ee4abcec42e559e8a6
 .ks-button:focus {
     box-shadow: 0 0 0 0.2rem rgba(118, 173, 55, 0.5);
     outline: 0;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> d9ccb8d004f10f726a4fb4ee4abcec42e559e8a6
 .ks-button:active {
     color: #fff;
     background-color: #42611F;
     border-color: #42611F;
 }
+<<<<<<< HEAD
+
+/* Week Day Buttons */
+
+=======
 /*-----------------------*/
 /* General Styles End */
 
@@ -136,12 +201,19 @@ a:hover {
 /* Meal Plan Page styles Start */
 /*----------------------------------*/
 /* Week Day Buttons */
+>>>>>>> d9ccb8d004f10f726a4fb4ee4abcec42e559e8a6
 .week-cards {
     /* display: inline-block; */
     width: 8rem;
     float: left;
     margin: 0.5px;
 }
+<<<<<<< HEAD
+
+button div div h5 {
+    font-size: 0.85rem;
+}
+=======
 button div div h5 {
     font-size: 0.85rem;
 } 
@@ -275,3 +347,4 @@ button div div h5 {
 /**************************************************/
 /*---------------------------------*/
 /* Meal Plan Page styles End */
+>>>>>>> d9ccb8d004f10f726a4fb4ee4abcec42e559e8a6

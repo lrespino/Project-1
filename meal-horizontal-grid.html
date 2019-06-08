@@ -18,6 +18,7 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
+
     <script src="https://kit.fontawesome.com/59a7a76dd2.js"></script>
 
     <!-- Animate.css CDN Link -->
@@ -26,6 +27,11 @@
     <!--dragula stylesheets-->
     <link rel="stylesheet" href="assets/dist/dragula.css">
     <link rel="stylesheet" href="assets/dist/dragula.min.css">
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+
+
+
 </head>
 
 
@@ -36,10 +42,10 @@
             <h1 class="nav float-left">HH</h1>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link active" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Meal Plan</a>
+                    <a class="nav-link" href="#">Meal Plan</a>
                 </li>
             </ul>
         </nav>
@@ -55,55 +61,55 @@
                 <button class="animated" id="MondayButton">
                     <div class="week-cards animated">
                         <div class="card-body">
-                          <h5 class="card-title text-center">Monday</h5>
+                            <h5 class="card-title text-center">Monday</h5>
                         </div>
                     </div>
                 </button>
-            
+
                 <button class="animated" id="TuesdayButton">
                     <div class="week-cards">
                         <div class="card-body">
-                          <h5 class="card-title text-center">Tuesday</h5>
+                            <h5 class="card-title text-center">Tuesday</h5>
                         </div>
                     </div>
                 </button>
-            
+
                 <button class="animated" id="WednesdayButton">
                     <div class="week-cards">
                         <div class="card-body">
-                          <h5 class="card-title text-center">Wednesday</h5>
+                            <h5 class="card-title text-center">Wednesday</h5>
                         </div>
                     </div>
                 </button>
-            
+
                 <button class="animated" id="ThursdayButton">
                     <div class="week-cards">
                         <div class="card-body">
-                          <h5 class="card-title text-center">Thursday</h5>
+                            <h5 class="card-title text-center">Thursday</h5>
                         </div>
                     </div>
                 </button>
-            
+
                 <button class="animated" id="FridayButton">
                     <div class="week-cards">
                         <div class="card-body">
-                          <h5 class="card-title text-center">Friday</h5>
+                            <h5 class="card-title text-center">Friday</h5>
                         </div>
                     </div>
                 </button>
-            
+
                 <button class="animated" id="SaturdayButton">
                     <div class="week-cards">
                         <div class="card-body">
-                          <h5 class="card-title text-center">Saturday</h5>
+                            <h5 class="card-title text-center">Saturday</h5>
                         </div>
                     </div>
                 </button>
-            
+
                 <button class="animated" id="SundayButton">
                     <div class="week-cards">
                         <div class="card-body">
-                          <h5 class="card-title text-center">Sunday</h5>
+                            <h5 class="card-title text-center">Sunday</h5>
                         </div>
                     </div>
                 </button>
@@ -112,28 +118,28 @@
             </div>
         </div>
         <!--Day Plan-->
-        <div class="row">
+        <div class="row" id="dailyMealsContainer">
 
             <!--Day Plan-->
             <div class="col-md-4 border text-center">
                 <h2 class="border meal-header">Breakfast</h2>
                 <div id="breakfast" class="holder meal-holder element mx-auto">
-                   
-               </div>
-            </div>   
+
+                </div>
+            </div>
 
             <div class="col-md-4 border text-center">
                 <h2 class="border meal-header">Lunch</h2>
-                <div id="lunch"class="holder meal-holder element mx-auto">
-                   
-               </div>
+                <div id="lunch" class="holder meal-holder element mx-auto">
+
+                </div>
             </div>
 
             <div class="col-md-4 border text-center">
                 <h2 class="border meal-header">Dinner</h2>
-                <div id="dinner"class="holder meal-holder element mx-auto">
-                   
-               </div>
+                <div id="dinner" class="holder meal-holder element mx-auto">
+
+                </div>
             </div>
 
         </div>
@@ -142,24 +148,24 @@
         <div class="row">
             <div class="col-md-12 border text-center mx-auto">
                 <div id="submitButtonSpacing">
-                    <input type="submit" id="save" value="Save" class="ks-button-form-submit">
+                    <button id="save" class="ks-button-form-submit">Save</button>
                 </div>
             </div>
         </div>
 
         <!--Recipe Search-->
         <div class="row">
-            
+
             <div class="col-md-12 border text-center mx-auto">
-                
-                    
+
+
                 <!-- Recipe Results -->
                 <div class="slideContainer">
                     <div id="searchResults" class="container imageContainer mx-auto">
-                    
+
                     </div>
                 </div>
-                
+
                 <form>
                     <label id="searchTitleSpacing">Search for a Recipe:</label>
                     <div>
@@ -170,13 +176,13 @@
                     </div>
                 </form>
 
-                
+
             </div>
         </div>
 
         <!--Favrites Section-->
         <div class="row">
-            <div class="favorite-container col-md-12 border text-center mx-auto">
+            <div class="favorite-container col-md-12 border text-center mx-auto" id="saved-recipes">
                 <p>Favorites!!!</p>
             </div>
         </div>
@@ -187,20 +193,23 @@
     <footer class="footerStyle border text-center fixed-bottom">
         <p>© 2019 Health Hero</p>
     </footer>
- <script>          
-    $('.toggleFavBut').click(function () {
-        console.log("favorited")
-        $(this).toggleClass('favoriteButton far');
-        $(this).toggleClass('favoritedButton fas fa-lg');
+    <script>
+        $('.toggleFavBut').click(function () {
+            console.log("favorited")
+            $(this).toggleClass('favoriteButton far');
+            $(this).toggleClass('favoritedButton fas fa-lg');
         });
- </script>
-<!--Simple script to toggle classes on heart icon-->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
-<script src="assets/dist/dragula.js"></script>
-<script src="assets/JavaScript/drag-and-drop-logic.js"></script>
+    </script>
+    <!--Simple script to toggle classes on heart icon-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+    <script src="assets/dist/dragula.js"></script>
+    <script src="assets/JavaScript/drag-and-drop-logic.js"></script>
+    <script src="assets/JavaScript/recipe-logic.js"></script>
+    <script src="assets/JavaScript/database-logic.js"></script>
+
 </body>
 
 
-<script src="assets/JavaScript/recipe-logic.js"></script>
+
 
 </html>

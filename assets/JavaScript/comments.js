@@ -26,7 +26,7 @@ $(document).ready(function () {
 
 
 
-/*  dragula([left, right]); 
+/*  dragula([left, right]);
 dragula([containers], { removeOnSpill: true });
 dragula([containers, searchResults], { copy: true }); */
 
@@ -55,28 +55,6 @@ $(elementWrapper).find(".drag-container").each(function (e) {
         copy: true
     });
 }); */
-
-var breakfast = '#breakfast';
-var lunch = '#lunch';
-var dinner = '#dinner';
-var searchResults = "#searchResults"
-
-var containers = [
-    document.querySelector(breakfast),
-    document.querySelector(lunch),
-    document.querySelector(dinner),
-    document.querySelector(searchResults)
-];
-
-dragula({
-    containers: containers,
-    //  revertOnSpill: true,
-    //   copy: true
-    copy: function (el, containers) {
-        return $(containers).attr('id').match('searchResults');
-    },
-    removeOnSpill: true,
-});
 
 /* dragula(containers, {
     copy: function (el, containers) {

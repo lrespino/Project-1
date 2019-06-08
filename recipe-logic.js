@@ -26,38 +26,27 @@ $("#submit").on("click", function (e) {
 
         buildRecipeCards(recipes);
         console.log(recipes);
-        //Added the toggle fav function here so it can work with the loaded items
-        $('.toggleFavBut').click(function () {
-            console.log("favorited")
-            $(this).toggleClass('favoriteButton far');
-            $(this).toggleClass('favoritedButton fas fa-lg');
-        });
 
     });
 });
 
 //Given an array of recipes, dynamically generate cards to append to the page
 function buildRecipeCards(recipes) {
-
-    $("#searchResults").empty();
     recipes.forEach(function (recipe, index) {
         var recipeCard = $("<div>").addClass("card");
 
         var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
         var cardBody = $("<div>").addClass("card-body");
         var title = $("<h5>").addClass("card-title").text(recipe.label);
-        var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
-        var newLine = $("<br>");
-        var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe")
-        var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs")
-        var ingredientsButton = $("<button>").addClass("ks-button-recipe").attr("data-toggle", "collapse")
+        var recipeButton = $("<a>").addClass("btn btn-primary").attr("href", recipe.url).text("Recipe Details")
 
+        var ingredientsButton = $("<button>").addClass("btn btn-primary").attr("data-toggle", "collapse")
             .attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
 
         var ingredientsCollapse = $("<div>").addClass("collapse").attr("id", index);
 
         var ingredients = $("<ul>").addClass("list-group", "list-group-flush");
-        recipeButton.append(externalSite)
+
         ingredientsCollapse.append(ingredients);
 
         recipe.ingredientLines.forEach(function (ingredient) {
@@ -65,18 +54,11 @@ function buildRecipeCards(recipes) {
             ingredients.append(li);
         });
 
-        cardBody.append(title, heartButton, newLine, ingredientsButton, ingredientsCollapse, recipeButton);
+        cardBody.append(title, ingredientsButton, ingredientsCollapse, recipeButton);
 
         recipeCard.append(img, cardBody);
 
         $("#searchResults").append(recipeCard);
 
-
     });
 }
-
-
-/* Remove Button */
-$("#removeButton").on("click", function () {
-    $(".card").remove();
-})

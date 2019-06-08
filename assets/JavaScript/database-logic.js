@@ -19,12 +19,12 @@ console.log("database set up")
 
 
 
-database.ref().on("child_added", function (snapshot, prevChildKey) {
-    var usersRecipes = snapshot.val();
+// database.ref().on("child_added", function (snapshot, prevChildKey) {
+//     var usersRecipes = snapshot.val();
 
-});
+// });
 
-$("#saveRecipe").on("click", function () {
+$("#save").on("click", function () {
     console.log("saving recipes...");
     $("#dailyMealsContainer").find(".card").each(function () {
         var ingredients = [];
@@ -65,9 +65,9 @@ function buildRecipeCard(recipe) {
     var title = $("<h5>").addClass("card-title").text(recipe.label);
     var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
     var newLine = $("<br>");
-    var recipeButton = $("<a>").addClass("ks-button").attr("href", recipe.url).text("Recipe Details")
+    var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe Details")
 
-    var ingredientsButton = $("<button>").addClass("ks-button").attr("data-toggle", "collapse")
+    var ingredientsButton = $("<button>").addClass("ks-button-recipe").attr("data-toggle", "collapse")
         .attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
 
     var ingredientsCollapse = $("<div>").addClass("collapse").attr("id", index);
@@ -85,33 +85,7 @@ function buildRecipeCard(recipe) {
 
     recipeCard.append(img, cardBody);
 
-    $("#dbRecipes").append(recipeCard);
+    $("#saved-recipes").append(recipeCard);
 
 }
 
-
-// When the user clicks the submit button, add the info to the database
-// $("#searchResults").on("click", ".card", function (e) {
-//     e.preventDefault();
-//     console.log("submitted")
-
-//     var ingredients = [];
-
-//     //build an array of the ingredients for the recipe that was clicked
-//     $(this).find(".list-group-item").each(function () {
-//         ingredients.push($(this).text())
-//     })
-
-//     var recipe = {
-//         image: $(this).find(".card-img-top").attr("src"),
-//         label: $(this).find(".card-title").text(),
-//         ingredientLines: ingredients
-//     };
-
-//     console.log(recipe);
-
-//     //Save the recipe to Firebase
-//     database.ref().push({
-//         recipe: recipe
-//     });
-// });

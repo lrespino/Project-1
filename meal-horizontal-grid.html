@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meal Planner</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://kit.fontawesome.com/59a7a76dd2.js"></script>
+
+    <!-- Animate.css CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+    <!--dragula stylesheets-->
+    <link rel="stylesheet" href="assets/dist/dragula.css">
+    <link rel="stylesheet" href="assets/dist/dragula.min.css">
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+
+
+
+</head>
+
+<body class="main">
+    <!-- Navbar -->
+    <header class="">
+        <nav class="navbar navbar-expand-md h-font navbar-light ">
+            <div class="navbar-brand" > 
+                <h1 href="#"class="nav float-left icon ">HH</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navbar-nav ml-auto nav-font">
+                <li class="nav-item active ">
+                    <a class="nav-link ks-nav " href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container">
+        <!--Weekly Plan Row-->
+        <div class="row">
+            <div class="col-md-12 border text-center">
+                <!-- Week Cards -->
+                <!---------------------------------------->
+                <button class="animated zoomIn ks-weekButtons" id="MondayButton">
+                    <div class="week-cards">
+                        <div class="">
+                          <h5 class="card-title text-center">Monday</h5>
+                        </div>
+                    </div>
+                </button>
+            
+                <button class="animated zoomIn ks-weekButtons" id="TuesdayButton">
+                    <div class="week-cards">
+                        <div class="">
+                          <h5 class="card-title text-center">Tuesday</h5>
+                        </div>
+                    </div>
+                </button>
+            
+                <button class="animated zoomIn ks-weekButtons" id="WednesdayButton">
+                    <div class="week-cards">
+                        <div class="">
+                          <h5 class="card-title text-center">Wednesday</h5>
+                        </div>
+                    </div>
+                </button>
+            
+                <button class="animated zoomIn ks-weekButtons" id="ThursdayButton">
+                    <div class="week-cards">
+                        <div class="">
+                          <h5 class="card-title text-center">Thursday</h5>
+                        </div>
+                    </div>
+                </button>
+            
+                <button class="animated zoomIn ks-weekButtons" id="FridayButton">
+                    <div class="week-cards">
+                        <div class="">
+                          <h5 class="card-title text-center">Friday</h5>
+                        </div>
+                    </div>
+                </button>
+            
+                <button class="animated zoomIn ks-weekButtons" id="SaturdayButton">
+                    <div class="week-cards">
+                        <div class="">
+                          <h5 class="card-title text-center">Saturday</h5>
+                        </div>
+                    </div>
+                </button>
+            
+                <button class="animated zoomIn ks-weekButtons" id="SundayButton">
+                    <div class="week-cards">
+                        <div class="">
+                          <h5 class="card-title text-center">Sunday</h5>
+                        </div>
+                    </div>
+                </button>
+                <!----------------------------->
+                <!-- End of Week Cards -->
+            </div>
+        </div>
+        <!--Day Plan-->
+        <div class="row" id="dailyMealsContainer">
+    
+            <div class="col-md-4 text-center">
+                <h2 class="meal-header ks-container">Breakfast</h2>
+                <div id="breakfast" class="holder meal-holder element mx-auto animated fadeInLeftBig gradient">
+                   
+               </div>
+            </div>   
+
+            <div class="col-md-4 text-center">
+                <h2 class="meal-header ks-container">Lunch</h2>
+                <div id="lunch"class="holder meal-holder element mx-auto animated fadeInUpBig gradient">
+                   
+               </div>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <h2 class="meal-header ks-container">Dinner</h2>
+                <div id="dinner"class="holder meal-holder element mx-auto animated fadeInRightBig gradient">
+                   
+               </div>
+            </div>
+
+        </div>
+
+        <!--Save Day Plan-->
+        <div class="row">
+            <div class="col-md-5"></div>
+
+            <div class="col-md-2 border text-center mx-auto ks-container save-margin">
+                <div id="submitButtonSpacing">
+                    <button id="save" class="ks-button-form-submit">Save</button>
+                </div>
+            </div>
+
+            <div class="col-md-5"></div>
+        </div>
+
+        <!--Recipe Search-->
+        <div class="row">
+
+            <div class="col-md-12 border text-center mx-auto">
+
+
+                <!-- Recipe Results -->
+                <div class="slideContainer">
+                    <div id="searchResults" class="container imageContainer mx-auto">
+
+                    </div>
+                </div>
+
+                <form>
+                    <label id="searchTitleSpacing">Search for a Recipe:</label>
+                    <div>
+                        <input type="text" id="searchTerm">
+                    </div>
+                    <div id="submitButtonSpacing">
+                        <input type="submit" id="submit" value="Submit" class="ks-button-form-submit ">
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+
+        <!--Favrites Section-->
+        <div class="row">
+            <div class="favorite-container col-md-12 border text-center mx-auto" id="saved-recipes">
+                <p>Favorites!!!</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class=" text-center mt-auto">
+        <div>© 2019 Health Hero</div>
+    </footer>   
+
+    <script>          
+      $('.toggleFavBut').click(function () {
+          console.log("favorited")
+          $(this).toggleClass('favoriteButton far');
+          $(this).toggleClass('favoritedButton fas fa-lg');
+      });
+
+      /* Week Button Stay Active */
+      $(".ks-weekButtons").click(function() {
+          $(this).toggleClass('favoriteButton');
+          $(this).toggleClass('favoritedButton');
+      });
+    </script>
+    <!--Simple script to toggle classes on heart icon-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+    <script src="assets/dist/dragula.js"></script>
+    <script src="assets/JavaScript/drag-and-drop-logic.js"></script>
+    <script src="assets/JavaScript/recipe-logic.js"></script>
+    <script src="assets/JavaScript/gradientLogic-and-modal.js"></script>
+    <script src="assets/JavaScript/database-logic.js"></script>
+
+</body>
+
+</html>

@@ -252,9 +252,9 @@ button div div h5 {
 .slideContainer {
     padding-left: 30px;
 }
-.imageContainer {
-    /* padding-left: 30px; */
-}
+/* .imageContainer {
+    padding-left: 30px;
+} */
 .card {
     /* width: 202px; */
     /* height: 302px; */
@@ -346,9 +346,9 @@ button div div h5 {
 }
 /**************************************************/
 /* Favorites Container */
-.favorite-container {
-    /* background-color: rgb(118, 173, 55); */
-}
+/* .favorite-container {
+    background-color: rgb(118, 173, 55);
+} */
 /**************************************************/
 /*---------------------------------*/
 /* Meal Plan Page styles End */

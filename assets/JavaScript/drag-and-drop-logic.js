@@ -7,7 +7,11 @@ var containers = [
     document.querySelector(breakfast),
     document.querySelector(lunch),
     document.querySelector(dinner),
-    document.querySelector(searchResults)
+    document.querySelector(searchResults),
+    document.querySelector(".carousel-item"),
+    document.querySelector("#firstSlide"),
+    document.querySelector("#secondSlide"),
+    document.querySelector("#thirdSlide"),
 ];
 
 dragula({
@@ -15,7 +19,7 @@ dragula({
     //  revertOnSpill: true,
     //   copy: true
     copy: function (el, containers) {
-        return $(containers).attr('id').match('searchResults');
+        return $(containers).attr('class').match('carousel-item');
     },
     removeOnSpill: true,
 });

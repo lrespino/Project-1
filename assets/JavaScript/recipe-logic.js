@@ -58,10 +58,12 @@ function buildRecipeCards(recipes) {
         var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe")
         var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs")
         var ingredientsButton = $("<button>").addClass("ks-button-recipe modalButton").attr("data-toggle", "collapse").attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
+        recipeButton.append(externalSite);
+
+
         var ingredientsCollapse = $("<div>").addClass("collapse").attr("id", index);
 
-        var ingredients = $("<ul>").addClass("list-group", "list-group-flush");
-        recipeButton.append(externalSite);
+        var ingredients = $("<ul>").addClass("list-group list-group-flush hiddenIngredientList");
         ingredientsCollapse.append(ingredients);
 
         recipe.ingredientLines.forEach(function (ingredient) {
@@ -69,7 +71,7 @@ function buildRecipeCards(recipes) {
             ingredients.append(li);
         });
 
-        cardBody.append(title, heartButton, newLine, ingredientsButton, ingredientsCollapse, recipeButton);
+        cardBody.append(title, recipeButton);
 
         recipeCard.append(img, cardBody);
 

@@ -159,7 +159,7 @@
 
                 <div class="col-md-2 text-center mx-auto save-margin">
                     <div id="submitButtonSpacing">
-                        <button id="save" class="ks-button-form-submit">Save</button>
+                        <button id="save" class="ks-button-form-submit">Save!</button>
                     </div>
                 </div>
 
@@ -180,7 +180,16 @@
                     </div>
                 </div>
 
-                <form>
+                <form class="form-inline justify-content-center">
+                    <label class="form-group">Search for a recipe to add to your meal plan:</label>
+                    <div class="form-group mx-sm-3 mb-2 mt-2">
+                        <label for="searchTerm" class="sr-only">Search Recipes</label>
+                        <input type="text" class="form-control" id="searchTerm"
+                            placeholder="By name, ingredient, etc...">
+                    </div>
+                    <button type="submit" id="submit" class="ks-button-form-submit">Search</button>
+                </form>
+                <!-- <form>
                     <label id="searchTitleSpacing">Search for a Recipe:</label>
                     <div>
                         <input type="text" id="searchTerm">
@@ -188,7 +197,7 @@
                     <div id="submitButtonSpacing">
                         <input type="submit" id="submit" value="Submit" class="ks-button-form-submit ">
                     </div>
-                </form>
+                </form> -->
 
                 <div id="carouselExampleControls" class="carousel slide">
                     <div class="carousel-inner">

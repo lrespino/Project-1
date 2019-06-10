@@ -29,7 +29,7 @@ $("#submit").on("click", function (e) {
         $('.toggleFavBut').click(function () {
             console.log("favorited")
             $(this).toggleClass('favoriteButton far');
-            $(this).toggleClass('favoritedButton fas fa-lg');
+            $(this).toggleClass('favoritedButton fas fa-2x');
         });
 
     });
@@ -37,7 +37,7 @@ $("#submit").on("click", function (e) {
 
 function truncate(word) {
     if (word.length > 23)
-        return word.substring(0, 23) + '...';
+        return word.substring(0, 18) + '...';
     else
         return word;
 };
@@ -53,8 +53,7 @@ function buildRecipeCards(recipes) {
         var cardBody = $("<div>").addClass("card-body");
         var truncatedTitle = truncate(recipe.label);
         var title = $("<h5>").addClass("card-title").text(truncatedTitle);
-        var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
-        var newLine = $("<br>");
+        var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");
         var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe")
         var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs")
         var ingredientsButton = $("<button>").addClass("ks-button-recipe modalButton").attr("data-toggle", "collapse").attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
@@ -69,7 +68,7 @@ function buildRecipeCards(recipes) {
             ingredients.append(li);
         });
 
-        cardBody.append(title, heartButton, newLine, ingredientsButton, ingredientsCollapse, recipeButton);
+        cardBody.append(title, heartButton, ingredientsButton, ingredientsCollapse, recipeButton);
 
         recipeCard.append(img, cardBody);
 

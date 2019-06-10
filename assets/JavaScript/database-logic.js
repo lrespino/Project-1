@@ -89,8 +89,7 @@ function buildSavedRecipeCard(recipe, index) {
     var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
     var cardBody = $("<div>").addClass("card-body");
     var title = $("<h5>").addClass("card-title").text(recipe.label);
-    var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
-    var newLine = $("<br>");
+    var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");
     var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe Details")
 
     var ingredientsButton = $("<button>").addClass("ks-button-recipe").attr("data-toggle", "collapse")
@@ -107,7 +106,7 @@ function buildSavedRecipeCard(recipe, index) {
         ingredients.append(li);
     });
 
-    cardBody.append(title, heartButton, newLine, ingredientsButton, ingredientsCollapse, recipeButton);
+    cardBody.append(title, heartButton, ingredientsButton, ingredientsCollapse, recipeButton);
 
     recipeCard.append(img, cardBody);
 

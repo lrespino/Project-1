@@ -131,24 +131,24 @@
             <div class="row" id="dailyMealsContainer">
 
                 <div class="col-md-4 text-center">
-                    <h2 class="meal-header">Breakfast</h2>
+                    <h2 class="meal-header h-font">Breakfast</h2>
                     <div id="breakfast" class="holder meal-holder element mx-auto animated fadeInLeftBig gradient">
 
                     </div>
                 </div>
 
                 <div class="col-md-4 text-center">
-                    <h2 class="meal-header">Lunch</h2>
-                    <div id="lunch" class="holder meal-holder element mx-auto animated fadeInUpBig gradient">
-
-                    </div>
+                    <h2 class="meal-header h-font">Lunch</h2>
+                    <div id="lunch"class="holder meal-holder element mx-auto animated fadeInUpBig gradient">
+                       
+                   </div>
                 </div>
 
                 <div class="col-md-4 text-center">
-                    <h2 class="meal-header">Dinner</h2>
-                    <div id="dinner" class="holder meal-holder element mx-auto animated fadeInRightBig gradient">
-
-                    </div>
+                    <h2 class="meal-header h-font">Dinner</h2>
+                    <div id="dinner"class="holder meal-holder element mx-auto animated fadeInRightBig gradient">
+                       
+                   </div>
                 </div>
 
             </div>
@@ -213,9 +213,6 @@
             </div>
         </div>
         </div>
-
-
-
     </section>
 
     <!-- Footer -->
@@ -223,6 +220,14 @@
         <div>© 2019 Health Hero</div>
     </footer>
 
+    <script>
+        //Added the toggle fav function here so it can work with the loaded items
+        $('.toggleFavBut').click(function () {
+        console.log("favorited")
+        $(this).toggleClass('favoriteButton far');
+        $(this).toggleClass('favoritedButton fas fa-2x');
+        });
+    </script>
 
     <!--Simple script to toggle classes on heart icon-->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>

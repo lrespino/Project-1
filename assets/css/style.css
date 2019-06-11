@@ -260,7 +260,7 @@ button div div h5 {
 /********************************************/
 /* Results Slide */ 
 .slideContainer {
-    padding-left: 30px;
+    padding-left: 70px;
 }
 /* .imageContainer {
     padding-left: 30px;
@@ -272,7 +272,8 @@ button div div h5 {
     height: 21rem;
     margin: auto; 
     float: left; 
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+    margin: 0px 5px; 
     cursor: grabbing;
 }
 .ks-card:hover {
@@ -379,6 +380,7 @@ button div div h5 {
     height: 30px;
     border-style: solid;
     border-color: gold;
+    display: none;
 }
 .carousel-control-next {
     display: block;
@@ -394,6 +396,7 @@ button div div h5 {
     height: 30px;
     border-style: solid;
     border-color: gold;
+    display: none;
 }
 /**************************************************/
 /* Favorites Container */

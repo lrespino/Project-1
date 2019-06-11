@@ -251,6 +251,14 @@
         $(this).toggleClass('favoriteButton far');
         $(this).toggleClass('favoritedButton fas fa-2x');
         });
+
+        $(".ks-button-form-submit").on("click", function(){
+            setTimeout(function(){
+                $(".carousel-control-prev-icon").css("display","block");
+                $(".carousel-control-next-icon").css("display","block");
+            }, 750);
+            
+        });
     </script>
 
     <!--Simple script to toggle classes on heart icon-->

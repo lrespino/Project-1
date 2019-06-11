@@ -103,6 +103,8 @@ function buildRecipeCards(recipes) {
 
         $('.carousel').carousel();
 
+        
+
     });
 }
 

@@ -54,6 +54,12 @@
                         <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link ks-nav" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ks-nav" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link ks-nav" href="#">Logout</a>
                     </li>
                 </ul>
@@ -216,13 +222,13 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="ingredientsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal modalIngredients fade" id="ingredientsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
+            <div class="modal-dialog modal-dialog-ingredients" role="document">
+                <div class="modal-content modal-content-ingredients">
+                    <div class="modal-header modal-header-ingredients">
                       <h5 class="modal-title"       id="exampleModalLongTitle">Ingredients</h5>
-                      <button type="button" class="close"       data-dismiss="modal" aria-label="Close">
+                      <button type="button" class="close closeButton"       data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>    
@@ -230,7 +236,7 @@
 
                     </ul>    
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="ks-button-close" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

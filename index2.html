@@ -18,94 +18,182 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <!--Google fonts-->
   <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
-
+   
 </head>
 
-<body>
-  <!-- Navbar -->
-  <header class="">
-    <nav class="navbar navbar-expand-md h-font navbar-light ">
-      <div class="navbar-brand">
-        <h1 href="#" class="nav float-left icon ">HH</h1>
-      </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class=" navbar-nav ml-auto nav-font">
-          <li class="nav-item active ">
-            <a class="nav-link ks-nav " href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ks-nav" id="logout" href="#">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+<body class="grey lighten-3">
 
-  <!-- Page Introduction -->
-  <div class="container main">
-    <div class="row">
-      <div class="col-md-12 border ks-container m-5">
-        <section class="p-4">
-          <h2 class="text-center border-bottom h-font">Welcome To Health Hero</h2>
-          <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure quia nulla provident ipsam reiciendis, isteplaceat numquam optio impedit necessitatibus laudantium consequatur suscipit fuga similique est tempore molestiaspossimus veniam!
-          </p>
-        </section>
-      </div>
-    </div>  
-  </div>
-
-  <div class="row">
-    <div class="col-md-4 border mx-auto text-center ks-container ">
-      <div class="wrapper fadeInDown">
-        <div id="formContent" class="p-4">
-          <!-- Tabs Titles -->
-          <!-- Icon -->
-          <div class="m-2 mt-2">
-            <i class="far fa-user fa-3x"></i>
-          </div>
-          <!-- Login Form -->
-          <form>
-            <div class="form-group">
-              <label for="username">Username</label>
-              <input type="text" class="mx-auto m-2 onNewLine" id="inputUsername" placeholder="Username">
+    
+      <!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
+        <div class="nav-wrapper container">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <!-- <li class="logged-in">
+                <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+              </li> -->
+              
+              <li class="logged-out">
+                <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+              </li>
+              <li class="logged-out">
+                <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+              </li>
+              <li class="logged-in">
+                <a href="#" class="grey-text" id="mealplan">Meal Plan</a>
+              </li>
+                <li class="logged-in">
+                <a href="#" class="grey-text" id="logout">Logout</a>
+                </li>
+            </span>
+          </ul>
+        </div>
+      </nav>
+      <!-- SIGN UP MODAL -->
+      <div id="modal-signup" class="modal">
+        <div class="modal-content">
+          <h4>Sign up</h4><br />
+          <form id="signup-form">
+            <div class="input-field">
+              <input type="email" id="signup-email" required />
+              <label for="signup-email">Email address</label>
             </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="text" class="mx-auto m-2 onNewLine" id="inputPassword" placeholder="Password">
+            <div class="input-field">
+              <input type="password" id="signup-password" required />
+              <label for="signup-password">Choose password</label>
             </div>
-            <div class="form-check m-2">
-              <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-              <label class="form-check-label" for="dropdownCheck2">Remember me</label>
-            </div>
-            <button type="login" class="mx-auto ks-button" value="login">Sign in</button>
+            <button class="btn yellow darken-2 z-depth-0">Sign up</button>
           </form>
-          <div class="dropdown">
-            <a class="ks-button dropdown-toggle m-2" href="#" role="button" id="dropdownMedata-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login adm
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Daniel</a>
-              <a class="dropdown-item" href="#">Matt</a>
-              <a class="dropdown-item" href="#">Luis</a>
-              <a class="dropdown-item" href="#">Kayleigh</a>
-            </div>
-          </div>
-          <!-- Remind Passowrd -->
-          <!-- <div class="mx-auto m-2" id="formFooter">
-            <a class="" href="#">Forgot Password?</a>
-          </div> -->
         </div>
       </div>
-    </div>  
-  </div>
+      <!-- LOGIN MODAL -->
+      <div id="modal-login" class="modal">
+        <div class="modal-content">
+          <h4>Login</h4><br />
+          <form id="login-form">
+            <div class="input-field">
+              <input type="email" id="login-email" required />
+              <label for="login-email">Email address</label>
+            </div>
+            <div class="input-field">
+              <input type="password" id="login-password" required />
+              <label for="login-password">Your password</label>
+            </div>
+            <button class="btn yellow darken-2 z-depth-0">Login</button>
+          </form>
+        </div>
+      </div>
+      <!-- ACCOUNT MODAL -->
+      <div id="modal-account" class="modal">
+        <div class="modal-content center-align">
+          <h4>Account details</h4><br />
+          <div class="account-details"></div>
+          <div class="account-extras"></div>
+        </div>
+      </div>
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- <header class="">
+        <nav class="navbar navbar-expand-md h-font navbar-light ">
+            <div class="navbar-brand">
+                <h1 href="#" class="nav float-left icon ">HH</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navbar-nav ml-auto nav-font">
+                <li class="nav-item active ">
+                  <a class="nav-link ks-nav " href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ks-nav" id="logout" href="#">Logout</a>
+                </li>
+            </ul>
+            </div>
+        </nav> -->
+    </header>
+    <!-- Page Introduction -->
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-12 border ks-container m-5">
+                <section class="p-4">
+                    <h2 class="text-center border-bottom h-font">Welcome To Health Hero</h2>
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure quia nulla provident ipsam
+                        reiciendis, iste
+                        placeat numquam optio impedit necessitatibus laudantium consequatur suscipit fuga similique est
+                        tempore
+                        molestias possimus veniam!
+                    </p>
+                </section>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-4 border mx-auto text-center ks-container ">
+                <div class="wrapper fadeInDown">
+                    <div id="formContent" class="p-4"> -->
+                        <!-- Tabs Titles -->
+                        <!-- Icon -->
+                        <!-- <div class="m-2 mt-2">
+                            <i class="far fa-user fa-3x"></i>
+                        </div> -->
+                        <!-- Login Form -->
+                        <!-- <form>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="mx-auto m-2 onNewLine" id="inputUsername"
+                                    placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" class="mx-auto m-2 onNewLine" id="inputPassword"
+                                    placeholder="Password">
+                            </div>
+                            <div class="form-check m-2">
+                                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                                <label class="form-check-label" for="dropdownCheck2">
+                                    Remember me
+                                </label>
+                            </div>
+                            <button type="login" class="mx-auto ks-button" value="login">Sign in</button>
+                        </form>
+                        <div class="dropdown">
+                            <a class="ks-button dropdown-toggle m-2" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Login admins
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Daniel</a>
+                                <a class="dropdown-item" href="#">Matt</a>
+                                <a class="dropdown-item" href="#">Luis</a>
+                                <a class="dropdown-item" href="#">Kayleigh</a>
+                            </div>
+                        </div> -->
+                        <!-- Remind Passowrd -->
+                            <!-- <div class="mx-auto m-2" id="formFooter">
+                            <a class="" href="#">Forgot Password?</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
   <!-- Footer -->
   <footer class=" text-center mt-auto">
-      <div>© 2019 Health Hero</div>
+    <div>© 2019 Health Hero</div>
   </footer>
 
   <!-- Bootstrap Script Links -->
@@ -118,10 +206,40 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
-  <script src="assets/JavaScript/recipe-logic.js"></script>
+  <!-- <script src="assets/JavaScript/recipe-logic.js"></script> -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#config-web-app -->
+      
+  <script>
 
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCb8riZvb8Jlnep5_bSG3_BvseXedeH7HE",
+      authDomain: "recipe-app-74786.firebaseapp.com",
+      databaseURL: "https://recipe-app-74786.firebaseio.com",
+      projectId: "recipe-app-74786",
+      storageBucket: "recipe-app-74786.appspot.com",
+      messagingSenderId: "588767138515",
+      appId: "1:588767138515:web:00bcab0cd40afe4c"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    // update firestore settings
+    // db.settings({ timestampsInSnapshots: true });
+
+  </script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="assets/JavaScript/auth.js"></script>
+  <script src="assets/JavaScript/index.js"></script>
+    
 </body>
-
-
 
 </html>

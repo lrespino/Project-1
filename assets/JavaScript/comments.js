@@ -72,3 +72,63 @@ $(elementWrapper).find(".drag-container").each(function (e) {
     },
     removeOnSpill: true
 } */
+
+
+
+// var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
+//         var cardBody = $("<div>").addClass("card-body");
+//         var truncatedTitle = truncate(recipe.label);
+//         var title = $("<h5>").addClass("card-title").text(truncatedTitle);
+//         var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
+//         var newLine = $("<br>");
+//         var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).attr("target", "_blank").text("Recipe");
+//         var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs");
+
+
+        
+//         var ingredientsButton = $("<button>").addClass("ks-button-recipe").attr("data-toggle", "modal").attr("data-target", "#"+ index).attr("aria-controls", index).text("Ingredients");
+
+
+//         var ingredientsModal = $("<div>").addClass("modal fade").addId("#" + index).attr("id", index).attr("tabindex", "-1").attr("aria-hidden", "true").attr("role", "dialog");
+
+//         var modalDialog = $("<div>").addClass("modal-dialog").attr("role", "document");
+//         var modalContentDiv = $("<div>").addClass("modal-content");
+//         var modalDialogComplete = modalDialog.modalContentComplete;
+
+//         var modalContent = modalContentDiv.modalHeader.modalBody.modalFooter;
+
+
+//         var modalHeaderDiv = $("<div>").addClass("modal-header");
+//         var modalH5 = $("<h5>").adClass("modal-title").addId("exampleModalLongTitle").text("Ingredients");
+//         var modalHeader = modalHeaderDiv.modalH5.modalHeaderClose;
+        
+//         var modalCloseX = $("<button>").attr("type", "button").addClass("close").attr("data-dismiss", "modal").attr("aria-label", "Close");
+//         var closeSymbol = $("<span>").attr("aria-hidden", "true").text("&times;");
+//         var modalHeaderClose = modalCloseX.closeSymbol;
+
+//         var modalBody = $("<div>").addClass("modal-body").append(ingredients[index]);
+
+//         var modalFooterDiv = $("<div>").addClass("modal-footer");
+//         var footerCloseBtn = $("<button>").addClass("ks-button").attr("data-dismiss", "modal").text("Close");
+//         var modalFooter = modalFooterDiv.footerCloseBtn;
+
+//         var ingredientsModalcomplete = ingredientsModal.modalDialogComplete;
+
+        
+
+//         var ingredients = $("<ul>").addClass("list-group", "list-group-flush");
+
+//         recipeButton.append(externalSite);
+//         ingredientsModalcomplete.append(index);
+
+//         recipe.ingredientLines.forEach(function (ingredient) {
+//             var li = $("<li>").addClass("list-group-item").text(ingredient);
+//             ingredients.append(li);
+//         });
+
+        
+//         $(".modalDump").append(ingredientsModal);
+
+//         cardBody.append(title, heartButton, newLine, ingredientsButton, recipeButton);
+
+//         recipeCard.append(img, cardBody);

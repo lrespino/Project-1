@@ -19,22 +19,22 @@ body {
 .h-font {
     font-family: 'EB Garamond', serif;
 }
+.icon {
+    font-size: 2.8rem;
+    color:  #42611F;
+}
+/*Navigation Bar*/
 .navbar-light .navbar-nav .active>.nav-link {
     color: #42611F;
 }
 .navbar-light .navbar-nav .nav-link {
-        color: rgb(118, 173, 55);
+    color: rgb(118, 173, 55);
 }
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
     font-size: 22px;
     transition: .5s ease;
     color:#42611F;
 }
-.icon {
-     font-size: 2.8rem;
-     color:  #42611F;
-}
-/*Navigation Bar*/
 .ks-nav{
     font-size: 1.2rem;
     border-right: 1px solid rgb(118, 173, 55);
@@ -167,15 +167,23 @@ button div div h5 {
     background-color: #42611F;
     border-color: #42611F;
     text-decoration: none;
+    cursor: pointer;
 }
 .ks-weekButtons:focus {
-    box-shadow: 0 0 0 0.2rem rgb(255,215,0);
+    background-color: #42611F;
     outline: 0;
+    border-style: outset;
+    border-color: rgba(255, 255, 255, 0.5);
 }
 .ks-weekButtons:active {
     color: #fff;
     background-color: #42611F;
     border-color: #42611F;
+    /* transform: translateY(1px); */
+    transform: translate(0px,5px);
+    cursor: progress;
+    
+    
 }
 /********************************/
 /* Breakfast lunch Dinner Styles */
@@ -201,6 +209,7 @@ button div div h5 {
     /* height: 302px; */
     padding: 0px;
     margin: 0px;
+    border-radius: 10%;
 }
 /********************************/
 /* Save Button Styles */
@@ -232,6 +241,7 @@ button div div h5 {
     line-height: 1.5;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    cursor: pointer;
 }
 .ks-button-form-submit:hover {
     color: #fff;
@@ -263,6 +273,13 @@ button div div h5 {
     margin: auto; 
     float: left; 
     margin-bottom: 10px; 
+    cursor: grabbing;
+}
+.card:hover {
+    cursor: grab;
+}
+.card:active {
+    cursor: grabbing;
 }
 .card-img-top {
     /* width: 202px; */
@@ -277,6 +294,9 @@ button div div h5 {
     position: relative; /*relative position for heart button */
     padding-top: 5px;
 
+}
+.hiddenIngredientList {
+    display: none;
 }
 .card-title {
     font-size: 1em;
@@ -300,6 +320,7 @@ button div div h5 {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     margin: 0 auto;
     margin-top: 5px;
+    cursor: pointer;
 }
 .ks-button-recipe:hover {
     color: #fff;
@@ -320,13 +341,11 @@ button div div h5 {
     background-color: transparent;
     border-color: transparent;
     box-shadow: none;
-
     position: absolute;
     display: block;
     cursor: pointer;
     top: -145%;
     left: 77%;
-    
 }
  .favoriteButton:hover {
     color:  rgba(176, 27, 4, .5);
@@ -337,12 +356,44 @@ button div div h5 {
     border-color: transparent;
     box-shadow: none;
     color: rgb(176, 27, 4);
-
     position: absolute;
     display: block;
     cursor: pointer;
     top: -145%;
-    left: 73%;
+    left: 73%; 
+}
+.carousel-container {
+    margin-top: 30px;
+}
+.carousel-control-prev{
+    display: block;
+    width: 0px;
+    height: 0px;
+}
+.carousel-control-prev-icon {
+    /* margin-right: 120px; */
+    margin-top: 150px;
+    background-color: rgb(118, 173, 55);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-color: gold;
+}
+.carousel-control-next {
+    display: block;
+    width: 0px;
+    height: 0px;
+}
+.carousel-control-next-icon {
+    margin-left: -28px;
+    margin-top: 150px;
+    background-color: rgb(118, 173, 55);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-color: gold;
 }
 /**************************************************/
 /* Favorites Container */
@@ -355,22 +406,24 @@ button div div h5 {
 
 /* Modal Styles */
 .modal {
-    /*display: none;*/
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(118, 173, 55, 0.2);
 }
-.modalContent {
-    background-color: #f4f4f4;
-    margin: 50% auto;
-    padding: 20px;
+.modal-header {
+    color: #fff;
+}
+.modal-dialog {
+    width: 70%;
+}
+.modal-content {
+    color: #fff;
+    background-color: rgb(118, 173, 55);
+    margin: 20% auto;
+    padding: 10px;
     width: 70%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17)
+}
+.list-group-item {
+    background-color: #42611F;
 }
 .closeButton {
     color: #000000;

@@ -1,7 +1,7 @@
 var breakfast = '#breakfast';
 var lunch = '#lunch';
 var dinner = '#dinner';
-var searchResults = "#searchResults"
+var searchResults = "#searchResults";
 
 var containers = [
     document.querySelector(breakfast),

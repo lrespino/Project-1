@@ -85,11 +85,12 @@ function buildSavedRecipeCard(recipe, index) {
     console.log("building cards");
     console.log(index);
 
-    var recipeCard = $("<div>").addClass("card d-flex justify-content-center");
+    var recipeCard = $("<div>").addClass("card ks-card");
 
     var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
 
     var cardBody = $("<div>").addClass("card-body");
+    
     var title = $("<h5>").addClass("card-title").text(recipe.label);
 
     var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");

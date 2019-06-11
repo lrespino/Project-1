@@ -42,7 +42,6 @@ function truncate(word) {
         return word;
 };
 
-
 //Given an array of recipes, dynamically generate cards to append to the page
 function buildRecipeCards(recipes) {
     $("#firstSlide").empty();

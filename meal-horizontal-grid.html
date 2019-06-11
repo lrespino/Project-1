@@ -216,13 +216,13 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="ingredientsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal modalIngredients fade" id="ingredientsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title"       id="exampleModalLongTitle">Ingredients</h5>
-                      <button type="button" class="close"       data-dismiss="modal" aria-label="Close">
+            <div class="modal-dialog modal-dialog-ingredients" role="document">
+                <div class="modal-content modal-content-ingredients">
+                    <div class="modal-header modal-header-ingredients">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Ingredients</h5>
+                      <button type="button" class="close closeButton"       data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>    
@@ -230,7 +230,7 @@
 
                     </ul>    
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="ks-button-close" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -250,6 +250,14 @@
         console.log("favorited")
         $(this).toggleClass('favoriteButton far');
         $(this).toggleClass('favoritedButton fas fa-2x');
+        });
+
+        $(".ks-button-form-submit").on("click", function(){
+            setTimeout(function(){
+                $(".carousel-control-prev-icon").css("display","block");
+                $(".carousel-control-next-icon").css("display","block");
+            }, 750);
+            
         });
     </script>
 

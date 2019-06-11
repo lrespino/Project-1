@@ -42,7 +42,6 @@ function truncate(word) {
         return word;
 };
 
-
 //Given an array of recipes, dynamically generate cards to append to the page
 function buildRecipeCards(recipes) {
     $("#firstSlide").empty();
@@ -50,19 +49,28 @@ function buildRecipeCards(recipes) {
     $("#thirdSlide").empty();
     recipes.forEach(function (recipe, index) {
         console.log(index);
+
         var recipeCard = $("<div>").addClass("card ks-card");
 
         var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
+
         var cardBody = $("<div>").addClass("card-body");
+
         var truncatedTitle = truncate(recipe.label);
+
         var title = $("<h5>").addClass("card-title").text(truncatedTitle);
+
         var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");
+
         var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).attr("target", "_blank").text("Recipe ");
+
         var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs");
+
         var ingredientsButton = $("<button>").addClass("ks-button-recipe ingredientsButtonClick").attr("data-toggle", "modal").attr("data-target", "#ingredientsModal").text("Ingredients");
-        var ingredientsModal = $("<div>").addClass("modal-body modalContent").attr("id", index);
+
         var ingredients = $("<ul>").addClass("list-group list-group-flush hiddenIngredientList");
 
+        /* Ingredients Modal Logic */
         $(".ingredientsButtonClick").on("click", function() {
             $(".modalDump").empty();
             var clickedRecipeCard = $(this).parent();
@@ -72,14 +80,12 @@ function buildRecipeCards(recipes) {
             $(".modalDump").html(ingredients);
         });
 
-
-        recipeButton.append(externalSite);
-        ingredientsModal.append(ingredients);
-
         recipe.ingredientLines.forEach(function (ingredient) {
             var li = $("<li>").addClass("list-group-item").text(ingredient);
             ingredients.append(li);
         });
+
+        recipeButton.append(externalSite);
 
         cardBody.append(title, heartButton, ingredients, ingredientsButton, recipeButton);
 
@@ -96,6 +102,8 @@ function buildRecipeCards(recipes) {
         }
 
         $('.carousel').carousel();
+
+        
 
     });
 }

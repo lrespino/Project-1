@@ -84,29 +84,43 @@ function getSavedRecipes(day) {
 function buildSavedRecipeCard(recipe, index) {
     console.log("building cards");
     console.log(index);
-    var recipeCard = $("<div>").addClass("card d-flex justify-content-center");
+
+    var recipeCard = $("<div>").addClass("card ks-card");
 
     var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
+
     var cardBody = $("<div>").addClass("card-body");
+    
     var title = $("<h5>").addClass("card-title").text(recipe.label);
+
     var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");
-    var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe Details")
 
-    var ingredientsButton = $("<button>").addClass("ks-button-recipe").attr("data-toggle", "collapse")
-        .attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
+    var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).attr("target", "_blank").text("Recipe ");
 
-    var ingredientsCollapse = $("<div>").addClass("collapse").attr("id", index);
+    var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs");
 
-    var ingredients = $("<ul>").addClass("list-group", "list-group-flush");
+    var ingredientsButton = $("<button>").addClass("ks-button-recipe ingredientsButtonClick").attr("data-toggle", "modal").attr("data-target", "#ingredientsModal").text("Ingredients");
 
-    ingredientsCollapse.append(ingredients);
+    var ingredients = $("<ul>").addClass("list-group list-group-flush hiddenIngredientList");
+
+    /* Ingredients Modal Logic */
+    $(".ingredientsButtonClick").on("click", function() {
+        $(".modalDump").empty();
+        var clickedRecipeCard = $(this).parent();
+        var ingredients = clickedRecipeCard.find
+        (".hiddenIngredientList").html();
+        console.log(ingredients);
+        $(".modalDump").html(ingredients);
+    });
 
     recipe.ingredientLines.forEach(function (ingredient) {
         var li = $("<li>").addClass("list-group-item").text(ingredient);
         ingredients.append(li);
     });
 
-    cardBody.append(title, heartButton, ingredientsButton, ingredientsCollapse, recipeButton);
+    recipeButton.append(externalSite);
+
+    cardBody.append(title, heartButton, ingredients, ingredientsButton, recipeButton);
 
     recipeCard.append(img, cardBody);
 

@@ -260,7 +260,7 @@ button div div h5 {
 /********************************************/
 /* Results Slide */ 
 .slideContainer {
-    padding-left: 70px;
+    padding-left: 90px;
 }
 /* .imageContainer {
     padding-left: 30px;
@@ -273,7 +273,7 @@ button div div h5 {
     margin: auto; 
     float: left; 
     margin-bottom: 10px;
-    margin: 0px 5px; 
+    /* margin: 0px 5px;  */
     cursor: grabbing;
 }
 .ks-card:hover {

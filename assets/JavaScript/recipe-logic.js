@@ -29,7 +29,7 @@ $("#submit").on("click", function (e) {
         $('.toggleFavBut').click(function () {
             console.log("favorited")
             $(this).toggleClass('favoriteButton far');
-            $(this).toggleClass('favoritedButton fas fa-lg');
+            $(this).toggleClass('favoritedButton fas fa-2x');
         });
 
     });
@@ -37,7 +37,7 @@ $("#submit").on("click", function (e) {
 
 function truncate(word) {
     if (word.length > 23)
-        return word.substring(0, 23) + '...';
+        return word.substring(0, 18) + '...';
     else
         return word;
 };
@@ -56,9 +56,8 @@ function buildRecipeCards(recipes) {
         var cardBody = $("<div>").addClass("card-body");
         var truncatedTitle = truncate(recipe.label);
         var title = $("<h5>").addClass("card-title").text(truncatedTitle);
-        var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
-        var newLine = $("<br>");
-        var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).attr("target", "_blank").text("Recipe");
+        var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");
+        var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).attr("target", "_blank").text("Recipe ");
         var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs");
         var ingredientsButton = $("<button>").addClass("ks-button-recipe ingredientsButtonClick").attr("data-toggle", "modal").attr("data-target", "#ingredientsModal").text("Ingredients");
         var ingredientsModal = $("<div>").addClass("modal-body modalContent").attr("id", index);
@@ -73,6 +72,7 @@ function buildRecipeCards(recipes) {
             $(".modalDump").html(ingredients);
         });
 
+
         recipeButton.append(externalSite);
         ingredientsModal.append(ingredients);
 
@@ -81,7 +81,8 @@ function buildRecipeCards(recipes) {
             ingredients.append(li);
         });
 
-        cardBody.append(title, heartButton, newLine, ingredients, ingredientsButton, recipeButton);
+        cardBody.append(title, heartButton, ingredients, ingredientsButton, recipeButton);
+
         recipeCard.append(img, cardBody);
 
         if (index < 4) {

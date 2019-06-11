@@ -199,62 +199,94 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class=" text-center mt-auto">
-        <div>© 2019 Health Hero</div>
-    </footer>
+  <!-- Footer -->
+  <footer class=" text-center mt-auto">
+    <div>© 2019 Health Hero</div>
+  </footer>
 
-    <!-- Bootstrap Script Links -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+  <!-- Bootstrap Script Links -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <!-- <script src="assets/JavaScript/recipe-logic.js"></script> -->
+  <!-- <script src="assets/JavaScript/recipe-logic.js"></script> -->
 
 
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></scrip
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></scrip
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></scrip
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#config-web-app -->
 
-        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
-
-        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#config-web-app -->
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCb8riZvb8Jlnep5_bSG3_BvseXedeH7HE",
+    authDomain: "recipe-app-74786.firebaseapp.com",
+    databaseURL: "https://recipe-app-74786.firebaseio.com",
+    projectId: "recipe-app-74786",
+    storageBucket: "recipe-app-74786.appspot.com",
+    messagingSenderId: "588767138515",
+    appId: "1:588767138515:web:00bcab0cd40afe4c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
       
-
-        <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-          apiKey: "AIzaSyCb8riZvb8Jlnep5_bSG3_BvseXedeH7HE",
-          authDomain: "recipe-app-74786.firebaseapp.com",
-          databaseURL: "https://recipe-app-74786.firebaseio.com",
-          projectId: "recipe-app-74786",
-          storageBucket: "recipe-app-74786.appspot.com",
-          messagingSenderId: "588767138515",
-          appId: "1:588767138515:web:00bcab0cd40afe4c"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-            
-            // make auth and firestore references
-            const auth = firebase.auth();
-            const db = firebase.firestore();
-            // update firestore settings
-            // db.settings({ timestampsInSnapshots: true });
-        </script>
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="assets/JavaScript/auth.js"></script>
-        <script src="assets/JavaScript/index.js"></script>
+      // make auth and firestore references
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+      // update firestore settings
+      // db.settings({ timestampsInSnapshots: true });
+  </script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/JavaScript/auth.js"></script>
+  <script src="assets/JavaScript/index.js"></script>
     
 
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+      </form>
+    </div>
+  </div>
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+      <div class="account-extras"></div>
+    </div>
+  </div>
 
 </body>
 

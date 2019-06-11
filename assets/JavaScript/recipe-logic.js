@@ -63,6 +63,7 @@ function buildRecipeCards(recipes) {
         var ingredientsModal = $("<div>").addClass("modal-body modalContent").attr("id", index);
         var ingredients = $("<ul>").addClass("list-group list-group-flush hiddenIngredientList");
 
+        /* Ingredients Modal Logic */
         $(".ingredientsButtonClick").on("click", function() {
             $(".modalDump").empty();
             var clickedRecipeCard = $(this).parent();

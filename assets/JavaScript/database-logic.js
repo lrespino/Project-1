@@ -1,12 +1,12 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyD1QZPPXVch374zmfIXCYp5OiSztaWiq_c",
-    authDomain: "recipe-test-af18f.firebaseapp.com",
-    databaseURL: "https://recipe-test-af18f.firebaseio.com",
-    projectId: "recipe-test-af18f",
-    storageBucket: "recipe-test-af18f.appspot.com",
-    messagingSenderId: "624361802599",
-    appId: "1:624361802599:web:6972545a765e6323"
+    apiKey: "AIzaSyCb8riZvb8Jlnep5_bSG3_BvseXedeH7HE",
+    authDomain: "recipe-app-74786.firebaseapp.com",
+    databaseURL: "https://recipe-app-74786.firebaseio.com",
+    projectId: "recipe-app-74786",
+    storageBucket: "recipe-app-74786.appspot.com",
+    messagingSenderId: "588767138515",
+    appId: "1:588767138515:web:00bcab0cd40afe4c"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

@@ -42,9 +42,12 @@ function truncate(word) {
         return word;
 };
 
+
 //Given an array of recipes, dynamically generate cards to append to the page
 function buildRecipeCards(recipes) {
     $("#firstSlide").empty();
+    $("#secondSlide").empty();
+    $("#thirdSlide").empty();
     recipes.forEach(function (recipe, index) {
         console.log(index);
         var recipeCard = $("<div>").addClass("card ks-card");
@@ -55,24 +58,31 @@ function buildRecipeCards(recipes) {
         var title = $("<h5>").addClass("card-title").text(truncatedTitle);
         var heartButton = $("<button>").addClass("far fa-heart favoriteButton toggleFavBut mb-2");
         var newLine = $("<br>");
-        var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).text("Recipe")
-        var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs")
-        var ingredientsButton = $("<button>").addClass("ks-button-recipe modalButton").attr("data-toggle", "collapse").attr("data-target", "#" + index).attr("aria-controls", index).text("Ingredients");
-        var ingredientsCollapse = $("<div>").addClass("collapse").attr("id", index);
+        var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).attr("target", "_blank").text("Recipe");
+        var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs");
+        var ingredientsButton = $("<button>").addClass("ks-button-recipe ingredientsButtonClick").attr("data-toggle", "modal").attr("data-target", "#ingredientsModal").text("Ingredients");
+        var ingredientsModal = $("<div>").addClass("modal-body modalContent").attr("id", index);
+        var ingredients = $("<ul>").addClass("list-group list-group-flush hiddenIngredientList");
 
-        var ingredients = $("<ul>").addClass("list-group", "list-group-flush");
+        $(".ingredientsButtonClick").on("click", function() {
+            $(".modalDump").empty();
+            var clickedRecipeCard = $(this).parent();
+            var ingredients = clickedRecipeCard.find
+            (".hiddenIngredientList").html();
+            console.log(ingredients);
+            $(".modalDump").html(ingredients);
+        });
+
         recipeButton.append(externalSite);
-        ingredientsCollapse.append(ingredients);
+        ingredientsModal.append(ingredients);
 
         recipe.ingredientLines.forEach(function (ingredient) {
             var li = $("<li>").addClass("list-group-item").text(ingredient);
             ingredients.append(li);
         });
 
-        cardBody.append(title, heartButton, newLine, ingredientsButton, ingredientsCollapse, recipeButton);
-
+        cardBody.append(title, heartButton, newLine, ingredients, ingredientsButton, recipeButton);
         recipeCard.append(img, cardBody);
-
 
         if (index < 4) {
             $("#firstSlide").append(recipeCard);
@@ -84,22 +94,8 @@ function buildRecipeCards(recipes) {
             $("#thirdSlide").append(recipeCard);
         }
 
-
-
-        $('.carousel').carousel()
-
-
-
+        $('.carousel').carousel();
 
     });
 }
 
-
-
-
-
-
-/* Remove Button */
-$("#removeButton").on("click", function () {
-    $(".card").remove();
-})

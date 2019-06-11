@@ -59,17 +59,17 @@ $(elementWrapper).find(".drag-container").each(function (e) {
 var breakfast = '#breakfast';
 var lunch = '#lunch';
 var dinner = '#dinner';
-var searchResults = "#searchResults"
+var searchResults = "#searchResults";
 
 var containers = [
     document.querySelector(breakfast),
     document.querySelector(lunch),
     document.querySelector(dinner),
     document.querySelector(searchResults),
-    document.querySelector(".carousel-item")
-    // document.querySelector("#firstSlide"),
-    // document.querySelector("#secondSlide"),
-    // document.querySelector("#thirdSlide"),
+    document.querySelector(".carousel-item"),
+    document.querySelector("#firstSlide"),
+    document.querySelector("#secondSlide"),
+    document.querySelector("#thirdSlide"),
 ];
 
 dragula({

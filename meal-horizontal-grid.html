@@ -133,21 +133,21 @@
                 <div class="col-md-4 text-center">
                     <h2 class="meal-header">Breakfast</h2>
                     <div id="breakfast" class="holder meal-holder element mx-auto animated fadeInLeftBig gradient">
-
+                        <!-- <h2>DRAG MEAL HERE</h2> -->
                     </div>
                 </div>
 
                 <div class="col-md-4 text-center">
                     <h2 class="meal-header">Lunch</h2>
                     <div id="lunch" class="holder meal-holder element mx-auto animated fadeInUpBig gradient">
-
+                        <!-- <h2>DRAG MEAL HERE</h2> -->
                     </div>
                 </div>
 
                 <div class="col-md-4 text-center">
                     <h2 class="meal-header">Dinner</h2>
                     <div id="dinner" class="holder meal-holder element mx-auto animated fadeInRightBig gradient">
-
+                        <!-- <h2>DRAG MEAL HERE</h2> -->
                     </div>
                 </div>
 
@@ -168,30 +168,21 @@
         </div>
 
         <!--Recipe Search-->
-        <div class="row">
+        <div class="row ks-container carousel-container">
 
             <div class="col-md-12 border text-center mx-auto">
 
 
                 <!-- Recipe Results -->
-                <div class="slideContainer">
+
+                <!-- <div class="slideContainer">
                     <div id="searchResults" class="container imageContainer mx-auto">
 
                     </div>
-                </div>
-
-                <form>
-                    <label id="searchTitleSpacing">Search for a Recipe:</label>
-                    <div>
-                        <input type="text" id="searchTerm">
-                    </div>
-                    <div id="submitButtonSpacing">
-                        <input type="submit" id="submit" value="Submit" class="ks-button-form-submit ">
-                    </div>
-                </form>
-
-                <div id="carouselExampleControls" class="carousel slide">
-                    <div class="carousel-inner">
+                </div> -->
+                
+                <div id="carouselExampleControls" class="carousel slide carousel-container">
+                    <div class="carousel-inner slideContainer">
                         <div id="searchResults" class="container imageContainer mx-auto">
                             <div class="carousel-item active" id="firstSlide">
                             </div>
@@ -210,12 +201,48 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
+
+                <form>
+                    <label id="searchTitleSpacing">Search for a Recipe:</label>
+                    <div>
+                        <input type="text" id="searchTerm">
+                    </div>
+                    <div id="submitButtonSpacing">
+                        <input type="submit" id="submit" value="Submit" class="ks-button-form-submit ">
+                    </div>
+                </form>
+
             </div>
         </div>
+
+
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ingredientsModal">
+            Launch demo modal
+        </button> -->
+        <!-- Modal -->
+        <div class="modal fade" id="ingredientsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title"       id="exampleModalLongTitle">Ingredients</h5>
+                      <button type="button" class="close"       data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>    
+                    <ul class="modalDump">
+
+                    </ul>    
+                    <div class="modal-footer">
+                      <button type="button" class="btn      btn-secondary"       data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+            
         </div>
 
-
-
+        
+        
     </section>
 
     <!-- Footer -->

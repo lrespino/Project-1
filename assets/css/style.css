@@ -265,7 +265,7 @@ button div div h5 {
 /* .imageContainer {
     padding-left: 30px;
 } */
-.card {
+.ks-card {
     /* width: 202px; */
     /* height: 302px; */
     width: 14rem;
@@ -275,10 +275,10 @@ button div div h5 {
     margin-bottom: 10px; 
     cursor: grabbing;
 }
-.card:hover {
+.ks-card:hover {
     cursor: grab;
 }
-.card:active {
+.ks-card:active {
     cursor: grabbing;
 }
 .card-img-top {

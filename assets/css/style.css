@@ -198,8 +198,12 @@ button div div h5 {
     border-radius: .25rem;
 }
 .meal-header {
+    /* color: #42611F; */
+    color: rgb(118, 173, 55);
+    font-family: 'Rammetto One', cursive;
     font-size: 25px;
-    margin-top: 5px;
+    margin-top: 10px;
+    text-shadow: 1px 1px 0 #42611F, -1px 1px 0 #42611F, 1px 1px 0 #42611F, -1px 1px 0 #42611F;
 }
 /* Gradient Style */
 .gradient {

@@ -1,59 +1,87 @@
 // listen for auth status changes
-// auth.onAuthStateChanged(user => {
-//   if (user) {
-//     self.location.href = ("meal-horizontal-grid.html"), event.preventDefault();
-//     }
-//    else {
-//     // self.location.href =("index.html"), event.preventDefault();
-   
-//   }
-// });  
+auth.onAuthStateChanged(user => {
+  if (user) {
+    self.location.href = ("meal-horizontal-grid.html"), event.preventDefault();
+    // $("#formContent").style.display = "none";
+    }
+   else {
+    // self.location.href =("index.html"), event.preventDefault();
+    
+  }
+});  
+
+// Capture Button Click login
+$("#login").on("click", function(event) {
+  event.preventDefault();
 
 
-
-// signup
-const signupForm = document.querySelector('#signup-form');
-signupForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+  email = $("#inputUsername").val().trim();
+  password = $("#inputPassword").val().trim();
+  console.log(email)
+  console.log(password)
   
-  // get user info
-  const email = signupForm['signup-email'].value;
-  const password = signupForm['signup-password'].value;
-
-  // sign up the user
-  auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    // close the signup modal & reset form
-    const modal = document.querySelector('#modal-signup');
-    M.Modal.getInstance(modal).close();
-    signupForm.reset();
+  auth.signInWithEmailAndPassword(email, password).then((cred) => {
+  console.log(cred.user);
+    });
   });
-});
 
-// logout
-const logout = document.querySelector('#logout');
-logout.addEventListener('click', (e) => {
-  e.preventDefault();
+  // logout
+$("#logout").on("click", function(event) {
+  event.preventDefault();
   auth.signOut().then(() => {
     console.log('user signed out');
   })
 });
 
-// login
-const loginForm = document.querySelector('#login-form');
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+// dropdown Button Click login
+$("#daniel").on("click", function(event) {
+  event.preventDefault();
   
-  // get user info
-  const email = loginForm['login-email'].value;
-  const password = loginForm['login-password'].value;
+    email = "daniel@test.com";
+    password = "test1234";
+    auth.signInWithEmailAndPassword(email, password).then((cred) => {
+      console.log(cred.user);
+        });
+      });
 
-  // log the user in
-  auth.signInWithEmailAndPassword(email, password).then((cred) => {
-    console.log(cred.user);
-    // close the signup modal & reset form
-    const modal = document.querySelector('#modal-login');
-    M.Modal.getInstance(modal).close();
-    loginForm.reset();
-  });
+$("#matt").on("click", function(event) {
+  event.preventDefault();
+  
+    email = "matt@test.com";
+    password = "test1234";
+    auth.signInWithEmailAndPassword(email, password).then((cred) => {
+      console.log(cred.user);
+        });
+      });    
+$("#kayleigh").on("click", function(event) {
+  event.preventDefault();
+  
+    email = "Kayleigh@test.com";
+    password = "test1234";
+    auth.signInWithEmailAndPassword(email, password).then((cred) => {
+      console.log(cred.user);
+        });
+      });
 
-});
+//   // signup
+//   $("#signup").on("click", function(event) {
+  
+//   //   //Test signup with login Button 
+//   //  $("#login").on("click", function(event) {
+
+//     event.preventDefault();
+    
+  
+//   // get user info
+//   email = $("#addUsername").val().trim();
+//   password = $("#addPassword").val().trim();
+
+//   // //Test signup with login Button 
+//   // email = $("#inputUsername").val().trim();
+//   // password = $("#inputPassword").val().trim();
+
+//   // sign up the user
+//   auth.createUserWithEmailAndPassword(email, password);
+//        console.log(cred.user);
+  
+//  });

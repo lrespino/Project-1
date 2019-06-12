@@ -205,6 +205,13 @@ button div div h5 {
     margin-top: 10px;
     text-shadow: 1px 1px 0 #42611F, -1px 1px 0 #42611F, 1px 1px 0 #42611F, -1px 1px 0 #42611F;
 }
+.meal-header:after {
+    content: "";
+    display: block;
+    margin: 0 auto; 
+    width: 75%; 
+    border-bottom: 5px double #42611F;
+}
 /* Gradient Style */
 .gradient {
     width: 14rem;

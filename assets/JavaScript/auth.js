@@ -2,7 +2,7 @@
 auth.onAuthStateChanged(user => {
   if (user) {
     self.location.href = ("meal-horizontal-grid.html"), event.preventDefault();
-    $("#formContent").style.display = "none";
+    // $("#formContent").style.display = "none";
     }
    else {
     // self.location.href =("index.html"), event.preventDefault();
@@ -46,7 +46,7 @@ $("#daniel").on("click", function(event) {
 
 
 //   // signup
-//   $("#logout").on("click", function(event) {
+//   $("#signup").on("click", function(event) {
   
 //   //   //Test signup with login Button 
 //   //  $("#login").on("click", function(event) {

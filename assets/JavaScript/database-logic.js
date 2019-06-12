@@ -10,10 +10,29 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-// VARIABLES
-// --------------------------------------------------------------------------------
 
 var database = firebase.database();// Initialize Firebase (YOUR OWN APP)
+const auth = firebase.auth();
+
+// listen for auth status changes
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        console.log("User id: " + user.uid);
+
+    } else {
+        console.log("no one is signed in")
+        self.location.href = ("index.html"), event.preventDefault();
+    }
+});
+
+// logout
+$("#logout").on("click", function (event) {
+    event.preventDefault();
+    auth.signOut().then(() => {
+        console.log('user signed out');
+    })
+    self.location.href = ("index.html"), event.preventDefault()
+});
 
 var currentDay = "Monday";
 
@@ -90,7 +109,7 @@ function buildSavedRecipeCard(recipe, index) {
     var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
 
     var cardBody = $("<div>").addClass("card-body");
-    
+
     var title = $("<h5>").addClass("card-title").text(recipe.label);
 
     var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");
@@ -104,11 +123,11 @@ function buildSavedRecipeCard(recipe, index) {
     var ingredients = $("<ul>").addClass("list-group list-group-flush hiddenIngredientList");
 
     /* Ingredients Modal Logic */
-    $(".ingredientsButtonClick").on("click", function() {
+    $(".ingredientsButtonClick").on("click", function () {
         $(".modalDump").empty();
         var clickedRecipeCard = $(this).parent();
         var ingredients = clickedRecipeCard.find
-        (".hiddenIngredientList").html();
+            (".hiddenIngredientList").html();
         console.log(ingredients);
         $(".modalDump").html(ingredients);
     });

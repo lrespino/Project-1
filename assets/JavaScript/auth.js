@@ -44,6 +44,24 @@ $("#daniel").on("click", function(event) {
         });
       });
 
+$("#matt").on("click", function(event) {
+  event.preventDefault();
+  
+    email = "matt@test.com";
+    password = "test1234";
+    auth.signInWithEmailAndPassword(email, password).then((cred) => {
+      console.log(cred.user);
+        });
+      });    
+$("#kayleigh").on("click", function(event) {
+  event.preventDefault();
+  
+    email = "Kayleigh@test.com";
+    password = "test1234";
+    auth.signInWithEmailAndPassword(email, password).then((cred) => {
+      console.log(cred.user);
+        });
+      });
 
 //   // signup
 //   $("#signup").on("click", function(event) {

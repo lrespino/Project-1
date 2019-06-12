@@ -1,7 +1,7 @@
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
-    self.location.href = ("meal-horizontal-grid.html"), event.preventDefault();
+    // self.location.href = ("meal-horizontal-grid.html"), event.preventDefault();
     // $("#formContent").style.display = "none";
     }
    else {

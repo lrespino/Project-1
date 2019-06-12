@@ -170,7 +170,7 @@ button div div h5 {
     cursor: pointer;
 }
 .ks-weekButtons:focus {
-    background-color: #42611F;
+    background-color: rgba(255, 255, 255, 0.5);
     outline: 0;
     border-style: outset;
     border-color: rgba(255, 255, 255, 0.5);
@@ -191,7 +191,7 @@ button div div h5 {
     /* width: 202px; */
     /* height: 302px; */
     width: 14rem;
-    height: 21rem;
+    height: 18.5rem;
     background-color: #000000;
     padding: 0px;
     margin: 0px;
@@ -204,7 +204,7 @@ button div div h5 {
 /* Gradient Style */
 .gradient {
     width: 14rem;
-    height: 21rem;
+    height: 18.5rem;
     /* width: 202px; */
     /* height: 302px; */
     padding: 0px;
@@ -269,7 +269,7 @@ button div div h5 {
     /* width: 202px; */
     /* height: 302px; */
     width: 14rem;
-    height: 21rem;
+    height: 18.5rem;
     margin: auto; 
     float: left; 
     margin-bottom: 10px; 
@@ -344,7 +344,7 @@ button div div h5 {
     position: absolute;
     display: block;
     cursor: pointer;
-    top: -145%;
+    top: -200%;
     left: 77%;
 }
  .favoriteButton:hover {
@@ -359,7 +359,7 @@ button div div h5 {
     position: absolute;
     display: block;
     cursor: pointer;
-    top: -145%;
+    top: -200%;
     left: 73%; 
 }
 .carousel-container {
@@ -437,4 +437,16 @@ button div div h5 {
 }
 
 
+/*Search Box */
+.search-box {
+    background-color: none;
+    margin-top: 0px;
+    margin-bottom: 30px
+}
+#searchTerm {
+    width: 16rem;
+}
 
+.recipe-link {
+    display: none;
+}

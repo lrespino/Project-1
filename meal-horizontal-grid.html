@@ -71,7 +71,7 @@
             <div class="col-md-12 border text-center">
                 <!-- Week Cards -->
                 <!---------------------------------------->
-                <button class="animated zoomIn ks-weekButtons" id="Monday">
+                <button class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Monday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Monday</h5>
@@ -79,7 +79,7 @@
                     </div>
                 </button>
 
-                <button class="animated zoomIn ks-weekButtons" id="Tuesday">
+                <button class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Tuesday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Tuesday</h5>
@@ -87,7 +87,7 @@
                     </div>
                 </button>
 
-                <button class="animated zoomIn ks-weekButtons" id="Wednesday">
+                <button class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Wednesday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Wednesday</h5>
@@ -95,7 +95,7 @@
                     </div>
                 </button>
 
-                <button class="animated zoomIn ks-weekButtons" id="Thursday">
+                <button class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Thursday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Thursday</h5>
@@ -103,7 +103,7 @@
                     </div>
                 </button>
 
-                <button class="animated zoomIn ks-weekButtons" id="Friday">
+                <button class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Friday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Friday</h5>
@@ -111,7 +111,7 @@
                     </div>
                 </button>
 
-                <button class="animated zoomIn ks-weekButtons" id="Saturday">
+                <button class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Saturday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Saturday</h5>
@@ -119,7 +119,7 @@
                     </div>
                 </button>
 
-                <button class="animated zoomIn ks-weekButtons" id="Sunday">
+                <button class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Sunday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Sunday</h5>
@@ -212,7 +212,7 @@
                         <input type="text" id="searchTerm">
                     </div>
                     <div id="submitButtonSpacing">
-                        <input type="submit" id="submit" value="Submit" class="ks-button-form-submit ">
+                        <input type="submit" id="submit" value="Submit" class="ks-button-form-submit searchButton">
                     </div>
                 </form>
 
@@ -251,12 +251,12 @@
     <script>
         //Added the toggle fav function here so it can work with the loaded items
         $('.toggleFavBut').click(function () {
-        console.log("favorited")
-        $(this).toggleClass('favoriteButton far');
-        $(this).toggleClass('favoritedButton fas fa-2x');
+            console.log("favorited")
+            $(this).toggleClass('favoriteButton far');
+            $(this).toggleClass('favoritedButton fas fa-2x');
         });
         /* Adds the carousel buttons on submit click */
-        $(".ks-button-form-submit").on("click", function(){
+        $(".searchButton").on("click", function(){
             setTimeout(function(){
                 $(".carousel-control-prev-icon").css("display","block");
                 $(".carousel-control-next-icon").css("display","block");
@@ -264,8 +264,11 @@
             
         });
 
-        $(".ks-weekButtons").on("click", function(){
+        $(".ks-weekButtons-toggle").on("click", function(){
 
+            $(this).toggleClass("selectedDay");
+            // $(this).toogleClass("ks-weekButtons");
+            
         });
 
     </script>

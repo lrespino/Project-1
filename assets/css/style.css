@@ -169,22 +169,27 @@ button div div h5 {
     text-decoration: none;
     cursor: pointer;
 }
+.selectedDay {
+    background-color: #42611F;
+    outline: 0;
+    border-style: outset;
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translate(0px,5px);
+}
 .ks-weekButtons:focus {
     background-color: #42611F;
     outline: 0;
     border-style: outset;
     border-color: rgba(255, 255, 255, 0.5);
+    transform: translate(0px,5px);
 }
-.ks-weekButtons:active {
+/* .ks-weekButtons:active {
     color: #fff;
     background-color: #42611F;
     border-color: #42611F;
-    /* transform: translateY(1px); */
     transform: translate(0px,5px);
     cursor: progress;
-    
-    
-}
+} */
 /********************************/
 /* Breakfast lunch Dinner Styles */
 .meal-holder {

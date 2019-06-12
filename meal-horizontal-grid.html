@@ -24,6 +24,9 @@
     <!-- Animate.css CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+
     <!--dragula stylesheets-->
     <link rel="stylesheet" href="assets/dist/dragula.css">
     <link rel="stylesheet" href="assets/dist/dragula.min.css">
@@ -54,7 +57,7 @@
                         <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ks-nav" href="#">Logout</a>
+                        <a class="nav-link ks-nav" id="logout" href="#">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -251,14 +254,19 @@
         $(this).toggleClass('favoriteButton far');
         $(this).toggleClass('favoritedButton fas fa-2x');
         });
-
+        /* Adds the carousel buttons on submit click */
         $(".ks-button-form-submit").on("click", function(){
             setTimeout(function(){
                 $(".carousel-control-prev-icon").css("display","block");
                 $(".carousel-control-next-icon").css("display","block");
-            }, 750);
+            }, 1000);
             
         });
+
+        $(".ks-weekButtons").on("click", function(){
+
+        });
+
     </script>
 
     <!--Simple script to toggle classes on heart icon-->

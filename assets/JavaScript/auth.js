@@ -1,4 +1,5 @@
 // listen for auth status changes
+/* Logout Button needs to work before this code should be active */
 auth.onAuthStateChanged(user => {
   if (user) {
     // self.location.href = ("meal-horizontal-grid.html"), event.preventDefault();

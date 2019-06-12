@@ -14,10 +14,18 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();// Initialize Firebase (YOUR OWN APP)
 const auth = firebase.auth();
 
+//Global variable used to hold the current users unique ID
+var userID;
+
+//Global variable used to keep track of the day the user is currently viewing
+var currentDay = "Monday";
+
 // listen for auth status changes
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        console.log("User id: " + user.uid);
+        userID = user.uid;
+        console.log("User id: " + userID);
+        getSavedRecipes(currentDay);
 
     } else {
         console.log("no one is signed in")
@@ -25,7 +33,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
 });
 
-// logout
+// click handler for logout
 $("#logout").on("click", function (event) {
     event.preventDefault();
     auth.signOut().then(() => {
@@ -34,10 +42,7 @@ $("#logout").on("click", function (event) {
     self.location.href = ("index.html"), event.preventDefault()
 });
 
-var currentDay = "Monday";
-
-console.log("database set up")
-
+//click handler for weekday buttons
 $(".ks-weekButtons").on("click", function () {
     console.log($(this).attr("id"));
     currentDay = $(this).attr("id");
@@ -50,8 +55,7 @@ $(".ks-weekButtons").on("click", function () {
 
 })
 
-
-
+//Click handler to save the recipes the user has chosen
 $("#save").on("click", function () {
     console.log("saving recipes...");
 
@@ -71,24 +75,24 @@ $("#save").on("click", function () {
         };
 
         console.log(recipe);
-        //Save the recipe to Firebase
-        database.ref("weeklyPlan/" + currentDay).push({
-            recipe: recipe
-        });
+        pushSavedRecipe(recipe);
+
     });
 })
 
+//Save the recipe that the user has selected to the database 
+function pushSavedRecipe(recipe) {
+    //Save the recipe to Firebase
+    database.ref("Users/" + userID + "/weeklyPlan/" + currentDay).push({
+        recipe: recipe
+    });
 
-// database.ref().on("child_added", function (snapshot, prevChildKey) {
-//     var recipe = snapshot.val().recipe;
-//     console.log(recipe);
-//     buildRecipeCard(recipe);
-//     index++;
-// });
+}
 
+//retrieve the current user's recipes from the database for the given day
 function getSavedRecipes(day) {
     var index = 0;
-    firebase.database().ref('/weeklyPlan/' + day).once('value').then(function (snapshot) {
+    firebase.database().ref("Users/" + userID + '/weeklyPlan/' + day).once('value').then(function (snapshot) {
         snapshot.forEach(function (child) {
             //This is the recipe object that we use through out the application
             var recipe = child.val().recipe

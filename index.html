@@ -93,7 +93,7 @@
                                     Remember me
                                 </label>
                             </div>
-                            <button type="login" class="mx-auto ks-button" value="login">Sign in</button>
+                            <button type="login" class="mx-auto ks-button" id="login" value="login">Sign in</button>
                         </form>
                         <div class="dropdown">
                             <a class="ks-button dropdown-toggle m-2" href="#" role="button" id="dropdownMenuLink"
@@ -102,10 +102,10 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Daniel</a>
-                                <a class="dropdown-item" href="#">Matt</a>
+                                <a class="dropdown-item" Id ="daniel" href="#">Daniel</a>
+                                <a class="dropdown-item" Id ="matt"href="#">Matt</a>
                                 <a class="dropdown-item" href="#">Luis</a>
-                                <a class="dropdown-item" href="#">Kayleigh</a>
+                                <a class="dropdown-item" Id ="kayleigh" href="#">Kayleigh</a>
                             </div>
                         </div>
                         <!-- Remind Passowrd -->
@@ -135,7 +135,39 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#config-web-app -->
+        
+    <script>
+
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCb8riZvb8Jlnep5_bSG3_BvseXedeH7HE",
+        authDomain: "recipe-app-74786.firebaseapp.com",
+        databaseURL: "https://recipe-app-74786.firebaseio.com",
+        projectId: "recipe-app-74786",
+        storageBucket: "recipe-app-74786.appspot.com",
+        messagingSenderId: "588767138515",
+        appId: "1:588767138515:web:00bcab0cd40afe4c"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    </script>
+
+
+
+
+
     <script src="assets/JavaScript/recipe-logic.js"></script>
+    <script src="assets/JavaScript/auth.js"></script>
 </body>
 
 

@@ -113,7 +113,7 @@ function buildRecipeCards(recipes) {
 
     });
 }
-$('.carousel').carousel({
+/* $('.carousel').carousel({
     pause: true,
     interval: false
-});
+}); */

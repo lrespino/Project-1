@@ -14,7 +14,7 @@ var containers = [
     document.querySelector("#thirdSlide"),
 ];
 
-dragula({
+var drake = dragula({
     containers: containers,
     //  revertOnSpill: true,
     //   copy: true
@@ -23,3 +23,4 @@ dragula({
     },
     removeOnSpill: true,
 });
+

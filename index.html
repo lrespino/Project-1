@@ -37,17 +37,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class=" navbar-nav ml-auto nav-font">
-                <li class="nav-item active ">
-                  <a class="nav-link ks-nav " href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ks-nav" id="logout" href="#">Logout</a>
-                </li>
-            </ul>
+                <ul class=" navbar-nav ml-auto nav-font">
+                    <li class="nav-item active ">
+                        <a class="nav-link ks-nav " href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ks-nav" data-toggle="modal" data-target="#loginModal" href="#">Login</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -78,44 +75,63 @@
                         <!-- Login Form -->
                         <form>
                             <div class="form-group">
-                                <label for="username">Username</label>
+                                <label for="username">Email</label>
                                 <input type="text" class="mx-auto m-2 onNewLine" id="inputUsername"
-                                    placeholder="Username">
+                                    placeholder="email@gmail.com">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="text" class="mx-auto m-2 onNewLine" id="inputPassword"
+                                <input type="password" class="mx-auto m-2 onNewLine" id="inputPassword"
                                     placeholder="Password">
                             </div>
-                            <div class="form-check m-2">
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                                <label class="form-check-label" for="dropdownCheck2">
-                                    Remember me
-                                </label>
-                            </div>
-                            <button type="login" class="mx-auto ks-button" id="login" value="login">Sign in</button>
+                            <button type="login" class="mx-auto ks-button" id="signup" value="signup">Sign up!</button>
                         </form>
-                        <div class="dropdown">
-                            <a class="ks-button dropdown-toggle m-2" href="#" role="button" id="dropdownMenuLink"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Login admins
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" Id ="daniel" href="#">Daniel</a>
-                                <a class="dropdown-item" Id ="matt"href="#">Matt</a>
-                                <a class="dropdown-item" href="#">Luis</a>
-                                <a class="dropdown-item" Id ="kayleigh" href="#">Kayleigh</a>
-                            </div>
-                        </div>
-                        <!-- Remind Passowrd -->
-                        <!--                         <div class="mx-auto m-2" id="formFooter">
-                            <a class="" href="#">Forgot Password?</a>
-                        </div> -->
 
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal" id="loginModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div
+                    class="col-md-12 border mx-auto text-center ks-container modal-body modal-content modal-content-logs modal-content-logs">
+
+                    <div class="ks-container">
+
+                        <div class="modal-close-button">
+                            <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;<span>
+                            </button>
+                        </div>
+
+                        <div id="formContent" class="p-4">
+                            <!-- Tabs Titles -->
+                            <!-- Icon -->
+                            <div class="m-2 mt-2">
+                                <i class="far fa-user fa-3x"></i>
+                            </div>
+                            <!-- Login Form -->
+                            <form>
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="mx-auto m-2 onNewLine" id="loginUsername"
+                                        placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="mx-auto m-2 onNewLine" id="loginPassword"
+                                        placeholder="Password">
+                                </div>
+                                <button type="login" class="mx-auto ks-button" id="login" value="login">Sign in</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- modal -->
         </div>
     </div>
 
@@ -140,36 +156,5 @@
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#config-web-app -->
-        
-    <script>
-
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyCb8riZvb8Jlnep5_bSG3_BvseXedeH7HE",
-        authDomain: "recipe-app-74786.firebaseapp.com",
-        databaseURL: "https://recipe-app-74786.firebaseio.com",
-        projectId: "recipe-app-74786",
-        storageBucket: "recipe-app-74786.appspot.com",
-        messagingSenderId: "588767138515",
-        appId: "1:588767138515:web:00bcab0cd40afe4c"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    // make auth and firestore references
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-
-    </script>
-
-
-
-
-
-    <script src="assets/JavaScript/recipe-logic.js"></script>
     <script src="assets/JavaScript/auth.js"></script>
 </body>
-
-
-
-</html>

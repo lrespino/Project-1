@@ -69,22 +69,22 @@ function buildRecipeCards(recipes) {
 
         var ingredientsButton = $("<button>").addClass("ks-button-recipe ingredientsButtonClick").attr("data-toggle", "modal").attr("data-target", "#ingredientsModal").text("Ingredients");
 
-        var ingredients = $("<ul>").addClass("list-group list-group-flush hiddenIngredientList");
 
         /* Ingredients Modal Logic */
-        $(".ingredientsButtonClick").on("click", function() {
+        $(".ingredientsButtonClick").on("click", function () {
             $(".modalDump").empty();
             $(".recipe-dump").empty(); //recipe link
             var clickedRecipeCard = $(this).parent();
             var ingredients = clickedRecipeCard.find(".hiddenIngredientList").html();
             console.log("ingredients are" + ingredients);
-            $(".modalDump").html(ingredients);  
+            $(".modalDump").html(ingredients);
             var recipeButtonHolder = clickedRecipeCard.find(".recipe-link").html(); //recipe link
             console.log("recipe link " + recipe.url); //recipe link
             $(".recipe-dump").html(recipeButtonHolder); //recipe link
         });
 
- //     ingredientsModal.append(ingredients);
+        //     ingredientsModal.append(ingredients);
+        var ingredients = $("<ul>").addClass("list-group list-group-flush hiddenIngredientList");
 
         recipeButtonHolder.append(recipeButton)
 
@@ -94,7 +94,7 @@ function buildRecipeCards(recipes) {
         });
 
         cardBody.append(title, heartButton, ingredients, ingredientsButton, recipeButtonHolder);
-        
+
         recipeButton.append(externalSite);
 
         recipeCard.append(img, cardBody);

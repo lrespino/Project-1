@@ -161,6 +161,7 @@ button div div h5 {
     line-height: 1.5;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    
 } 
 .ks-weekButtons:hover {
     color: #fff;
@@ -169,21 +170,31 @@ button div div h5 {
     text-decoration: none;
     cursor: pointer;
 }
+.selectedDay {
+    background-color: #42611F;
+    outline: 0;
+    border-style: outset;
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translate(0px,5px);
+    
+    
+}
+.unSelectedDay {
+    transform: none;
+}
 .ks-weekButtons:focus {
     background-color: #42611F;
     outline: 0;
     border-style: outset;
     border-color: rgba(255, 255, 255, 0.5);
+    transform: translate(0px,5px);
 }
 .ks-weekButtons:active {
     color: #fff;
     background-color: #42611F;
     border-color: #42611F;
-    /* transform: translateY(1px); */
     transform: translate(0px,5px);
     cursor: progress;
-    
-    
 }
 /********************************/
 /* Breakfast lunch Dinner Styles */
@@ -198,8 +209,19 @@ button div div h5 {
     border-radius: .25rem;
 }
 .meal-header {
+    /* color: #42611F; */
+    color: gold;
+    font-family: 'Rammetto One', cursive;
     font-size: 25px;
-    margin-top: 5px;
+    margin-top: 10px;
+    text-shadow: 4px 4px 4px #42611F, -4px 4px 4px #42611F, 4px 4px 4px #42611F, -4px 4px 4px #42611F;
+}
+.meal-header:after {
+    content: "";
+    display: block;
+    margin: 0 auto; 
+    width: 75%; 
+    border-bottom: 5px double #42611F;
 }
 /* Gradient Style */
 .gradient {
@@ -484,6 +506,7 @@ button div div h5 {
 .modal-content-logs {
     margin: 20% auto;
 }
+
 
 
 

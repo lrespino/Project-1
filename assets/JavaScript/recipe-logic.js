@@ -62,8 +62,8 @@ function buildRecipeCards(recipes) {
 
         var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");
 
-        var recipeButton = $("<a>").addClass("ks-button-recipe").attr("href", recipe.url).attr("target", "_blank").text("Recipe ");
-
+        var recipeButton = $("<a>").addClass("recipe-link ks-button-recipe").attr("href", recipe.url).attr("target", "_blank").text("Recipe ");
+   
         var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs");
 
         var ingredientsButton = $("<button>").addClass("ks-button-recipe ingredientsButtonClick").attr("data-toggle", "modal").attr("data-target", "#ingredientsModal").text("Ingredients");
@@ -78,6 +78,7 @@ function buildRecipeCards(recipes) {
             (".hiddenIngredientList").html();
             console.log(ingredients);
             $(".modalDump").html(ingredients);
+            
         });
 
         recipe.ingredientLines.forEach(function (ingredient) {
@@ -85,6 +86,7 @@ function buildRecipeCards(recipes) {
             ingredients.append(li);
         });
 
+        
         recipeButton.append(externalSite);
 
         cardBody.append(title, heartButton, ingredients, ingredientsButton, recipeButton);

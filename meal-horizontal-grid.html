@@ -24,6 +24,10 @@
     <!-- Animate.css CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One&display=swap" rel="stylesheet">
+
     <!--dragula stylesheets-->
     <link rel="stylesheet" href="assets/dist/dragula.css">
     <link rel="stylesheet" href="assets/dist/dragula.min.css">
@@ -71,47 +75,47 @@
             <div class="col-md-12 border text-center">
                 <!-- Week Cards -->
                 <!---------------------------------------->
-                <button class="animated zoomIn ks-weekButtons" id="Monday">
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle unSelectedDay" id="Monday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Monday</h5>
                         </div>
                     </div>
-                </button>
-
-                <button class="animated zoomIn ks-weekButtons" id="Tuesday">
+                    </button>
+                
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle unSelectedDay" id="Tuesday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Tuesday</h5>
                         </div>
                     </div>
                 </button>
-
-                <button class="animated zoomIn ks-weekButtons" id="Wednesday">
+               
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle unSelectedDay" id="Wednesday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Wednesday</h5>
                         </div>
                     </div>
                 </button>
-
-                <button class="animated zoomIn ks-weekButtons" id="Thursday">
+               
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle unSelectedDay" id="Thursday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Thursday</h5>
                         </div>
                     </div>
                 </button>
-
-                <button class="animated zoomIn ks-weekButtons" id="Friday">
+             
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle unSelectedDay" id="Friday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Friday</h5>
                         </div>
                     </div>
                 </button>
-
-                <button class="animated zoomIn ks-weekButtons" id="Saturday">
+               
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle unSelectedDay" id="Saturday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Saturday</h5>
@@ -119,7 +123,7 @@
                     </div>
                 </button>
 
-                <button class="animated zoomIn ks-weekButtons" id="Sunday">
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle unSelectedDay" id="Sunday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Sunday</h5>
@@ -135,21 +139,21 @@
             <div class="row" id="dailyMealsContainer">
 
                 <div class="col-md-4 text-center">
-                    <h2 class="meal-header h-font">Breakfast</h2>
+                    <h2 class="meal-header">Breakfast</h2>
                     <div id="breakfast" class="holder meal-holder element mx-auto animated fadeInLeftBig gradient">
                         <!-- <h2>DRAG MEAL HERE</h2> -->
                     </div>
                 </div>
 
                 <div class="col-md-4 text-center">
-                    <h2 class="meal-header h-font">Lunch</h2>
+                    <h2 class="meal-header">Lunch</h2>
                     <div id="lunch" class="holder meal-holder element mx-auto animated fadeInUpBig gradient">
                         <!-- <h2>DRAG MEAL HERE</h2> -->
                     </div>
                 </div>
 
                 <div class="col-md-4 text-center">
-                    <h2 class="meal-header h-font">Dinner</h2>
+                    <h2 class="meal-header">Dinner</h2>
                     <div id="dinner" class="holder meal-holder element mx-auto animated fadeInRightBig gradient">
                         <!-- <h2>DRAG MEAL HERE</h2> -->
                     </div>
@@ -212,7 +216,7 @@
                         <input type="text" id="searchTerm">
                     </div>
                     <div id="submitButtonSpacing">
-                        <input type="submit" id="submit" value="Submit" class="ks-button-form-submit ">
+                        <input type="submit" id="submit" value="Submit" class="ks-button-form-submit searchButton">
                     </div>
                 </form>
 
@@ -225,22 +229,22 @@
 
             <div class="modal-dialog modal-dialog-ingredients" role="document">
                 <div class="modal-content modal-content-ingredients">
+
                     <div class="modal-header modal-header-ingredients">
                         <h5 class="modal-title" id="exampleModalLongTitle">Ingredients</h5>
                         <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </div>
+                    </div>    
                     <ul class="modalDump">
-
-                    </ul>
+            
+                    </ul>    
                     <div class="modal-footer">
                         <button type="button" class="ks-button-close" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
-
-        </div>
+         </div>
 
     </section>
 
@@ -256,22 +260,26 @@
             $(this).toggleClass('favoriteButton far');
             $(this).toggleClass('favoritedButton fas fa-2x');
         });
+        /* Adds the carousel buttons on submit click */
+        $(".searchButton").on("click", function(){
+            setTimeout(function(){
+                $(".carousel-control-prev-icon").css("display","block");
+                $(".carousel-control-next-icon").css("display","block");
+            }, 1000);           
+        });
 
-        $(".ks-button-form-submit").on("click", function () {
-            setTimeout(function () {
-                $(".carousel-control-prev-icon").css("display", "block");
-                $(".carousel-control-next-icon").css("display", "block");
-            }, 750);
+        $(".ks-weekButtons-toggle").on("click", function() {
 
+            $(this).toggleClass("selectedDay");
+            $(this).toggleClass("unSelectedDay");
+            
         });
     </script>
-
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
     <script src="assets/dist/dragula.js"></script>
     <script src="assets/JavaScript/drag-and-drop-logic.js"></script>
     <script src="assets/JavaScript/gradientLogic-and-modal.js"></script>
-
     <script src="assets/JavaScript/recipe-logic.js"></script>
     <script src="assets/JavaScript/database-logic.js"></script>
 

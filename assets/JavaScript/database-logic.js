@@ -166,11 +166,11 @@ function buildSavedRecipeCard(recipe, meal) {
         $("#dinner").append(recipeCard);
     }
     //To toggle the favorite button when the card is in the meal plan
-    $('.toggleFavBut').click(function () {
-        console.log("favorited")
+/*     $('.toggleFavBut').click(function () {
+       // console.log("favorited")
         $(this).toggleClass('favoriteButton far');
         $(this).toggleClass('favoritedButton fas fa-2x');
-    });
+    }); */
 }
 
 function removeRecipeFromDB(meal) {

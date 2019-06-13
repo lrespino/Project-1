@@ -231,12 +231,20 @@ button div div h5 {
     transform: none;
 }
 
-.ks-weekButtons:focus {
+/* .ks-weekButtons:focus {
     background-color: #42611F;
     outline: 0;
     border-style: outset;
     border-color: rgba(255, 255, 255, 0.5);
     transform: translate(0px, 5px);
+} */
+
+.carousel-inner {
+    padding-top: 20px;
+}
+
+form {
+    margin-bottom: 20px;
 }
 
 .ks-weekButtons:active {
@@ -283,7 +291,7 @@ button div div h5 {
 
 .gradient {
     width: 14rem;
-    height: 18.5rem;
+    height: 16rem;
     /* width: 202px; */
     /* height: 302px; */
     padding: 0px;
@@ -316,11 +324,10 @@ button div div h5 {
 .search-box {
     background-color: none;
     margin-top: 0px;
-    margin-bottom: 30px
 }
 
 #searchTerm {
-    width: 16rem;
+    width: 24rem;
 }
 
 .ks-button-form-submit {
@@ -376,7 +383,7 @@ button div div h5 {
     /* width: 202px; */
     /* height: 302px; */
     width: 14rem;
-    height: 18.5rem;
+    height: 16rem;
     margin: auto;
     float: left;
     margin-bottom: 10px;
@@ -395,10 +402,10 @@ button div div h5 {
 .card-img-top {
     /* width: 202px; */
     /* height: 124px; */
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
     margin: 5px auto;
-    margin-top: 13px
+    margin-top: 5px
 }
 
 .card-body {
@@ -481,10 +488,6 @@ button div div h5 {
     cursor: pointer;
     top: -200%;
     left: 73%;
-}
-
-.carousel-container {
-    margin-top: 30px;
 }
 
 .carousel-control-prev {

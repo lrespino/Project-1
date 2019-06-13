@@ -210,7 +210,7 @@
                     </a>
                 </div>
 
-                <form>
+                <!--                 <form>
                     <label id="searchTitleSpacing">Search for a Recipe:</label>
                     <div>
                         <input type="text" id="searchTerm">
@@ -218,6 +218,15 @@
                     <div id="submitButtonSpacing">
                         <input type="submit" id="submit" value="Submit" class="ks-button-form-submit searchButton">
                     </div>
+                </form> -->
+                <form class="form-inline justify-content-center search-box">
+                    <label class="form-group"></label>
+                    <div class="form-group mx-sm-3 mb-2 mt-2">
+                        <label for="searchTerm" class="sr-only">Search Recipes</label>
+                        <input type="text" class="form-control" id="searchTerm"
+                            placeholder="Search by name, ingredient, etc...">
+                    </div>
+                    <button type="submit" id="submit" class="ks-button-form-submit searchButton">Search</button>
                 </form>
 
             </div>
@@ -229,23 +238,21 @@
 
             <div class="modal-dialog modal-dialog-ingredients" role="document">
                 <div class="modal-content modal-content-ingredients">
-
                     <div class="modal-header modal-header-ingredients">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Ingredients</h5>
-                        <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                      <h5 class="modal-title" id="exampleModalLongTitle">Ingredients</h5>
+                      <button type="button" class="close closeButton"       data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                     </div>    
                     <ul class="modalDump">
-            
-                    </ul>    
+                    </ul>
                     <div class="modal-footer">
-                        <button type="button" class="ks-button-close" data-dismiss="modal">Close</button>
+                    <span class=" recipe-dump text-center"></span>
                     </div>
                 </div>
             </div>
-         </div>
 
+        </div>
     </section>
 
     <!-- Footer -->
@@ -265,7 +272,7 @@
             setTimeout(function(){
                 $(".carousel-control-prev-icon").css("display","block");
                 $(".carousel-control-next-icon").css("display","block");
-            }, 1000);           
+            }, 1000); 
         });
 
         $(".ks-weekButtons-toggle").on("click", function() {

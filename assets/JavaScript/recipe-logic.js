@@ -62,8 +62,9 @@ function buildRecipeCards(recipes) {
 
         var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");
 
-        var recipeButton = $("<a>").addClass("recipe-link ks-button-recipe").attr("href", recipe.url).attr("target", "_blank").text("Recipe ");
-   
+        var recipeButtonHolder = $("<span>").addClass("recipe-link")
+        var recipeButton = $("<a>").addClass("ks-button-close").attr("href", recipe.url).attr("target", "_blank").text("Recipe ");
+
         var externalSite = $("<i>").addClass("fas fa-external-link-alt fa-xs");
 
         var ingredientsButton = $("<button>").addClass("ks-button-recipe ingredientsButtonClick").attr("data-toggle", "modal").attr("data-target", "#ingredientsModal").text("Ingredients");
@@ -73,23 +74,28 @@ function buildRecipeCards(recipes) {
         /* Ingredients Modal Logic */
         $(".ingredientsButtonClick").on("click", function() {
             $(".modalDump").empty();
+            $(".recipe-dump").empty(); //recipe link
             var clickedRecipeCard = $(this).parent();
-            var ingredients = clickedRecipeCard.find
-            (".hiddenIngredientList").html();
-            console.log(ingredients);
-            $(".modalDump").html(ingredients);
-            
+            var ingredients = clickedRecipeCard.find(".hiddenIngredientList").html();
+            console.log("ingredients are" + ingredients);
+            $(".modalDump").html(ingredients);  
+            var recipeButtonHolder = clickedRecipeCard.find(".recipe-link").html(); //recipe link
+            console.log("recipe link " + recipe.url); //recipe link
+            $(".recipe-dump").html(recipeButtonHolder); //recipe link
         });
+
+ //     ingredientsModal.append(ingredients);
+
+        recipeButtonHolder.append(recipeButton)
 
         recipe.ingredientLines.forEach(function (ingredient) {
             var li = $("<li>").addClass("list-group-item").text(ingredient);
             ingredients.append(li);
         });
 
+        cardBody.append(title, heartButton, ingredients, ingredientsButton, recipeButtonHolder);
         
         recipeButton.append(externalSite);
-
-        cardBody.append(title, heartButton, ingredients, ingredientsButton, recipeButton);
 
         recipeCard.append(img, cardBody);
 
@@ -105,8 +111,9 @@ function buildRecipeCards(recipes) {
 
         $('.carousel').carousel();
 
-        
-
     });
 }
-
+$('.carousel').carousel({
+    pause: true,
+    interval: false
+});

@@ -1,88 +1,63 @@
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyCb8riZvb8Jlnep5_bSG3_BvseXedeH7HE",
+  authDomain: "recipe-app-74786.firebaseapp.com",
+  databaseURL: "https://recipe-app-74786.firebaseio.com",
+  projectId: "recipe-app-74786",
+  storageBucket: "recipe-app-74786.appspot.com",
+  appId: "1:588767138515:web:00bcab0cd40afe4c"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// make auth and firestore references
+const auth = firebase.auth();
+const db = firebase.firestore();
+
 // listen for auth status changes
-/* Logout Button needs to work before this code should be active */
-auth.onAuthStateChanged(user => {
+firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    // self.location.href = ("meal-horizontal-grid.html"), event.preventDefault();
-    // $("#formContent").style.display = "none";
-    }
-   else {
-    // self.location.href =("index.html"), event.preventDefault();
-    
+    console.log("User id: " + user.uid);
+    self.location.href = ("meal-horizontal-grid.html"), event.preventDefault()
+  } else {
+    console.log("no one is signed in")
+    // No user is signed in.
   }
-});  
+});
 
-// Capture Button Click login
-$("#login").on("click", function(event) {
-  event.preventDefault();
+$("#signup").on("click", function (e) {
 
+  e.preventDefault();
 
   email = $("#inputUsername").val().trim();
   password = $("#inputPassword").val().trim();
-  console.log(email)
-  console.log(password)
-  
-  auth.signInWithEmailAndPassword(email, password).then((cred) => {
-  console.log(cred.user);
-    });
+  console.log(email + " " + password);
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
   });
 
-  // logout
-$("#logout").on("click", function(event) {
+})
+
+// Capture Button Click login
+$("#login").on("click", function (event) {
+
   event.preventDefault();
-  auth.signOut().then(() => {
-    console.log('user signed out');
+  console.log("login clicked")
+
+
+  email = $("#loginUsername").val().trim();
+  password = $("#loginPassword").val().trim();
+  console.log(email)
+  console.log(password)
+
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
   })
+
 });
-
-// dropdown Button Click login
-$("#daniel").on("click", function(event) {
-  event.preventDefault();
-  
-    email = "daniel@test.com";
-    password = "test1234";
-    auth.signInWithEmailAndPassword(email, password).then((cred) => {
-      console.log(cred.user);
-        });
-      });
-
-$("#matt").on("click", function(event) {
-  event.preventDefault();
-  
-    email = "matt@test.com";
-    password = "test1234";
-    auth.signInWithEmailAndPassword(email, password).then((cred) => {
-      console.log(cred.user);
-        });
-      });    
-$("#kayleigh").on("click", function(event) {
-  event.preventDefault();
-  
-    email = "Kayleigh@test.com";
-    password = "test1234";
-    auth.signInWithEmailAndPassword(email, password).then((cred) => {
-      console.log(cred.user);
-        });
-      });
-
-//   // signup
-//   $("#signup").on("click", function(event) {
-  
-//   //   //Test signup with login Button 
-//   //  $("#login").on("click", function(event) {
-
-//     event.preventDefault();
-    
-  
-//   // get user info
-//   email = $("#addUsername").val().trim();
-//   password = $("#addPassword").val().trim();
-
-//   // //Test signup with login Button 
-//   // email = $("#inputUsername").val().trim();
-//   // password = $("#inputPassword").val().trim();
-
-//   // sign up the user
-//   auth.createUserWithEmailAndPassword(email, password);
-//        console.log(cred.user);
-  
-//  });

@@ -82,7 +82,6 @@ function buildRecipeCards(recipes) {
             var recipeButtonHolder = clickedRecipeCard.find(".recipe-link").html(); //recipe link
             console.log("recipe link " + recipe.url); //recipe link
             $(".recipe-dump").html(recipeButtonHolder); //recipe link
-
         });
 
  //     ingredientsModal.append(ingredients);
@@ -95,6 +94,7 @@ function buildRecipeCards(recipes) {
         });
 
         cardBody.append(title, heartButton, ingredients, ingredientsButton, recipeButtonHolder);
+        
         recipeButton.append(externalSite);
 
         recipeCard.append(img, cardBody);
@@ -113,7 +113,7 @@ function buildRecipeCards(recipes) {
 
     });
 }
-/* $('.carousel').carousel({
+$('.carousel').carousel({
     pause: true,
     interval: false
-}); */
+});

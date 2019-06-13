@@ -179,7 +179,7 @@ function getRecipeFromCard(card) {
 
     //build an array of the ingredients for the recipe that was clicked
     $(card).find(".list-group-item").each(function () {
-        ingredients.push($(card).text())
+        ingredients.push($(this).text())
     });
 
     var recipe = {

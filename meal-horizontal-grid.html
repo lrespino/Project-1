@@ -27,8 +27,12 @@
     <!--dragula stylesheets-->
     <link rel="stylesheet" href="assets/dist/dragula.css">
     <link rel="stylesheet" href="assets/dist/dragula.min.css">
+
+    <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
 
 
 
@@ -47,14 +51,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class=" navbar-nav ml-auto nav-font">
-                    <li class="nav-item">
-                        <a class="nav-link ks-nav " href="index.html">Home</a>
-                    </li>
                     <li class="nav-item active">
                         <a class="nav-link ks-nav" href="meal-horizontal-grid.html">Meal Plan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ks-nav" href="#">Logout</a>
+                        <a class="nav-link ks-nav " href="shopping-list.html">Shopping List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ks-nav" id="logout" href="#">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -180,7 +184,7 @@
 
                     </div>
                 </div> -->
-                
+
                 <div id="carouselExampleControls" class="carousel slide carousel-container">
                     <div class="carousel-inner slideContainer">
                         <div id="searchResults" class="container imageContainer mx-auto">
@@ -216,58 +220,61 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal modalIngredients fade" id="ingredientsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal modalIngredients fade" id="ingredientsModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 
             <div class="modal-dialog modal-dialog-ingredients" role="document">
                 <div class="modal-content modal-content-ingredients">
                     <div class="modal-header modal-header-ingredients">
-                      <h5 class="modal-title" id="exampleModalLongTitle">Ingredients</h5>
-                      <button type="button" class="close closeButton"       data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>    
+                        <h5 class="modal-title" id="exampleModalLongTitle">Ingredients</h5>
+                        <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                     <ul class="modalDump">
 
-                    </ul>    
+                    </ul>
                     <div class="modal-footer">
-                      <button type="button" class="ks-button-close" data-dismiss="modal">Close</button>
+                        <button type="button" class="ks-button-close" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
-            
+
         </div>
-                    
+
     </section>
 
     <!-- Footer -->
     <footer class=" text-center mt-auto">
         <div>© 2019 Health Hero</div>
     </footer>
-
+    <!--Simple script to toggle classes on heart icon-->
     <script>
         //Added the toggle fav function here so it can work with the loaded items
         $('.toggleFavBut').click(function () {
-        console.log("favorited")
-        $(this).toggleClass('favoriteButton far');
-        $(this).toggleClass('favoritedButton fas fa-2x');
+            console.log("favorited")
+            $(this).toggleClass('favoriteButton far');
+            $(this).toggleClass('favoritedButton fas fa-2x');
         });
 
-        $(".ks-button-form-submit").on("click", function(){
-            setTimeout(function(){
-                $(".carousel-control-prev-icon").css("display","block");
-                $(".carousel-control-next-icon").css("display","block");
+        $(".ks-button-form-submit").on("click", function () {
+            setTimeout(function () {
+                $(".carousel-control-prev-icon").css("display", "block");
+                $(".carousel-control-next-icon").css("display", "block");
             }, 750);
-            
+
         });
     </script>
 
-    <!--Simple script to toggle classes on heart icon-->
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
     <script src="assets/dist/dragula.js"></script>
     <script src="assets/JavaScript/drag-and-drop-logic.js"></script>
-    <script src="assets/JavaScript/recipe-logic.js"></script>
     <script src="assets/JavaScript/gradientLogic-and-modal.js"></script>
+
+    <script src="assets/JavaScript/recipe-logic.js"></script>
     <script src="assets/JavaScript/database-logic.js"></script>
+
 
 </body>
 

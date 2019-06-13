@@ -10,15 +10,39 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-// VARIABLES
-// --------------------------------------------------------------------------------
 
 var database = firebase.database();// Initialize Firebase (YOUR OWN APP)
+const auth = firebase.auth();
 
+//Global variable used to hold the current users unique ID
+var userID;
+
+//Global variable used to keep track of the day the user is currently viewing
 var currentDay = "Monday";
 
-console.log("database set up")
+//Get the user id of the current user
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        userID = user.uid;
+        console.log("User id: " + userID);
+        getSavedRecipes(currentDay);
 
+    } else {
+        console.log("no one is signed in")
+        self.location.href = ("index.html"), event.preventDefault();
+    }
+});
+
+// click handler for logout
+$("#logout").on("click", function (event) {
+    event.preventDefault();
+    auth.signOut().then(() => {
+        console.log('user signed out');
+    })
+    self.location.href = ("index.html"), event.preventDefault()
+});
+
+//click handler for weekday buttons
 $(".ks-weekButtons").on("click", function () {
     console.log($(this).attr("id"));
     currentDay = $(this).attr("id");
@@ -31,8 +55,7 @@ $(".ks-weekButtons").on("click", function () {
 
 })
 
-
-
+//Click handler to save the recipes the user has chosen
 $("#save").on("click", function () {
     console.log("saving recipes...");
 
@@ -51,46 +74,52 @@ $("#save").on("click", function () {
             url: $(this).find("a").attr("href")
         };
 
-        console.log(recipe);
-        //Save the recipe to Firebase
-        database.ref("weeklyPlan/" + currentDay).push({
-            recipe: recipe
-        });
+        var meal = $(this).parent().attr("id");
+        console.log(meal);
+
+        pushSavedRecipe(recipe, meal);
+
     });
 })
 
-
-// database.ref().on("child_added", function (snapshot, prevChildKey) {
-//     var recipe = snapshot.val().recipe;
-//     console.log(recipe);
-//     buildRecipeCard(recipe);
-//     index++;
-// });
-
-function getSavedRecipes(day) {
-    var index = 0;
-    firebase.database().ref('/weeklyPlan/' + day).once('value').then(function (snapshot) {
-        snapshot.forEach(function (child) {
-            //This is the recipe object that we use through out the application
-            var recipe = child.val().recipe
-            buildSavedRecipeCard(recipe, index);
-            index += 1;
-            console.log(child.val().recipe);
-        });
+//Save the recipe that the user has selected to the database 
+function pushSavedRecipe(recipe, meal) {
+    //Save the recipe to Firebase
+    database.ref(userID + '/' + currentDay + "/" + meal).set({
+        recipe: recipe
     });
 
 }
+var meals = ['breakfast', 'lunch', 'dinner'];
+//retrieve the current user's recipes from the database for the given day
+function getSavedRecipes(day) {
 
-function buildSavedRecipeCard(recipe, index) {
-    console.log("building cards");
-    console.log(index);
+    meals.forEach(function (meal) {
+        firebase.database().ref(userID + '/' + day + '/' + meal).once('value').then(function (snapshot) {
+            snapshot.forEach(function (child) {
+                //This is the recipe object that we use through out the application
+                var recipe = child.val();
+                console.log(recipe);
+                console.log(meal);
+                buildSavedRecipeCard(recipe, meal);
+
+            });
+        });
+    })
+
+
+}
+
+function buildSavedRecipeCard(recipe, meal) {
+    console.log("building cards...");
+
 
     var recipeCard = $("<div>").addClass("card ks-card");
 
     var img = $("<img>").addClass("card-img-top").attr("src", recipe.image);
 
     var cardBody = $("<div>").addClass("card-body");
-    
+
     var title = $("<h5>").addClass("card-title").text(recipe.label);
 
     var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");
@@ -104,12 +133,11 @@ function buildSavedRecipeCard(recipe, index) {
     var ingredients = $("<ul>").addClass("list-group list-group-flush hiddenIngredientList");
 
     /* Ingredients Modal Logic */
-    $(".ingredientsButtonClick").on("click", function() {
+    $(".ingredientsButtonClick").on("click", function () {
         $(".modalDump").empty();
         var clickedRecipeCard = $(this).parent();
         var ingredients = clickedRecipeCard.find
-        (".hiddenIngredientList").html();
-        console.log(ingredients);
+            (".hiddenIngredientList").html();
         $(".modalDump").html(ingredients);
     });
 
@@ -124,15 +152,30 @@ function buildSavedRecipeCard(recipe, index) {
 
     recipeCard.append(img, cardBody);
 
-    if (index === 0) {
+    if (meal === 'breakfast') {
         $("#breakfast").append(recipeCard);
     }
-    else if (index === 1) {
+    else if (meal === 'lunch') {
         $("#lunch").append(recipeCard);
     }
-    else if (index === 2) {
+    else if (meal === 'dinner') {
         $("#dinner").append(recipeCard);
     }
 
 }
 
+function removeRecipeFromDB(meal) {
+    console.log("removing saved recipe from database...");
+    firebase.database().ref(userID + '/' + currentDay).child(meal).remove();
+}
+
+//Add event listener to our global drake variable to remove recipes from database
+drake.on('remove', function (el, container, source) {
+    //This is the element (card) that is being removed
+    console.log(el);
+    //This gives us the id of the container that we removed the card from
+    console.log(source.id);
+
+    removeRecipeFromDB(source.id);
+    console.log("removed");
+})

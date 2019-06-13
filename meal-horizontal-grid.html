@@ -75,47 +75,53 @@
             <div class="col-md-12 border text-center">
                 <!-- Week Cards -->
                 <!---------------------------------------->
-                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle selectedDay" id="Monday">
+                <button type="button" name="weekButton"
+                    class="animated zoomIn ks-weekButtons ks-weekButtons-toggle selectedDay" id="Monday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Monday</h5>
                         </div>
                     </div>
-                    </button>
-                
-                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Tuesday">
+                </button>
+
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle"
+                    id="Tuesday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Tuesday</h5>
                         </div>
                     </div>
                 </button>
-               
-                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Wednesday">
+
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle"
+                    id="Wednesday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Wednesday</h5>
                         </div>
                     </div>
                 </button>
-               
-                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Thursday">
+
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle"
+                    id="Thursday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Thursday</h5>
                         </div>
                     </div>
                 </button>
-             
-                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Friday">
+
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle"
+                    id="Friday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Friday</h5>
                         </div>
                     </div>
                 </button>
-               
-                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Saturday">
+
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle"
+                    id="Saturday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Saturday</h5>
@@ -123,7 +129,8 @@
                     </div>
                 </button>
 
-                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle" id="Sunday">
+                <button type="button" name="weekButton" class="animated zoomIn ks-weekButtons ks-weekButtons-toggle"
+                    id="Sunday">
                     <div class="week-cards">
                         <div class="">
                             <h5 class="card-title text-center">Sunday</h5>
@@ -239,15 +246,15 @@
             <div class="modal-dialog modal-dialog-ingredients" role="document">
                 <div class="modal-content modal-content-ingredients">
                     <div class="modal-header modal-header-ingredients">
-                      <h5 class="modal-title" id="exampleModalLongTitle">Ingredients</h5>
-                      <button type="button" class="close closeButton"       data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>    
-                    <ul class="modalDump">
-                    </ul>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Ingredients</h5>
+                        <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modalDump">
+                    </div>
                     <div class="modal-footer">
-                    <span class=" recipe-dump text-center"></span>
+                        <span class=" recipe-dump text-center"></span>
                     </div>
                 </div>
             </div>
@@ -268,19 +275,20 @@
             $(this).toggleClass('favoritedButton fas fa-2x');
         });
         /* Adds the carousel buttons on submit click */
-        $(".searchButton").on("click", function(){
-            setTimeout(function(){
-                $(".carousel-control-prev-icon").css("display","block");
-                $(".carousel-control-next-icon").css("display","block");
-            }, 1000); 
+        $(".searchButton").on("click", function () {
+            setTimeout(function () {
+                $(".carousel-control-prev-icon").css("display", "block");
+                $(".carousel-control-next-icon").css("display", "block");
+            }, 1000);
         });
 
-        $(".ks-weekButtons-toggle").on("click", function() {
+        $(".ks-weekButtons-toggle").on("click", function () {
 
-            $(this).addClass("selectedDay").siblings().removeClass("selectedDay");
-            
+            $(this).siblings().removeClass("selectedDay");
+            $(this).addClass("selectedDay");
+
             // $(this).toggleClass("unSelectedDay");
-            
+
         });
     </script>
 

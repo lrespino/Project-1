@@ -7,6 +7,7 @@ html {
     /*for sticky footer */
     min-height: 100%;
     /*for sticky footer */
+    min-width: 100%;
 }
 
 body {
@@ -77,6 +78,7 @@ body {
 .HHlogo {
     width: 30px;
     height: 40px;
+    margin-top: 3px;
 }
 
 /*Footer*/
@@ -89,6 +91,17 @@ footer {
     height: 40px;
     line-height: 40px;
     /*vertically centers */
+}
+
+.footerText {
+    color: #42611F;
+    font-size: 12px;
+}
+
+.HHlogoFooter {
+    width: 7px;
+    height: 10px;
+    margin-bottom: 5px;
 }
 
 /* KS-Button Styles */
@@ -138,6 +151,12 @@ footer {
 .main {
     margin-top: 78px;
     margin-bottom: 78px;
+}
+
+.HHlogo2 {
+    width: 30px;
+    height: 40px;
+    margin-bottom: 20px;
 }
 
 /*-Login-- */

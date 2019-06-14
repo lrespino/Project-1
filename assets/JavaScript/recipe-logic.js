@@ -4,7 +4,7 @@ $("#submit").on("click", function (e) {
 
     var query = $("#searchTerm").val();
 
-    console.log(query);
+ //   console.log(query);
     var appKey = "ab75022db9057519bafaa14829512295";
     var appId = "cc950c0c";
 
@@ -23,14 +23,7 @@ $("#submit").on("click", function (e) {
         });
 
         buildRecipeCards(recipes);
-        console.log(recipes);
-        //Added the toggle fav function here so it can work with the loaded items
-/*         $('.toggleFavBut').click(function () {
-            console.log("favorited")
-            $(this).toggleClass('favoriteButton far');
-            $(this).toggleClass('favoritedButton fas fa-2x');
-        }); */
-
+     //   console.log(recipes);
     });
 });
 
@@ -47,7 +40,7 @@ function buildRecipeCards(recipes) {
     $("#secondSlide").empty();
     $("#thirdSlide").empty();
     recipes.forEach(function (recipe, index) {
-        console.log(index);
+   //     console.log(index);
 
         var recipeCard = $("<div>").addClass("card ks-card");
 
@@ -75,10 +68,10 @@ function buildRecipeCards(recipes) {
             $(".recipe-dump").empty(); //recipe link
             var clickedRecipeCard = $(this).parent();
             var ingredients = clickedRecipeCard.find(".hiddenIngredientList").html();
-            console.log("ingredients are" + ingredients);
+           // console.log("ingredients are" + ingredients);
             $(".modalDump").html(ingredients);
             var recipeButtonHolder = clickedRecipeCard.find(".recipe-link").html(); //recipe link
-            console.log("recipe link " + recipe.url); //recipe link
+          //  console.log("recipe link " + recipe.url); //recipe link
             $(".recipe-dump").html(recipeButtonHolder); //recipe link
         });
 

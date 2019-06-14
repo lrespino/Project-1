@@ -24,11 +24,12 @@ var currentDay = "Monday";
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         userID = user.uid;
-        console.log("User id: " + userID);
+  //      console.log("User id: " + userID);
         getSavedRecipes(currentDay);
+        getFavorites()
 
     } else {
-        console.log("no one is signed in")
+  //      console.log("no one is signed in")
         self.location.href = ("index.html"), event.preventDefault();
     }
 });
@@ -37,14 +38,14 @@ firebase.auth().onAuthStateChanged(function (user) {
 $("#logout").on("click", function (event) {
     event.preventDefault();
     auth.signOut().then(() => {
-        console.log('user signed out');
+ //       console.log('user signed out');
     })
     self.location.href = ("index.html"), event.preventDefault()
 });
 
 //click handler for weekday buttons
 $(".ks-weekButtons").on("click", function () {
-    console.log($(this).attr("id"));
+ //   console.log($(this).attr("id"));
     currentDay = $(this).attr("id");
 
     $("#breakfast").empty();
@@ -52,25 +53,25 @@ $(".ks-weekButtons").on("click", function () {
     $("#dinner").empty();
 
     getSavedRecipes(currentDay);
-
+    getFavorites()
 })
 
 //Add event listener to our global drake variable to remove recipes from database
 drake.on('remove', function (el, container, source) {
     //This is the element (card) that is being removed
-    console.log(el);
+ //   console.log(el);
     //This gives us the id of the container that we removed the card from
-    console.log(source.id);
+ //   console.log(source.id);
 
     removeRecipeFromDB(source.id);
-    console.log("removed");
+ //   console.log("removed");
 });
 
 //Add event listener to our global drake variable to add recipes to database
 drake.on('drop', function (el, target) {
-    console.log("dropped");
-    console.log(el);
-    console.log(target.id);
+  //  console.log("dropped");
+ //   console.log(el);
+ //   console.log(target.id);
     //this is the ID of the container the card was dropped in
     //target.id
 
@@ -95,8 +96,8 @@ function getSavedRecipes(day) {
             snapshot.forEach(function (child) {
                 //This is the recipe object that we use through out the application
                 var recipe = child.val();
-                console.log(recipe);
-                console.log(meal);
+      //          console.log(recipe);
+      //          console.log(meal);
                 buildSavedRecipeCard(recipe, meal);
 
             });
@@ -116,7 +117,7 @@ function buildSavedRecipeCard(recipe, meal) {
     var heartButton = $("<button>").addClass("far fa-heart favoriteButton fa-lg toggleFavBut mb-2");
 
     var recipeButtonHolder = $("<span>").addClass("recipe-link")
-    console.log("recipe url: " + recipe.url);
+   // console.log("recipe url: " + recipe.url);
     var recipeButton = $("<a>").addClass("ks-button-close").attr("href", recipe.url).attr("target", "_blank").text("Recipe ");
 
 
@@ -127,23 +128,23 @@ function buildSavedRecipeCard(recipe, meal) {
     recipeButtonHolder.append(recipeButton)
 
     recipe.ingredientLines.forEach(function (ingredient) {
-        console.log("ingredients: " + ingredient);
+     //   console.log("ingredients: " + ingredient);
         var li = $("<li>").addClass("list-group-item").text(ingredient);
         ingredients.append(li);
     });
 
     var ingredientsButton = $("<button>").addClass("ks-button-recipe ingredientsButtonClick").attr("data-toggle", "modal").attr("data-target", "#ingredientsModal").text("Ingredients");
     ingredientsButton.on("click", function () {
-        console.log("ingredient button clicked")
+    //    console.log("ingredient button clicked")
         $(".modalDump").empty();
         $(".recipe-dump").empty(); //recipe link
         var clickedRecipeCard = $(this).parent();
 
-        console.log(ingredients);
+    //    console.log(ingredients);
         $(".modalDump").html(ingredients);
         $(".modalDump").find(".hiddenIngredientList").removeClass("hiddenIngredientList");
         var recipeButtonHolder = clickedRecipeCard.find(".recipe-link").html(); //recipe link
-        console.log("recipe link " + recipe.url); //recipe link
+     //   console.log("recipe link " + recipe.url); //recipe link
         $(".recipe-dump").html(recipeButtonHolder); //recipe link
     });
 
@@ -165,12 +166,6 @@ function buildSavedRecipeCard(recipe, meal) {
     else if (meal === 'dinner') {
         $("#dinner").append(recipeCard);
     }
-    //To toggle the favorite button when the card is in the meal plan
-/*     $('.toggleFavBut').click(function () {
-       // console.log("favorited")
-        $(this).toggleClass('favoriteButton far');
-        $(this).toggleClass('favoritedButton fas fa-2x');
-    }); */
 }
 
 function removeRecipeFromDB(meal) {

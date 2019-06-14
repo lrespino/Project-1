@@ -74,6 +74,11 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.HHlogo {
+    width: 30px;
+    height: 40px;
+}
+
 /*Footer*/
 
 footer {
@@ -224,7 +229,7 @@ button div div h5 {
     outline: 0;
     border-style: outset;
     border-color: rgba(255, 255, 255, 0.5);
-    /* transform: translate(0px,5px); */
+    transform: translate(0px,5px);
 }
 
 .unSelectedDay {
@@ -288,6 +293,7 @@ button div div h5 {
     /* height: 302px; */
     padding: 0px;
     margin: 0px;
+    margin-bottom: 10px;
     border-radius: 10%;
 }
 
@@ -572,10 +578,15 @@ button div div h5 {
 .closeButton {
     color: #000000;
     font-size: 30px;
+    border: none;
+    text-decoration: none;
+    display: block;
 }
 
 .closeButton:hover, .closeButton:focus {
     color: #fff;
+    border: none;
+    text-decoration: none;
 }
 
 .ks-button-close {
@@ -621,6 +632,7 @@ button div div h5 {
 
 .closeButton-logs:hover, .closeButton-logs:focus {
     color: #fff;
+    border: none;
 }
 
 .modal-content-logs {
